@@ -244,7 +244,11 @@ function GenericProject({ isMobile }: { isMobile: boolean }) {
   return (
     <div className="generic-project">
       <div className="generic-hero" style={{ aspectRatio: isMobile ? "3/4" : "16/10", background: project.bg }}>
-        <img src={project.img} alt={project.title} style={{ objectPosition: project.imgPosition ?? "center" }} />
+        <img
+          src={project.caseImg ?? project.img}
+          alt={project.title}
+          style={{ objectPosition: project.caseImg ? "center" : (project.imgPosition ?? "center") }}
+        />
         <div className="generic-scrim" />
         <button className="generic-back" onClick={() => navigate(-1)}>← Work</button>
         <div className="generic-hero-copy">

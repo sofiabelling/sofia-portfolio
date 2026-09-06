@@ -1,5 +1,6 @@
 import nixHero from "../imports/nix/nix-hero.jpg";
 import bepnHero from "../imports/bepn_curated_assets/country-explorer.png";
+import copecCaseHero from "../imports/copec_case.png";
 
 export type Tag = "UX" | "UI" | "Research" | "Interaction" | "Animation" | "3D" | "Branding" | "Mobile";
 
@@ -17,6 +18,8 @@ export interface Project {
   img: string;
   /** CSS object-position for the thumbnail crop, e.g. "center 36%" — for a source image whose best framing isn't dead-center. */
   imgPosition?: string;
+  /** Overrides `img` for the case-study page's hero banner only — the grid thumbnail keeps using `img`. */
+  caseImg?: string;
   tools: { name: string; icon: string }[];
   featured: boolean;
   /** Short uppercase editorial metadata lines, e.g. ["PRODUCT DESIGN · UX/UI", "MOBILE · RESEARCH"] */
@@ -137,6 +140,7 @@ export const projects: Project[] = [
     body: "The work spanned discovery research with petrol station workers and drivers, service blueprinting, and a full design system build that could scale across Copec's entire digital estate.",
     bg: "#0f3db5",
     img: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?w=1200&h=800&fit=crop&auto=format",
+    caseImg: copecCaseHero,
     tools: [
       { name: "Figma", icon: "🎨" },
       { name: "Maze", icon: "🧪" },
