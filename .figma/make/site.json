@@ -1,0 +1,12 @@
+{
+  "title": "sofiabellinghausen",
+  "description": "Showcases a professional portfolio website designed to highlight creative work and skills, enhancing online presence and client engagement.",
+  "language": "en",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
