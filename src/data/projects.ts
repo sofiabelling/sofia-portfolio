@@ -1,6 +1,7 @@
 import nixHero from "../imports/nix/nix-hero.jpg";
 import bepnHero from "../imports/bepn_curated_assets/country-explorer.png";
 import copecCaseHero from "../imports/copec_case.png";
+import copecThumbnail from "../imports/copec/copec-hero.png";
 
 export type Tag = "UX" | "UI" | "Research" | "Interaction" | "Animation" | "3D" | "Branding" | "Mobile";
 
@@ -139,7 +140,7 @@ export const projects: Project[] = [
       "Copec is one of Latin America's largest fuel and convenience networks. The mobile project set out to unify a fragmented set of loyalty, payment, and location features into a single, coherent product.",
     body: "The work spanned discovery research with petrol station workers and drivers, service blueprinting, and a full design system build that could scale across Copec's entire digital estate.",
     bg: "#0f3db5",
-    img: "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?w=1200&h=800&fit=crop&auto=format",
+    img: copecThumbnail,
     caseImg: copecCaseHero,
     tools: [
       { name: "Figma", icon: "🎨" },

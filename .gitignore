@@ -20,3 +20,8 @@ logs/
 /.opencode-skills/
 
 .DS_Store
+
+# Editor swap/lock files
+*.swp
+*.swo
+.*.swp

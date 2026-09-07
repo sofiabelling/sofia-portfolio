@@ -13,7 +13,7 @@ const THUMBNAIL_STYLE: Record<
 > = {
   copec: { fit: "cover", position: "center" },
   nix: { fit: "cover", position: "center 48%" },
-  bepn: { fit: "contain", position: "center", padding: "16px", scale: 0.97 },
+  bepn: { fit: "cover", position: "center 36%" },
   dashboard: { fit: "cover", position: "center" },
   "joel-sartore": { fit: "cover", position: "center 44%" },
 };

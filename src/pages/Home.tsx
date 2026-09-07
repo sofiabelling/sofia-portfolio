@@ -16,7 +16,7 @@ const THUMBNAIL_STYLE: Record<
 > = {
   copec: { fit: "cover", position: "center 48%", scale: 1.015 },
   nix: { fit: "cover", position: "center 48%" },
-  bepn: { fit: "contain", position: "center", padding: "18px", scale: 0.96 },
+  bepn: { fit: "cover", position: "center 36%" },
   dashboard: { fit: "cover", position: "center" },
   "joel-sartore": { fit: "cover", position: "center 44%" },
 };
@@ -276,7 +276,7 @@ function ProjectChapter({
         display: "block",
         objectFit: thumb.fit ?? "cover",
         objectPosition: thumb.position ?? project.imgPosition ?? "center",
-        padding: project.slug === "bepn" ? (isMobile ? "8px" : "12px") : thumb.padding ?? 0,
+        padding: thumb.padding ?? 0,
         transform: `translateZ(0) scale(${(thumb.scale ?? 1) * (!isMobile && hovered ? 1.025 : 1)})`,
         transformOrigin: "center",
         imageRendering: "auto",
@@ -426,7 +426,7 @@ function ProjectChapter({
               display: "block",
               objectFit: thumb.fit ?? "cover",
               objectPosition: thumb.position ?? project.imgPosition ?? "center",
-              padding: project.slug === "bepn" ? (isActive ? "8px" : "6px") : thumb.padding ?? 0,
+              padding: thumb.padding ?? 0,
               transform: `translateZ(0) scale(${(thumb.scale ?? 1) * (hovered ? .995 : isActive ? 1.012 : 1)})`,
               transformOrigin: "center",
               backfaceVisibility: "hidden",
