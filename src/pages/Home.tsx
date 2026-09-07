@@ -14,7 +14,7 @@ const THUMBNAIL_STYLE: Record<
   string,
   { fit?: "cover" | "contain"; position?: string; padding?: string; scale?: number }
 > = {
-  copec: { fit: "cover", position: "center" },
+  copec: { fit: "cover", position: "center 48%", scale: 1.015 },
   nix: { fit: "cover", position: "center 48%" },
   bepn: { fit: "contain", position: "center", padding: "18px", scale: 0.96 },
   dashboard: { fit: "cover", position: "center" },
@@ -80,20 +80,68 @@ export default function Home() {
           } as React.CSSProperties
         }
       >
+        <style>{`
+          @keyframes heroColorDrift {
+            0% { transform: translate3d(-4%, -2%, 0) scale(1); }
+            33% { transform: translate3d(7%, 4%, 0) scale(1.08); }
+            66% { transform: translate3d(-1%, 8%, 0) scale(.98); }
+            100% { transform: translate3d(-4%, -2%, 0) scale(1); }
+          }
+          @keyframes heroHueShift {
+            0% { filter: blur(72px) hue-rotate(0deg); }
+            50% { filter: blur(78px) hue-rotate(18deg); }
+            100% { filter: blur(72px) hue-rotate(0deg); }
+          }
+          @keyframes heroMobilePulse {
+            0%, 100% { transform: translate3d(-8%, -2%, 0) scale(1); opacity: .72; }
+            50% { transform: translate3d(8%, 5%, 0) scale(1.12); opacity: .95; }
+          }
+        `}</style>
+
         <div
           aria-hidden
           style={{
             position: "absolute",
-            zIndex: -2,
-            inset: isMobile ? "-70px -50px" : "-190px -240px",
+            zIndex: -3,
+            inset: isMobile ? "-90px -70px" : "-210px -260px",
             pointerEvents: "none",
-            filter: "blur(94px)",
-            opacity: isMobile ? 0.32 : 0.6,
-            background: isMobile
-              ? `radial-gradient(circle at 68% 34%, rgba(114,87,232,.07), transparent 46%), radial-gradient(circle at 34% 62%, rgba(255,150,210,.025), transparent 42%)`
-              : `radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(114,87,232,.10) 0%, rgba(114,87,232,.04) 23%, transparent 57%), radial-gradient(circle at calc(var(--mouse-x) - 18%) calc(var(--mouse-y) + 11%), rgba(255,150,210,.026), transparent 46%), radial-gradient(circle at calc(var(--mouse-x) + 14%) calc(var(--mouse-y) - 9%), rgba(110,218,235,.022), transparent 44%)`,
+            overflow: "hidden",
           }}
-        />
+        >
+          <div
+            style={{
+              position: "absolute",
+              inset: isMobile ? "4% -6% -8% -8%" : "0",
+              borderRadius: "50%",
+              background: isMobile
+                ? "radial-gradient(circle at 24% 38%, rgba(255,86,198,.24), transparent 34%), radial-gradient(circle at 70% 30%, rgba(114,87,232,.24), transparent 36%), radial-gradient(circle at 58% 72%, rgba(83,220,237,.18), transparent 34%)"
+                : "radial-gradient(circle at 24% 36%, rgba(255,86,198,.20), transparent 30%), radial-gradient(circle at 72% 30%, rgba(114,87,232,.22), transparent 34%), radial-gradient(circle at 60% 72%, rgba(83,220,237,.16), transparent 32%)",
+              opacity: isMobile ? .72 : .76,
+              animation: isMobile
+                ? "heroMobilePulse 6.4s ease-in-out infinite, heroHueShift 8.8s ease-in-out infinite"
+                : "heroColorDrift 8.5s ease-in-out infinite, heroHueShift 10s ease-in-out infinite",
+              willChange: "transform, filter, opacity",
+            }}
+          />
+
+          {!isMobile && (
+            <div
+              style={{
+                position: "absolute",
+                width: "54%",
+                aspectRatio: "1",
+                left: "calc(var(--mouse-x) - 27%)",
+                top: "calc(var(--mouse-y) - 27%)",
+                borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(166,91,255,.18) 0%, rgba(255,88,190,.10) 35%, rgba(84,219,236,.055) 58%, transparent 72%)",
+                filter: "blur(40px)",
+                transform: "translate3d(0,0,0)",
+                transition: "left .22s cubic-bezier(.2,.75,.25,1), top .22s cubic-bezier(.2,.75,.25,1)",
+                willChange: "left, top",
+              }}
+            />
+          )}
+        </div>
 
         <div
           style={{
@@ -229,114 +277,165 @@ function ProjectChapter({
         objectFit: thumb.fit ?? "cover",
         objectPosition: thumb.position ?? project.imgPosition ?? "center",
         padding: project.slug === "bepn" ? (isMobile ? "8px" : "12px") : thumb.padding ?? 0,
-        transform: `scale(${(thumb.scale ?? 1) * (!isMobile && hovered ? 1.008 : 1)})`,
+        transform: `translateZ(0) scale(${(thumb.scale ?? 1) * (!isMobile && hovered ? 1.025 : 1)})`,
+        transformOrigin: "center",
         imageRendering: "auto",
         backfaceVisibility: "hidden",
-        transition: "transform .55s cubic-bezier(.2,.75,.25,1)",
+        willChange: "transform",
+        transition: "transform .32s cubic-bezier(.2,.7,.2,1)",
       }}
     />
   );
 
-  /* Mobile gets a genuinely responsive composition instead of squeezing
-     the desktop chapter into a narrow viewport. */
+  /* Mobile uses one persistent layout so the active/inactive state can
+     animate instead of swapping two different trees. */
   if (isMobile) {
-    if (isActive) {
-      return (
-        <article
-          style={{
-            overflow: "hidden",
-            border: "1px solid #E4E0F4",
-            borderRadius: "12px",
-            background: BG,
-          }}
-        >
-          <button
-            type="button"
-            aria-label={`Open ${project.title} project`}
-            onClick={onOpen}
-            style={{
-              display: "block",
-              width: "100%",
-              height: "248px",
-              padding: 0,
-              border: 0,
-              overflow: "hidden",
-              background: project.bg,
-              cursor: "pointer",
-            }}
-          >
-            {image}
-          </button>
-
-          <div style={{ padding: "17px 17px 18px" }}>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", letterSpacing: ".07em", color: SOFT }}>
-              {project.year}
-            </span>
-            <h2 style={{ margin: "7px 0 0", fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: "27px", fontWeight: 800, lineHeight: .96, letterSpacing: "-.04em", color: NAV }}>
-              {project.title}
-            </h2>
-            <div className="editorial-meta-block" style={{ marginTop: "9px", maxWidth: "390px" }}>
-              {metaLines.map((line) => <div key={line}>{line}</div>)}
-              {project.impact && <strong>{project.impact}</strong>}
-            </div>
-            <button
-              type="button"
-              onClick={onOpen}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                marginTop: "16px",
-                padding: 0,
-                border: 0,
-                background: "transparent",
-                cursor: "pointer",
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "9px",
-                fontWeight: 500,
-                letterSpacing: ".1em",
-                textTransform: "uppercase",
-                color: VIOLET,
-              }}
-            >
-              View case study →
-            </button>
-          </div>
-        </article>
-      );
-    }
+    const mobileHeight = isActive ? 410 : 136;
 
     return (
       <article
-        onClick={onActivate}
+        onClick={() => !isActive && onActivate()}
+        onPointerDown={() => setHovered(true)}
+        onPointerUp={() => setHovered(false)}
+        onPointerCancel={() => setHovered(false)}
+        onPointerLeave={() => setHovered(false)}
         style={{
-          height: "136px",
+          position: "relative",
+          height: `${mobileHeight}px`,
           overflow: "hidden",
-          border: "1px solid #E4E0F4",
-          borderRadius: "11px",
+          border: `1px solid ${isActive ? "#D9D3F2" : "#E4E0F4"}`,
+          borderRadius: "12px",
           background: BG,
           cursor: "pointer",
+          transform: hovered ? "scale(.992)" : "scale(1)",
+          boxShadow: isActive ? "0 10px 28px rgba(26,25,64,.055)" : "0 0 0 rgba(26,25,64,0)",
+          transition: "height .42s cubic-bezier(.2,.78,.22,1), transform .16s ease, border-color .28s ease, box-shadow .32s ease",
+          willChange: "height, transform",
         }}
       >
-        <div style={{ display: "grid", gridTemplateColumns: "42% 58%", height: "100%" }}>
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", minWidth: 0, padding: "0 14px" }}>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "8px", letterSpacing: ".06em", color: SOFT }}>
+        <div
+          style={{
+            position: "absolute",
+            zIndex: 2,
+            left: 0,
+            top: isActive ? "248px" : 0,
+            width: isActive ? "100%" : "42%",
+            height: isActive ? "162px" : "136px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: isActive ? "space-between" : "center",
+            padding: isActive ? "17px 17px 18px" : "0 14px",
+            background: BG,
+            transition: "top .42s cubic-bezier(.2,.78,.22,1), width .42s cubic-bezier(.2,.78,.22,1), height .42s cubic-bezier(.2,.78,.22,1), padding .34s ease",
+          }}
+        >
+          <div>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: isActive ? "9px" : "8px", letterSpacing: isActive ? ".07em" : ".06em", color: SOFT, transition: "font-size .28s ease" }}>
               {project.year}
             </span>
-            <h2 style={{ margin: "6px 0 0", fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: "18px", fontWeight: 800, lineHeight: .98, letterSpacing: "-.035em", color: NAV }}>
+            <h2
+              style={{
+                margin: isActive ? "7px 0 0" : "6px 0 0",
+                fontFamily: "'Bricolage Grotesque', sans-serif",
+                fontSize: isActive ? "27px" : "18px",
+                fontWeight: 800,
+                lineHeight: isActive ? .96 : .98,
+                letterSpacing: isActive ? "-.04em" : "-.035em",
+                color: NAV,
+                transform: isActive ? "translate3d(0,0,0)" : "translate3d(0,1px,0)",
+                transition: "font-size .34s cubic-bezier(.2,.78,.22,1), margin .3s ease, transform .3s ease",
+              }}
+            >
               {project.title}
             </h2>
+            <div
+              className="editorial-meta-block"
+              style={{
+                marginTop: "9px",
+                maxWidth: "390px",
+                opacity: isActive ? 1 : 0,
+                transform: isActive ? "translate3d(0,0,0)" : "translate3d(0,8px,0)",
+                pointerEvents: isActive ? "auto" : "none",
+                transition: "opacity .24s ease .12s, transform .34s cubic-bezier(.2,.78,.22,1) .08s",
+              }}
+            >
+              {metaLines.map((line) => <div key={line}>{line}</div>)}
+              {project.impact && <strong>{project.impact}</strong>}
+            </div>
           </div>
 
           <button
             type="button"
-            aria-label={`Open ${project.title} project`}
             onClick={(event) => { event.stopPropagation(); onOpen(); }}
-            style={{ width: "100%", height: "100%", minWidth: 0, padding: 0, border: 0, overflow: "hidden", background: project.bg, cursor: "pointer" }}
+            tabIndex={isActive ? 0 : -1}
+            aria-hidden={!isActive}
+            style={{
+              alignSelf: "flex-start",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: 0,
+              border: 0,
+              background: "transparent",
+              cursor: isActive ? "pointer" : "default",
+              pointerEvents: isActive ? "auto" : "none",
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "9px",
+              fontWeight: 500,
+              letterSpacing: ".1em",
+              textTransform: "uppercase",
+              color: VIOLET,
+              opacity: isActive ? 1 : 0,
+              transform: isActive ? "translate3d(0,0,0)" : "translate3d(0,8px,0)",
+              transition: "opacity .22s ease .15s, transform .32s cubic-bezier(.2,.78,.22,1) .1s",
+            }}
           >
-            {image}
+            View case study
+            <span style={{ transition: "transform .2s ease" }}>→</span>
           </button>
         </div>
+
+        <button
+          type="button"
+          aria-label={`Open ${project.title} project`}
+          onClick={(event) => {
+            event.stopPropagation();
+            if (isActive) onOpen();
+            else onActivate();
+          }}
+          style={{
+            position: "absolute",
+            zIndex: 1,
+            top: 0,
+            right: 0,
+            width: isActive ? "100%" : "58%",
+            height: isActive ? "248px" : "136px",
+            padding: 0,
+            border: 0,
+            overflow: "hidden",
+            background: project.bg,
+            cursor: "pointer",
+            transition: "width .42s cubic-bezier(.2,.78,.22,1), height .42s cubic-bezier(.2,.78,.22,1)",
+          }}
+        >
+          <img
+            src={project.img}
+            alt={project.title}
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "block",
+              objectFit: thumb.fit ?? "cover",
+              objectPosition: thumb.position ?? project.imgPosition ?? "center",
+              padding: project.slug === "bepn" ? (isActive ? "8px" : "6px") : thumb.padding ?? 0,
+              transform: `translateZ(0) scale(${(thumb.scale ?? 1) * (hovered ? .995 : isActive ? 1.012 : 1)})`,
+              transformOrigin: "center",
+              backfaceVisibility: "hidden",
+              willChange: "transform",
+              transition: "transform .36s cubic-bezier(.2,.75,.25,1), padding .3s ease",
+            }}
+          />
+        </button>
       </article>
     );
   }
@@ -353,16 +452,19 @@ function ProjectChapter({
       onMouseLeave={() => setHovered(false)}
       style={{
         position: "relative",
-        height: isActive ? "470px" : hovered ? "230px" : "172px",
+        height: "260px",
         overflow: "hidden",
-        border: "1px solid #E4E0F4",
+        border: `1px solid ${hovered ? "#D5CEF1" : "#E4E0F4"}`,
         borderRadius: "12px",
         background: project.bg,
         cursor: isActive ? "default" : "pointer",
-        transition: "height .36s cubic-bezier(.22,.78,.24,1)",
+        transform: hovered ? "translate3d(0,-3px,0)" : isActive ? "translate3d(0,-1px,0)" : "translate3d(0,0,0)",
+        boxShadow: hovered ? "0 14px 34px rgba(26,25,64,.08)" : "0 0 0 rgba(26,25,64,0)",
+        willChange: "transform",
+        transition: "transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease, border-color .24s ease",
       }}
     >
-      <div style={{ position: "absolute", inset: 0, display: "grid", gridTemplateColumns: isActive ? "minmax(260px,.68fr) minmax(0,1.32fr)" : "minmax(245px,.62fr) minmax(0,1.38fr)" }}>
+      <div style={{ position: "absolute", inset: 0, display: "grid", gridTemplateColumns: "minmax(260px,.68fr) minmax(0,1.32fr)" }}>
         <div
           style={{
             position: "relative",
@@ -371,7 +473,7 @@ function ProjectChapter({
             flexDirection: "column",
             justifyContent: isActive ? "space-between" : "center",
             minWidth: 0,
-            padding: isActive ? "32px 30px 28px" : "0 28px",
+            padding: isActive ? "24px 30px 22px" : "0 28px",
             background: BG,
           }}
         >
@@ -383,12 +485,14 @@ function ProjectChapter({
               style={{
                 margin: isActive ? "9px 0 0" : "6px 0 0",
                 fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: isActive ? "clamp(35px,3.2vw,51px)" : hovered ? "29px" : "25px",
+                fontSize: "27px",
                 fontWeight: 800,
                 lineHeight: .96,
                 letterSpacing: "-.04em",
                 color: NAV,
-                transition: "font-size .34s cubic-bezier(.22,.78,.24,1)",
+                transform: `translate3d(0,${hovered ? "-1px" : "0"},0) scale(${isActive ? 1.055 : 1})`,
+                transformOrigin: "left center",
+                transition: "transform .3s cubic-bezier(.2,.75,.25,1), color .22s ease",
               }}
             >
               {project.title}
@@ -398,8 +502,9 @@ function ProjectChapter({
               style={{
                 marginTop: isActive ? "12px" : "7px",
                 maxWidth: "390px",
-                opacity: isActive ? 1 : hovered ? .95 : .68,
-                transition: "opacity .25s ease",
+                opacity: isActive ? 1 : hovered ? .92 : .68,
+                transform: isActive ? "translate3d(0,0,0)" : hovered ? "translate3d(0,-1px,0)" : "translate3d(0,2px,0)",
+                transition: "opacity .25s ease, transform .3s cubic-bezier(.2,.75,.25,1)",
               }}
             >
               {metaLines.map((line) => <div key={line}>{line}</div>)}
@@ -407,16 +512,35 @@ function ProjectChapter({
             </div>
           </div>
 
-          {isActive && (
-            <button
-              type="button"
-              onClick={openCaseStudy}
-              style={{ alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: "9px", padding: 0, border: 0, background: "transparent", cursor: "pointer", fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 500, letterSpacing: ".1em", textTransform: "uppercase", color: hovered ? VIOLET : "#938DCA", transition: "color .2s ease" }}
-            >
-              View case study
-              <span style={{ transform: hovered ? "translateX(4px)" : "translateX(0)", transition: "transform .2s ease" }}>→</span>
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={openCaseStudy}
+            tabIndex={isActive ? 0 : -1}
+            aria-hidden={!isActive}
+            style={{
+              alignSelf: "flex-start",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "9px",
+              padding: 0,
+              border: 0,
+              background: "transparent",
+              cursor: isActive ? "pointer" : "default",
+              pointerEvents: isActive ? "auto" : "none",
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "9px",
+              fontWeight: 500,
+              letterSpacing: ".1em",
+              textTransform: "uppercase",
+              color: hovered ? VIOLET : "#938DCA",
+              opacity: isActive ? 1 : 0,
+              transform: isActive ? "translate3d(0,0,0)" : "translate3d(0,7px,0)",
+              transition: "opacity .22s ease, transform .3s cubic-bezier(.2,.75,.25,1), color .2s ease",
+            }}
+          >
+            View case study
+            <span style={{ transform: hovered ? "translateX(4px)" : "translateX(0)", transition: "transform .2s ease" }}>→</span>
+          </button>
         </div>
 
         <button
