@@ -238,7 +238,7 @@ export default function Home() {
               key={project.slug}
               project={project}
               isMobile={isMobile}
-              isActive={project.slug === activeSlug}
+              isActive={isMobile ? true : project.slug === activeSlug}
               onActivate={() => setActiveSlug(project.slug)}
               onOpen={() => navigate(`/work/${project.slug}`)}
             />
@@ -360,7 +360,6 @@ function ProjectChapter({
               }}
             >
               {metaLines.map((line) => <div key={line}>{line}</div>)}
-              {project.impact && <strong>{project.impact}</strong>}
             </div>
           </div>
 
@@ -508,7 +507,6 @@ function ProjectChapter({
               }}
             >
               {metaLines.map((line) => <div key={line}>{line}</div>)}
-              {project.impact && <strong>{project.impact}</strong>}
             </div>
           </div>
 

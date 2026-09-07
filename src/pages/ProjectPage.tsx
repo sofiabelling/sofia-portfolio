@@ -19,6 +19,15 @@ import nix98 from "../imports/nix/page-98.jpg";
 import nix99 from "../imports/nix/page-99.jpg";
 import nix100 from "../imports/nix/page-100.jpg";
 
+import copecSplashDemo from "../imports/copec-splash-demo.mp4";
+import copecMap from "../imports/copec/copec_map.png";
+import copecReceipt from "../imports/copec/copec_receipt.png";
+import copecHero from "../imports/copec/copec-hero.png";
+import copecBillboard from "../imports/copec/copec-billboard.jpg";
+import copecLogo from "../imports/copec/copec-logo.jpg";
+import copecOnboarding from "../imports/copec/copec-onboarding.png";
+import copecDemo from "../imports/copec/copec-case-study-demo.mp4";
+
 import BepnProject from "../components/BepnProject";
 
 
@@ -226,6 +235,516 @@ function NixCaseStudy() {
   );
 }
 
+
+function CopecCaseStudy() {
+  const navigate = useNavigate();
+
+  return (
+    <main className="copec-case">
+      <style>{`
+        .copec-case {
+          --copec-blue: #213E9A;
+          --copec-electric: #123BFF;
+          --copec-green: #00EA78;
+          --copec-ink: #173273;
+          --copec-muted: #6F7897;
+          --copec-paper: #FBFBF8;
+          background: var(--copec-paper);
+          color: var(--copec-ink);
+          overflow: hidden;
+        }
+        .copec-case * { box-sizing: border-box; }
+        .copec-case h1, .copec-case h2, .copec-case h3 {
+          font-family: 'Bricolage Grotesque', sans-serif;
+          letter-spacing: -.05em;
+        }
+        .copec-label {
+          margin: 0 0 22px;
+          font: 600 10px/1.2 'Inter', sans-serif;
+          letter-spacing: .16em;
+          text-transform: uppercase;
+          color: #7C86AA;
+        }
+        .copec-shell {
+          width: min(1180px, calc(100% - 120px));
+          margin: 0 auto;
+        }
+        .copec-display {
+          margin: 0;
+          font-size: clamp(44px, 5.5vw, 82px);
+          line-height: .96;
+          font-weight: 700;
+        }
+        .copec-copy-lg {
+          margin: 0;
+          font-size: clamp(18px, 1.6vw, 24px);
+          line-height: 1.48;
+          letter-spacing: -.02em;
+        }
+        .copec-hero {
+          position: relative;
+          min-height: 100vh;
+          padding: 146px 60px 0;
+          background: #F1F4F5;
+        }
+        .copec-back {
+          position: absolute;
+          top: 94px;
+          left: 60px;
+          border: 0;
+          padding: 0;
+          background: transparent;
+          color: #69769D;
+          cursor: pointer;
+          font: 600 10px 'Inter', sans-serif;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+        }
+        .copec-hero-copy {
+          width: min(1180px, 100%);
+          margin: 0 auto 46px;
+        }
+        .copec-hero-kicker {
+          margin: 0 0 17px;
+          color: #7180AA;
+          font: 600 10px 'Inter', sans-serif;
+          letter-spacing: .16em;
+          text-transform: uppercase;
+        }
+        .copec-hero h1 {
+          margin: 0;
+          color: var(--copec-blue);
+          font-size: clamp(88px, 14vw, 192px);
+          line-height: .74;
+          font-weight: 800;
+        }
+        .copec-hero-sub {
+          width: min(650px, 100%);
+          margin: 38px 0 0;
+          color: #566481;
+          font-size: clamp(20px, 2vw, 29px);
+          line-height: 1.3;
+          letter-spacing: -.025em;
+        }
+        .copec-hero-media {
+          width: min(1480px, calc(100vw - 34px));
+          margin: 0 auto;
+          overflow: hidden;
+        }
+        .copec-hero-media img {
+          display: block;
+          width: 100%;
+          transform: translateY(6%);
+        }
+        .copec-overview {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 110px;
+          padding: 140px 0;
+        }
+        .copec-overview-copy { padding-top: 34px; }
+        .copec-stats {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 22px;
+          margin-top: 70px;
+          padding-top: 26px;
+          border-top: 1px solid rgba(33,62,154,.16);
+        }
+        .copec-stat strong {
+          display: block;
+          margin-bottom: 8px;
+          color: var(--copec-blue);
+          font: 700 clamp(24px, 2.4vw, 38px) 'Bricolage Grotesque', sans-serif;
+          letter-spacing: -.04em;
+        }
+        .copec-stat span {
+          color: #8A91A9;
+          font: 600 9px 'Inter', sans-serif;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+        }
+        .copec-billboard {
+          width: 100%;
+          height: min(82vh, 900px);
+          background: #111;
+        }
+        .copec-billboard img {
+          width: 100%; height: 100%; display: block; object-fit: cover;
+        }
+        .copec-context-copy {
+          display: grid;
+          grid-template-columns: 1.1fr .9fr;
+          gap: 100px;
+          padding: 130px 0;
+        }
+        .copec-context-copy .copec-copy-lg { padding-top: 38px; }
+        .copec-testing {
+          display: grid;
+          grid-template-columns: .9fr 1.1fr;
+          gap: clamp(60px, 8vw, 130px);
+          align-items: center;
+          padding: 140px max(60px, calc((100vw - 1180px) / 2));
+          background: var(--copec-blue);
+          color: white;
+        }
+        .copec-testing .copec-label { color: rgba(255,255,255,.52); }
+        .copec-testing-copy p:not(.copec-label) {
+          max-width: 560px;
+          color: rgba(255,255,255,.78);
+          font-size: 17px;
+          line-height: 1.65;
+        }
+        .copec-testing-copy .copec-display { margin-bottom: 34px; }
+        .copec-process {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 9px;
+          margin-top: 40px;
+        }
+        .copec-process span {
+          padding: 10px 13px;
+          border: 1px solid rgba(255,255,255,.28);
+          border-radius: 999px;
+          font: 600 10px 'Inter', sans-serif;
+          letter-spacing: .08em;
+          text-transform: uppercase;
+        }
+        .copec-process i { opacity: .45; font-style: normal; }
+        .copec-video { margin: 0; text-align: center; }
+        .copec-video video {
+          display: block;
+          width: min(390px, 100%);
+          max-height: 730px;
+          margin: 0 auto;
+          border-radius: 34px;
+          box-shadow: 0 40px 90px rgba(0,0,0,.28);
+        }
+        .copec-video figcaption {
+          margin-top: 16px;
+          color: rgba(255,255,255,.54);
+          font: 400 10px 'Inter', sans-serif;
+          letter-spacing: .04em;
+        }
+        .copec-product {
+          padding: 145px 0 65px;
+          background: #fff;
+        }
+        .copec-product-heading {
+          display: grid;
+          grid-template-columns: 1.2fr .8fr;
+          column-gap: 90px;
+          margin-bottom: 74px;
+        }
+        .copec-product-heading .copec-label { grid-column: 1 / -1; }
+        .copec-product-heading > p:last-child {
+          margin: 18px 0 0;
+          color: var(--copec-muted);
+          font-size: 17px;
+          line-height: 1.65;
+        }
+        .copec-onboarding {
+          width: min(1500px, 96%);
+          margin: 0 auto;
+        }
+        .copec-onboarding img { display: block; width: 100%; height: auto; }
+        .copec-brand-break {
+          height: min(70vh, 740px);
+          overflow: hidden;
+          background: var(--copec-blue);
+        }
+        .copec-brand-break img { width: 100%; height: 100%; object-fit: cover; }
+        .copec-system {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 90px;
+          padding: 140px 0;
+        }
+        .copec-system-copy p:not(.copec-copy-lg) {
+          margin-top: 28px;
+          color: var(--copec-muted);
+          font-size: 16px;
+          line-height: 1.65;
+        }
+        .copec-system-flow {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+          align-items: center;
+          gap: 18px;
+          margin-top: 24px;
+          padding: 30px 0;
+          border-top: 1px solid rgba(33,62,154,.15);
+          border-bottom: 1px solid rgba(33,62,154,.15);
+        }
+        .copec-system-flow span {
+          font: 700 clamp(17px, 1.8vw, 25px) 'Bricolage Grotesque', sans-serif;
+          letter-spacing: -.03em;
+        }
+        .copec-system-flow i { color: var(--copec-green); font-style: normal; font-size: 22px; }
+        .copec-ui-showcase {
+          padding: 120px max(28px, calc((100vw - 1400px) / 2));
+          background: #EFF3F5;
+        }
+        .copec-ui-heading { margin-bottom: 60px; }
+        .copec-ui-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 18px;
+        }
+        .copec-ui-card {
+          margin: 0;
+          padding: 22px;
+          min-height: 560px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          background: #fff;
+          overflow: hidden;
+        }
+        .copec-ui-card img, .copec-ui-card video {
+          display: block;
+          width: 100%;
+          max-height: 520px;
+          object-fit: contain;
+        }
+        .copec-ui-card figcaption {
+          margin-top: 18px;
+          color: #8A91A9;
+          font: 600 9px 'Inter', sans-serif;
+          letter-spacing: .11em;
+          text-transform: uppercase;
+        }
+        .copec-outcome {
+          padding: 145px 0 78px;
+          background: #fff;
+        }
+        .copec-outcome-copy { margin-bottom: 82px; }
+        .copec-outcome-copy .copec-display { max-width: 920px; }
+        .copec-outcome-copy > p:not(.copec-label):not(.copec-outcome-meta) {
+          max-width: 670px;
+          margin: 36px 0 0 auto;
+          color: var(--copec-muted);
+          font-size: 19px;
+          line-height: 1.6;
+        }
+        .copec-outcome-meta {
+          margin: 68px 0 0;
+          padding-top: 22px;
+          border-top: 1px solid rgba(33,62,154,.15);
+          color: var(--copec-blue);
+          font: 600 10px 'Inter', sans-serif;
+          letter-spacing: .11em;
+          text-transform: uppercase;
+        }
+        .copec-final-image {
+          width: 100%;
+          max-height: 900px;
+          overflow: hidden;
+          background: #EDF1F3;
+        }
+        .copec-final-image img { display: block; width: 100%; transform: scale(1.07); }
+        .copec-bottom-back {
+          display: block;
+          margin: 68px auto 0;
+          border: 0;
+          background: transparent;
+          color: var(--copec-blue);
+          cursor: pointer;
+          font: 600 10px 'Inter', sans-serif;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+        }
+        @media (max-width: 767px) {
+          .copec-shell { width: calc(100% - 40px); }
+          .copec-hero { min-height: auto; padding: 118px 20px 0; }
+          .copec-back { top: 82px; left: 20px; }
+          .copec-hero-copy { margin-bottom: 34px; }
+          .copec-hero h1 { font-size: clamp(76px, 26vw, 120px); line-height: .78; }
+          .copec-hero-sub { margin-top: 28px; font-size: 19px; }
+          .copec-hero-media { width: calc(100vw - 14px); }
+          .copec-hero-media img { min-height: 390px; object-fit: cover; transform: none; }
+          .copec-overview, .copec-context-copy, .copec-system {
+            grid-template-columns: 1fr; gap: 40px; padding: 88px 0;
+          }
+          .copec-overview-copy, .copec-context-copy .copec-copy-lg { padding-top: 0; }
+          .copec-stats { grid-template-columns: 1fr; gap: 22px; margin-top: 44px; }
+          .copec-billboard { height: 60vh; }
+          .copec-testing { grid-template-columns: 1fr; padding: 88px 20px; gap: 62px; }
+          .copec-video video { width: min(310px, 82vw); border-radius: 27px; }
+          .copec-process i { display: none; }
+          .copec-product { padding: 88px 0 28px; }
+          .copec-product-heading { grid-template-columns: 1fr; gap: 22px; margin-bottom: 48px; }
+          .copec-product-heading .copec-label { grid-column: auto; }
+          .copec-onboarding { width: 148%; margin-left: -24%; }
+          .copec-brand-break { height: 44vh; }
+          .copec-system-flow { grid-template-columns: 1fr; gap: 8px; }
+          .copec-system-flow i { transform: rotate(90deg); width: 20px; }
+          .copec-ui-showcase { padding: 88px 20px; }
+          .copec-ui-grid { grid-template-columns: 1fr; }
+          .copec-ui-card { min-height: 430px; }
+          .copec-outcome { padding: 88px 0 70px; }
+          .copec-outcome-copy > p:not(.copec-label):not(.copec-outcome-meta) { margin-left: 0; }
+          .copec-final-image { height: 520px; }
+          .copec-final-image img { width: 155%; height: 100%; max-width: none; margin-left: -28%; object-fit: cover; transform: none; }
+        }
+      `}</style>
+
+      <section className="copec-hero">
+        <button className="copec-back" onClick={() => navigate("/work")}>← Work</button>
+        <div className="copec-hero-copy">
+          <p className="copec-hero-kicker">COPEC · PRODUCT DESIGN · 2019–2020</p>
+          <h1>Copec</h1>
+          <p className="copec-hero-sub">
+            Designing a phygital service experience connecting Copec’s stations,
+            payments, benefits and everyday services in one app.
+          </p>
+        </div>
+        <div className="copec-hero-media">
+          <img src={copecHero} alt="Copec Muevo mobile application" />
+        </div>
+      </section>
+
+      <section className="copec-shell copec-overview">
+        <div>
+          <p className="copec-label">01 — OVERVIEW</p>
+          <h2 className="copec-display">From service station to digital ecosystem.</h2>
+        </div>
+        <div className="copec-overview-copy">
+          <p className="copec-copy-lg">
+            I contributed to the early creation and launch of Copec’s consumer app,
+            helping shape the product from its first stages into a live service experience.
+          </p>
+          <div className="copec-stats">
+            <div className="copec-stat"><strong>5M+</strong><span>App downloads</span></div>
+            <div className="copec-stat"><strong>On-site</strong><span>User testing</span></div>
+            <div className="copec-stat"><strong>Phygital</strong><span>Service experience</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="copec-billboard">
+        <img src={copecBillboard} alt="Muevo Copec campaign in a real-world setting" />
+      </section>
+
+      <section className="copec-shell copec-context-copy">
+        <div>
+          <p className="copec-label">02 — IN CONTEXT</p>
+          <h2 className="copec-display">Designed for the real world.</h2>
+        </div>
+        <p className="copec-copy-lg">
+          Muevo wasn’t designed in isolation from the service station. Understanding how
+          people behaved while fueling, paying and moving through the station was fundamental
+          to the experience.
+        </p>
+      </section>
+
+      <section className="copec-testing">
+        <div className="copec-testing-copy">
+          <p className="copec-label">03 — USER RESEARCH</p>
+          <h2 className="copec-display">Testing where the experience happens.</h2>
+          <p>
+            User-centered research was a fundamental part of the design process. We repeatedly
+            tested different proposals with customers directly at Copec service stations,
+            observing how they interacted with the product in its real context of use.
+          </p>
+          <p>
+            These sessions helped us identify friction, validate comprehension and refine flows
+            before implementation — reducing confusion and unexpected exits from the app.
+          </p>
+          <div className="copec-process">
+            <span>Observe</span><i>→</i><span>Prototype</span><i>→</i>
+            <span>Test on-site</span><i>→</i><span>Refine</span>
+          </div>
+        </div>
+        <figure className="copec-video">
+          <video src={copecDemo} autoPlay muted loop playsInline />
+          <figcaption>Prototype validation during the design process.</figcaption>
+        </figure>
+      </section>
+
+      <section className="copec-product">
+        <div className="copec-shell copec-product-heading">
+          <p className="copec-label">04 — PRODUCT</p>
+          <h2 className="copec-display">Creating a new interaction language.</h2>
+          <p>
+            Every new app asks users to learn a set of behaviours. For Muevo, we created a visual
+            language that made new interactions feel simple, recognizable and distinctly Copec.
+          </p>
+        </div>
+        <div className="copec-onboarding">
+          <img src={copecOnboarding} alt="Muevo onboarding screens and illustration system" />
+        </div>
+      </section>
+
+      <section className="copec-brand-break">
+        <img src={copecLogo} alt="Muevo Copec" />
+      </section>
+
+      <section className="copec-shell copec-system">
+        <div>
+          <p className="copec-label">05 — DESIGN SYSTEM</p>
+          <h2 className="copec-display">A system built to scale.</h2>
+        </div>
+        <div className="copec-system-copy">
+          <p className="copec-copy-lg">
+            Muevo Design System is based on Atomic Design, bringing components, patterns and
+            documentation into a shared system for both design and development.
+          </p>
+          <p>
+            The goal was not simply to create a UI library, but to establish a consistent visual
+            and interaction language shaped around the context in which customers actually use Copec.
+          </p>
+        </div>
+        <div className="copec-system-flow">
+          <span>Foundations</span><i>→</i><span>Components</span><i>→</i>
+          <span>Patterns</span><i>→</i><span>Experiences</span>
+        </div>
+      </section>
+
+      <section className="copec-ui-showcase">
+        <div className="copec-ui-heading">
+          <p className="copec-label">06 — EXPERIENCE DETAILS</p>
+          <h2 className="copec-display">A consistent product across the journey.</h2>
+        </div>
+        <div className="copec-ui-grid">
+          <figure className="copec-ui-card">
+            <video src={copecSplashDemo} autoPlay loop muted playsInline />
+            <figcaption>Splash & motion</figcaption>
+          </figure>
+          <figure className="copec-ui-card">
+            <img src={copecMap} alt="Copec station locator" />
+            <figcaption>Station locator</figcaption>
+          </figure>
+          <figure className="copec-ui-card">
+            <img src={copecReceipt} alt="Copec purchase receipt" />
+            <figcaption>Receipt & feedback</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="copec-outcome">
+        <div className="copec-shell copec-outcome-copy">
+          <p className="copec-label">OUTCOME</p>
+          <h2 className="copec-display">One experience, across the entire journey.</h2>
+          <p>
+            Muevo brought station discovery, payments, promotions, scanning and customer services
+            into a single experience designed around how people actually use Copec.
+          </p>
+          <p className="copec-outcome-meta">
+            Research → Product Design → Testing → Design System → Launch
+          </p>
+        </div>
+        <div className="copec-final-image">
+          <img src={copecHero} alt="Final Muevo Copec product experience" />
+        </div>
+        <button className="copec-bottom-back" onClick={() => navigate("/work")}>← Back to all work</button>
+      </section>
+    </main>
+  );
+}
+
 function GenericProject({ isMobile }: { isMobile: boolean }) {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -239,7 +758,6 @@ function GenericProject({ isMobile }: { isMobile: boolean }) {
   // Only pull a distinct closing line when the body has more than one
   // sentence — otherwise it would just repeat the PROCESS paragraph verbatim.
   const outcome = bodySentences.length > 1 ? bodySentences[bodySentences.length - 1] : null;
-  const isCopec = slug === "copec";
 
   return (
     <div className="generic-project">
@@ -257,11 +775,10 @@ function GenericProject({ isMobile }: { isMobile: boolean }) {
             {project.impact ? ` · ${project.impact}` : ""}
           </p>
           <h1>{project.headline}</h1>
-          {isCopec && (
-            <p className="generic-hero-arc">FROM EARLY PRODUCT CREATION → LAUNCH</p>
-          )}
         </div>
       </div>
+
+
 
       <article className="generic-content page-container">
         <SectionLabel>01 — CONTEXT</SectionLabel>
@@ -334,6 +851,10 @@ export default function ProjectPage() {
 
   if (slug === "bepn") {
     return <BepnProject project={project} />;
+  }
+
+  if (slug === "copec") {
+    return <CopecCaseStudy />;
   }
 
   // Standard layout for the rest

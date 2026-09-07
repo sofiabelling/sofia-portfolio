@@ -263,19 +263,6 @@ function ProjectTile({
           >
             {project.title}
           </h2>
-          {!isMobile && project.impact && (
-            <span
-              style={{
-                flexShrink: 0,
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "9px",
-                letterSpacing: ".08em",
-                color: VIOLET,
-              }}
-            >
-              {project.impact}
-            </span>
-          )}
         </div>
 
         <div
