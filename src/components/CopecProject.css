@@ -318,34 +318,18 @@
   grid-column: 1 / -1;
 }
 
+/* No fixed aspect-ratio here on purpose — the box takes its height from
+   the image's own natural proportions, so nothing is ever cropped. */
 .copec-system-crop {
-  position: relative;
   width: 100%;
-  overflow: hidden;
   background: #fff;
   border: 1px solid rgba(35,63,157,.08);
-  aspect-ratio: 1.38 / 1;
 }
 
 .copec-system-crop img {
-  position: absolute;
-  inset: 0;
-  width: 108%;
-  max-width: none;
-  height: 108%;
-  object-fit: contain;
-  object-position: center;
-  transform: translate(-4%, -4%);
-}
-
-.copec-system-item-wide .copec-system-crop {
-  aspect-ratio: 1.75 / 1;
-}
-
-.copec-system-item-wide .copec-system-crop img {
-  width: 106%;
-  height: 106%;
-  transform: translate(-3%, -3%);
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .copec-system-item figcaption {
@@ -605,18 +589,6 @@
     grid-column: auto;
   }
 
-  .copec-system-crop,
-  .copec-system-item-wide .copec-system-crop {
-    aspect-ratio: 1.28 / 1;
-  }
-
-  .copec-system-crop img,
-  .copec-system-item-wide .copec-system-crop img {
-    width: 111%;
-    height: 111%;
-    transform: translate(-5.5%, -5.5%);
-    object-fit: contain;
-  }
 
   .copec-social {
     width: calc(100% - 32px);
