@@ -305,8 +305,13 @@
 
 .copec-system-library {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* Uneven on purpose: color/accessibility is a tall, narrow chart and
+     buttons is a wide, short one — this ratio brings their rendered
+     heights close to level instead of leaving a tall gap under the
+     shorter neighbor. */
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 28px 24px;
+  align-items: start;
   padding-bottom: 4px;
 }
 
