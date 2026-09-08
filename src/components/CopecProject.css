@@ -327,19 +327,6 @@
   aspect-ratio: 1.38 / 1;
 }
 
-/* Hide the small source Muevo logo without editing the original image. */
-.copec-system-crop::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 20%;
-  height: 16%;
-  background: #fff;
-  pointer-events: none;
-}
-
 .copec-system-crop img {
   position: absolute;
   inset: 0;
@@ -621,11 +608,6 @@
   .copec-system-crop,
   .copec-system-item-wide .copec-system-crop {
     aspect-ratio: 1.28 / 1;
-  }
-
-  .copec-system-crop::after {
-    width: 24%;
-    height: 17%;
   }
 
   .copec-system-crop img,
