@@ -323,6 +323,16 @@
   grid-column: 1 / -1;
 }
 
+/* Typography and blocks are "wide" for layout rhythm, but letting them
+   render at the full row width blew their height up past a full
+   viewport (way bigger than their color/buttons siblings). Cap the
+   card itself and center it so all four library items read as one
+   consistent size class. */
+.copec-system-item-wide .copec-system-crop {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
 /* No fixed aspect-ratio here on purpose — the box takes its height from
    the image's own natural proportions, so nothing is ever cropped. */
 .copec-system-crop {
