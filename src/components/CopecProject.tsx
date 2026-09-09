@@ -153,15 +153,6 @@ export default function CopecProject() {
             <video src={splashScreen} autoPlay muted loop playsInline />
             <figcaption>Splash screen</figcaption>
           </figure>
-
-          <div className="copec-section copec-screen-grid">
-            {screens.map((screen) => (
-              <figure key={screen.label}>
-                <div><img src={screen.src} alt={`Copec ${screen.label} screen`} /></div>
-                <figcaption>{screen.label}</figcaption>
-              </figure>
-            ))}
-          </div>
         </section>
 
         <section className="copec-system">
@@ -197,6 +188,17 @@ export default function CopecProject() {
               <div className="copec-system-image"><img src={blockStyles} alt="Copec reusable components" /></div>
               <figcaption><b>04</b> Reusable components</figcaption>
             </figure>
+          </div>
+        </section>
+
+        <section className="copec-screens">
+          <div className="copec-section copec-screen-grid">
+            {screens.map((screen) => (
+              <figure key={screen.label}>
+                <div><img src={screen.src} alt={`Copec ${screen.label} screen`} /></div>
+                <figcaption>{screen.label}</figcaption>
+              </figure>
+            ))}
           </div>
         </section>
 
