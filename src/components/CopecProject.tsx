@@ -18,6 +18,28 @@ import blockStyles from "../imports/copec/copec-block-components.png";
 import productOverview from "../imports/copec/copec-product-overview.png";
 import socialCampaign from "../imports/copec/copec-social-campaign.png";
 
+import screenHome from "../imports/copec/Home.png";
+import screenLoad from "../imports/copec/Load.png";
+import screenLoyalty from "../imports/copec/Loyalty.png";
+import screenMap1 from "../imports/copec/Map1.png";
+import screenMap2 from "../imports/copec/Map2.png";
+import screenMap3 from "../imports/copec/Map3.png";
+import screenCoupons from "../imports/copec/Coupons.png";
+import screenRate from "../imports/copec/Rate service.png";
+import screenTrx from "../imports/copec/Trx.png";
+
+const productScreens = [
+  { src: screenHome, label: "Home dashboard" },
+  { src: screenLoad, label: "Fuel loading" },
+  { src: screenLoyalty, label: "Loyalty & miles" },
+  { src: screenMap1, label: "Station map" },
+  { src: screenMap2, label: "Search stations" },
+  { src: screenMap3, label: "Filter stations" },
+  { src: screenCoupons, label: "Coupons" },
+  { src: screenRate, label: "Rate your visit" },
+  { src: screenTrx, label: "Transaction history" },
+];
+
 export default function CopecProject() {
   const navigate = useNavigate();
 
@@ -151,6 +173,20 @@ export default function CopecProject() {
             <video src={demoVideo} autoPlay muted loop playsInline />
             <figcaption>Splash screen</figcaption>
           </figure>
+        </div>
+
+        <div className="copec-section copec-screens-head">
+          <p className="copec-label">EVERY STEP OF THE JOURNEY</p>
+          <h3>From opening the app to leaving the station.</h3>
+        </div>
+
+        <div className="copec-section copec-screens-grid">
+          {productScreens.map((screen) => (
+            <figure key={screen.label}>
+              <img src={screen.src} alt={`Muevo screen — ${screen.label}`} />
+              <figcaption>{screen.label}</figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
