@@ -200,10 +200,6 @@ export default function CopecProject() {
           </div>
         </section>
 
-        <figure className="copec-product-overview">
-          <img src={productOverview} alt="Overview of the Copec app experience" />
-        </figure>
-
         <section className="copec-scale">
           <div className="copec-section copec-heading-grid">
             <div>
@@ -216,6 +212,9 @@ export default function CopecProject() {
               </p>
             </div>
           </div>
+          <figure className="copec-product-overview">
+            <img src={productOverview} alt="Overview of the Copec app experience" />
+          </figure>
           <figure className="copec-billboard">
             <img src={billboard} alt="Copec app campaign billboard" />
           </figure>
