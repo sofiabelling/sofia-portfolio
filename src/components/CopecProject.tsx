@@ -2,41 +2,36 @@ import { useNavigate } from "react-router";
 import "./CopecProject.css";
 
 import hero from "../imports/copec/copec-hero.png";
-import billboard from "../imports/copec/copec-billboard.jpg";
-import logo from "../imports/copec/copec-logo.jpg";
-import onboarding from "../imports/copec/copec-onboarding.png";
-import demoVideo from "../imports/copec/copec-case-study-demo.mp4";
-
-import researchProcess from "../imports/copec/copec-research-process.png";
 import researchStation from "../imports/copec/copec-research-station.png";
-
+import researchProcess from "../imports/copec/copec-research-process.png";
+import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
+import productOverview from "../imports/copec/copec-product-overview.png";
+import home from "../imports/copec/home.png";
+import coupons from "../imports/copec/coupons.png";
+import map1 from "../imports/copec/map-1.png";
+import map2 from "../imports/copec/map-2.png";
+import map3 from "../imports/copec/map-3.png";
+import transactions from "../imports/copec/transactions.png";
+import loyalty from "../imports/copec/loyalty.png";
+import rateService from "../imports/copec/rate-service.png";
+import load from "../imports/copec/load.png";
 import typeStyles from "../imports/copec/copec-type-styles.png";
 import colorStyles from "../imports/copec/copec-color-accessibility.png";
 import buttonStyles from "../imports/copec/copec-button-states.png";
 import blockStyles from "../imports/copec/copec-block-components.png";
+import billboard from "../imports/copec/copec-billboard.jpg";
+import splashScreen from "../imports/copec/splash-screen.mp4";
 
-import productOverview from "../imports/copec/copec-product-overview.png";
-
-import screenHome from "../imports/copec/Home.png";
-import screenLoad from "../imports/copec/Load.png";
-import screenLoyalty from "../imports/copec/Loyalty.png";
-import screenMap1 from "../imports/copec/Map1.png";
-import screenMap2 from "../imports/copec/Map2.png";
-import screenMap3 from "../imports/copec/Map3.png";
-import screenCoupons from "../imports/copec/Coupons.png";
-import screenRate from "../imports/copec/Rate service.png";
-import screenTrx from "../imports/copec/Trx.png";
-
-const productScreens = [
-  { src: screenHome, label: "Home dashboard" },
-  { src: screenLoad, label: "Fuel loading" },
-  { src: screenLoyalty, label: "Loyalty & miles" },
-  { src: screenMap1, label: "Station map" },
-  { src: screenMap2, label: "Search stations" },
-  { src: screenMap3, label: "Filter stations" },
-  { src: screenCoupons, label: "Coupons" },
-  { src: screenRate, label: "Rate your visit" },
-  { src: screenTrx, label: "Transaction history" },
+const screens = [
+  { src: home, label: "Home" },
+  { src: coupons, label: "Coupons" },
+  { src: map1, label: "Station discovery" },
+  { src: transactions, label: "Transactions" },
+  { src: loyalty, label: "Loyalty" },
+  { src: rateService, label: "Service feedback" },
+  { src: map2, label: "Search" },
+  { src: map3, label: "Filters" },
+  { src: load, label: "Payment" },
 ];
 
 export default function CopecProject() {
@@ -44,275 +39,200 @@ export default function CopecProject() {
 
   return (
     <main className="copec-case">
-      {/* =========================================================
-          HERO — same editorial language as NIX / BEPN
-      ========================================================== */}
       <section className="copec-hero">
-        <img
-          className="copec-hero-bg"
-          src={hero}
-          alt="Muevo Copec application shown across multiple screens"
-        />
+        <img src={hero} alt="Copec mobile ecosystem" />
         <div className="copec-hero-shade" />
-
-        <button className="copec-back" onClick={() => navigate("/work")}>
-          ← Work
-        </button>
-
+        <button className="copec-back" onClick={() => navigate("/work")}>← Work</button>
         <div className="copec-hero-copy">
-          <p className="copec-kicker">PRODUCT DESIGN · UX/UI · RESEARCH · 2019–2020</p>
+          <p className="copec-kicker">PRODUCT DESIGN · UX/UI · RESEARCH</p>
           <h1>Copec</h1>
-          <p className="copec-hero-subtitle">
-            Designing a digital experience for the physical world.
-          </p>
+          <p>Helping transform a physical service-station ecosystem into a connected phygital experience.</p>
         </div>
       </section>
 
-      {/* =========================================================
-          01 — OVERVIEW
-      ========================================================== */}
-      <section className="copec-section copec-overview">
-        <div>
-          <p className="copec-label">01 — OVERVIEW</p>
-          <h2>From service station to digital ecosystem.</h2>
-        </div>
-
-        <div className="copec-overview-copy">
-          <p className="copec-lead">
-            I contributed to the early creation and launch of Copec’s consumer app,
-            helping connect the service-station experience with payments, benefits
-            and everyday services.
-          </p>
-
-          <div className="copec-stats">
-            <div>
-              <strong>5M+</strong>
-              <span>APP DOWNLOADS</span>
-            </div>
-            <div>
-              <strong>On-site</strong>
-              <span>USER TESTING</span>
-            </div>
-            <div>
-              <strong>Phygital</strong>
-              <span>SERVICE EXPERIENCE</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          02 — DESIGNING IN CONTEXT
-      ========================================================== */}
-      <section className="copec-context">
-        <div className="copec-section copec-section-heading">
+      <article>
+        <section className="copec-section copec-overview">
           <div>
-            <p className="copec-label">02 — DESIGNING IN CONTEXT</p>
-            <h2>We didn't design the service station experience from behind a desk.</h2>
+            <p className="copec-label">01 — OVERVIEW</p>
+            <h2>From service station to digital ecosystem.</h2>
+          </div>
+          <div className="copec-copy">
+            <p className="copec-lead">
+              I worked on the early development and launch of Copec’s consumer app, with the goal of supporting a broader phygital transformation for the client.
+            </p>
+            <p>
+              The challenge was to connect services that already existed across Copec’s physical network — payments, promotions, station discovery and customer services — through one clear mobile experience.
+            </p>
+          </div>
+          <div className="copec-meta">
+            <div><span>CLIENT</span><strong>Copec</strong></div>
+            <div><span>ROLE</span><strong>UX/UI · Research · Design System</strong></div>
+            <div><span>CONTEXT</span><strong>Physical + digital services</strong></div>
+            <div><span>IMPACT</span><strong>5M+ downloads</strong></div>
+          </div>
+        </section>
+
+        <section className="copec-blue-statement">
+          <div className="copec-section">
+            <p className="copec-label light">THE GOAL</p>
+            <h2>Make the digital layer feel like a natural extension of Copec.</h2>
+          </div>
+        </section>
+
+        <section className="copec-section copec-research">
+          <div className="copec-heading-grid">
+            <div>
+              <p className="copec-label">02 — RESEARCH IN CONTEXT</p>
+              <h2>Test early. Then take it to the station.</h2>
+            </div>
+            <div className="copec-copy">
+              <p className="copec-lead">
+                Research started early with user interviews and usability testing, helping us understand customer expectations, behaviours and friction before the experience was fully defined.
+              </p>
+              <p>
+                As proposals evolved, I participated in multiple rounds of field testing directly at Copec service stations. Testing in context let us see what customers understood immediately, where they hesitated and which interactions needed to be simplified.
+              </p>
+            </div>
           </div>
 
-          <p className="copec-lead">
-            We repeatedly tested proposals with customers directly at Copec service
-            stations. Observing people in context helped us identify friction,
-            validate comprehension and refine the experience before implementation.
-          </p>
-        </div>
-
-        <figure className="copec-field-photo">
-          <img
-            src={researchStation}
-            alt="On-site research at a Copec service station"
-          />
-          <figcaption>On-site testing at a Copec service station.</figcaption>
-        </figure>
-
-        <div className="copec-section copec-process">
-          <span>Observe</span>
-          <i>→</i>
-          <span>Prototype</span>
-          <i>→</i>
-          <span>Test on-site</span>
-          <i>→</i>
-          <span>Refine</span>
-        </div>
-
-        <figure className="copec-research-process">
-          <img src={researchProcess} alt="Copec research and collaborative design process" />
-          <figcaption>Research, collaboration and proposal validation.</figcaption>
-        </figure>
-      </section>
-
-      {/* =========================================================
-          03 — FROM RESEARCH TO PRODUCT
-      ========================================================== */}
-      <section className="copec-product">
-        <div className="copec-section copec-section-heading">
-          <div>
-            <p className="copec-label">03 — FROM RESEARCH TO PRODUCT</p>
-            <h2>Turning a complex service ecosystem into one simple interface.</h2>
-          </div>
-
-          <p className="copec-lead">
-            Muevo introduced new behaviours around paying, scanning, promotions and
-            station services. The interface needed to make those unfamiliar actions
-            feel clear, quick and recognizably Copec.
-          </p>
-        </div>
-
-        <figure className="copec-onboarding">
-          <img src={onboarding} alt="Muevo onboarding screens" />
-        </figure>
-
-        <div className="copec-section copec-product-grid">
-          <figure className="copec-product-overview">
-            <img src={productOverview} alt="Overview of Muevo product screens" />
+          <figure className="copec-field">
+            <img src={researchStation} alt="Field testing at a Copec service station" />
+            <figcaption>Field testing at a Copec station — validating proposals where the product would actually be used.</figcaption>
           </figure>
 
-          <figure className="copec-prototype">
-            <video src={demoVideo} autoPlay muted loop playsInline />
+          <div className="copec-research-row">
+            <figure>
+              <img src={researchProcess} alt="Copec research, workshops and collaboration" />
+              <figcaption>Early interviews, usability sessions, workshops and iterative evaluation.</figcaption>
+            </figure>
+            <div className="copec-research-notes">
+              <span>01</span><p>Understand the existing service-station experience.</p>
+              <span>02</span><p>Prototype and test key interactions early.</p>
+              <span>03</span><p>Validate proposals with customers on-site.</p>
+              <span>04</span><p>Feed observations back into product decisions.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="copec-collaboration">
+          <div className="copec-section copec-heading-grid">
+            <div>
+              <p className="copec-label light">03 — COLLABORATION</p>
+              <h2>Designing with the business, not around it.</h2>
+            </div>
+            <div className="copec-copy light-copy">
+              <p className="copec-lead">
+                I worked closely with Copec stakeholders and the wider product team throughout the process, connecting customer findings with business and technical requirements.
+              </p>
+              <p>
+                Research results and design proposals were discussed collaboratively, allowing us to align decisions across a large existing service ecosystem while keeping the customer experience coherent.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="copec-product">
+          <div className="copec-section copec-heading-grid">
+            <div>
+              <p className="copec-label">04 — PRODUCT EXPERIENCE</p>
+              <h2>One interface for many everyday interactions.</h2>
+            </div>
+            <div className="copec-copy">
+              <p className="copec-lead">
+                I helped translate the different services within Copec into a consistent mobile experience across onboarding, promotions, payments, scanning, transaction history, station discovery and feedback.
+              </p>
+            </div>
+          </div>
+
+          <figure className="copec-onboarding">
+            <img src={onboarding} alt="Copec onboarding illustrations" />
+            <figcaption>Onboarding introduced the core value of the ecosystem through a simple visual language.</figcaption>
+          </figure>
+
+          <figure className="copec-product-overview">
+            <img src={productOverview} alt="Overview of the Copec app experience" />
+          </figure>
+
+          <div className="copec-section copec-screen-grid">
+            {screens.map((screen) => (
+              <figure key={screen.label}>
+                <div><img src={screen.src} alt={`Copec ${screen.label} screen`} /></div>
+                <figcaption>{screen.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <figure className="copec-splash">
+            <video src={splashScreen} autoPlay muted loop playsInline />
             <figcaption>Splash screen</figcaption>
           </figure>
-        </div>
+        </section>
 
-        <div className="copec-section copec-screens-head">
-          <p className="copec-label">EVERY STEP OF THE JOURNEY</p>
-          <h3>From opening the app to leaving the station.</h3>
-        </div>
+        <section className="copec-system">
+          <div className="copec-section copec-heading-grid">
+            <div>
+              <p className="copec-label">05 — MUEVO DESIGN SYSTEM</p>
+              <h2>A shared language built to scale.</h2>
+            </div>
+            <div className="copec-copy">
+              <p className="copec-lead">
+                As the product expanded, I contributed to the Muevo Design System, based on Atomic Design principles.
+              </p>
+              <p>
+                We standardized typography, color, accessibility, states and reusable interface patterns so design and development could work from the same foundation.
+              </p>
+            </div>
+          </div>
 
-        <div className="copec-section copec-screens-grid">
-          {productScreens.map((screen) => (
-            <figure key={screen.label}>
-              <img src={screen.src} alt={`Muevo screen — ${screen.label}`} />
-              <figcaption>{screen.label}</figcaption>
+          <div className="copec-section copec-system-grid">
+            <figure className="wide">
+              <div className="copec-system-image"><img src={typeStyles} alt="Copec typography system" /></div>
+              <figcaption><b>01</b> Typography</figcaption>
             </figure>
-          ))}
-        </div>
-      </section>
-
-      {/* =========================================================
-          BRAND BREAK
-      ========================================================== */}
-      <section className="copec-brand-break">
-        <img src={logo} alt="Muevo Copec" />
-      </section>
-
-      {/* =========================================================
-          04 — DESIGN SYSTEM
-      ========================================================== */}
-      <section className="copec-system">
-        <div className="copec-section copec-section-heading">
-          <div>
-            <p className="copec-label">04 — BUILDING THE LANGUAGE</p>
-            <h2>A system built to scale.</h2>
+            <figure>
+              <div className="copec-system-image"><img src={colorStyles} alt="Copec color and accessibility system" /></div>
+              <figcaption><b>02</b> Color & accessibility</figcaption>
+            </figure>
+            <figure>
+              <div className="copec-system-image"><img src={buttonStyles} alt="Copec button states" /></div>
+              <figcaption><b>03</b> Buttons & states</figcaption>
+            </figure>
+            <figure className="wide">
+              <div className="copec-system-image"><img src={blockStyles} alt="Copec reusable components" /></div>
+              <figcaption><b>04</b> Reusable components</figcaption>
+            </figure>
           </div>
+        </section>
 
-          <div className="copec-system-copy">
-            <p className="copec-lead">
-              Muevo Design System is based on Atomic Design, consolidating,
-              standardizing and documenting interface decisions so design and
-              development could work from the same language.
+        <section className="copec-scale">
+          <div className="copec-section copec-heading-grid">
+            <div>
+              <p className="copec-label">06 — INTO THE REAL WORLD</p>
+              <h2>The product became part of the physical brand.</h2>
+            </div>
+            <div className="copec-copy">
+              <p className="copec-lead">
+                The digital language extended into Copec’s wider communication and physical environment — closing the loop between the app and the service-station ecosystem it was designed for.
+              </p>
+            </div>
+          </div>
+          <figure className="copec-billboard">
+            <img src={billboard} alt="Copec app campaign billboard" />
+          </figure>
+        </section>
+
+        <section className="copec-outcome">
+          <div className="copec-section">
+            <p className="copec-label light">07 — OUTCOME</p>
+            <h2>A product designed in context, built to operate at scale.</h2>
+            <p className="copec-outcome-copy">
+              I contributed from early exploration through launch, combining user research, field testing, UX/UI and systems thinking. The app has since reached more than 5 million downloads.
             </p>
-            <p className="copec-body">
-              Typography, color, buttons and reusable blocks were designed as one
-              connected system — from visual foundations to repeatable interface
-              patterns.
-            </p>
+            <p className="copec-role-line">UX/UI DESIGN · INTERACTION DESIGN · USER INTERVIEWS · USABILITY TESTING · FIELD TESTING · PROTOTYPING · DESIGN SYSTEMS · STAKEHOLDER COLLABORATION</p>
+            <button onClick={() => navigate("/work")}>← Back to all work</button>
           </div>
-        </div>
-
-        <div className="copec-section copec-system-library">
-          <figure className="copec-system-item copec-system-item-wide">
-            <div className="copec-system-crop copec-system-crop-type">
-              <img src={typeStyles} alt="Muevo typography styles" />
-            </div>
-            <figcaption>
-              <span>01</span>
-              <strong>Typography</strong>
-            </figcaption>
-          </figure>
-
-          <figure className="copec-system-item">
-            <div className="copec-system-crop copec-system-crop-color">
-              <img src={colorStyles} alt="Muevo color and accessibility styles" />
-            </div>
-            <figcaption>
-              <span>02</span>
-              <strong>Color & accessibility</strong>
-            </figcaption>
-          </figure>
-
-          <figure className="copec-system-item">
-            <div className="copec-system-crop copec-system-crop-buttons">
-              <img src={buttonStyles} alt="Muevo button components and states" />
-            </div>
-            <figcaption>
-              <span>03</span>
-              <strong>Buttons & states</strong>
-            </figcaption>
-          </figure>
-
-          <figure className="copec-system-item copec-system-item-wide">
-            <div className="copec-system-crop copec-system-crop-blocks">
-              <img src={blockStyles} alt="Muevo reusable block components" />
-            </div>
-            <figcaption>
-              <span>04</span>
-              <strong>Reusable blocks</strong>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      {/* =========================================================
-          05 — FROM INTERFACE TO BRAND
-      ========================================================== */}
-      <section className="copec-brand-world">
-        <div className="copec-section copec-section-heading">
-          <div>
-            <p className="copec-label">05 — FROM INTERFACE TO BRAND</p>
-            <h2>A product that became part of the Copec brand.</h2>
-          </div>
-
-          <p className="copec-lead">
-            The Muevo visual language moved beyond the interface into digital
-            communication and physical environments, creating continuity across
-            the customer journey.
-          </p>
-        </div>
-
-        <figure className="copec-billboard">
-          <img src={billboard} alt="Muevo Copec billboard in the city" />
-        </figure>
-      </section>
-
-      {/* =========================================================
-          OUTCOME
-      ========================================================== */}
-      <section className="copec-outcome">
-        <div className="copec-section">
-          <p className="copec-label">OUTCOME</p>
-          <h2>One experience,<br />across the entire journey.</h2>
-
-          <p className="copec-lead">
-            Muevo brought station discovery, payments, promotions, scanning and
-            customer services into a single experience designed around how people
-            actually use Copec.
-          </p>
-
-          <div className="copec-outcome-flow">
-            Research <i>→</i> Product Design <i>→</i> Testing <i>→</i>
-            Design System <i>→</i> Launch
-          </div>
-        </div>
-
-        <figure className="copec-final">
-          <img src={hero} alt="Muevo Copec final product experience" />
-        </figure>
-
-        <button className="copec-bottom-back" onClick={() => navigate("/work")}>
-          ← Back to all work
-        </button>
-      </section>
+        </section>
+      </article>
     </main>
   );
 }
