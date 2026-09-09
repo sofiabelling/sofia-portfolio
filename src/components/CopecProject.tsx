@@ -154,7 +154,7 @@ export default function CopecProject() {
             <figcaption>Splash screen</figcaption>
           </figure>
 
-          <div className="copec-section copec-screen-carousel">
+          <div className="copec-section copec-screen-grid">
             {screens.map((screen) => (
               <figure key={screen.label}>
                 <div><img src={screen.src} alt={`Copec ${screen.label} screen`} /></div>
