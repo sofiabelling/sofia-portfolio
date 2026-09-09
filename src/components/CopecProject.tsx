@@ -146,7 +146,7 @@ export default function CopecProject() {
 
           <figure className="copec-onboarding">
             <img src={onboarding} alt="Copec onboarding illustrations" />
-            <figcaption>Onboarding introduced the core value of the ecosystem through a simple visual language.</figcaption>
+            <figcaption>Onboarding</figcaption>
           </figure>
 
           <figure className="copec-product-overview">
