@@ -149,11 +149,12 @@ export default function CopecProject() {
             <figcaption>Onboarding</figcaption>
           </figure>
 
-          <figure className="copec-product-overview">
-            <img src={productOverview} alt="Overview of the Copec app experience" />
+          <figure className="copec-splash">
+            <video src={splashScreen} autoPlay muted loop playsInline />
+            <figcaption>Splash screen</figcaption>
           </figure>
 
-          <div className="copec-section copec-screen-grid">
+          <div className="copec-section copec-screen-carousel">
             {screens.map((screen) => (
               <figure key={screen.label}>
                 <div><img src={screen.src} alt={`Copec ${screen.label} screen`} /></div>
@@ -162,9 +163,8 @@ export default function CopecProject() {
             ))}
           </div>
 
-          <figure className="copec-splash">
-            <video src={splashScreen} autoPlay muted loop playsInline />
-            <figcaption>Splash screen</figcaption>
+          <figure className="copec-product-overview">
+            <img src={productOverview} alt="Overview of the Copec app experience" />
           </figure>
         </section>
 
