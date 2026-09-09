@@ -410,15 +410,6 @@
   padding-bottom: 115px;
 }
 
-.copec-social {
-  width: min(1260px, calc(100% - 80px));
-  margin: 0 auto 80px;
-}
-.copec-social img {
-  width: 100%;
-  height: auto;
-}
-
 .copec-billboard {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -655,11 +646,6 @@
     grid-column: auto;
   }
 
-
-  .copec-social {
-    width: calc(100% - 32px);
-    margin-bottom: 52px;
-  }
 
   .copec-billboard {
     aspect-ratio: 4 / 3;

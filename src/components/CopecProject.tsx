@@ -16,7 +16,6 @@ import buttonStyles from "../imports/copec/copec-button-states.png";
 import blockStyles from "../imports/copec/copec-block-components.png";
 
 import productOverview from "../imports/copec/copec-product-overview.png";
-import socialCampaign from "../imports/copec/copec-social-campaign.png";
 
 import screenHome from "../imports/copec/Home.png";
 import screenLoad from "../imports/copec/Load.png";
@@ -280,10 +279,6 @@ export default function CopecProject() {
             the customer journey.
           </p>
         </div>
-
-        <figure className="copec-social">
-          <img src={socialCampaign} alt="Muevo social campaign applications" />
-        </figure>
 
         <figure className="copec-billboard">
           <img src={billboard} alt="Muevo Copec billboard in the city" />
