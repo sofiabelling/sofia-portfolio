@@ -76,6 +76,11 @@ export default function CopecProject() {
             <div><span>CONTEXT</span><strong>Physical + digital services</strong></div>
             <div><span>IMPACT</span><strong>5M+ downloads</strong></div>
           </div>
+
+          <figure className="copec-splash">
+            <video src={splashScreen} autoPlay muted loop playsInline />
+            <figcaption>Splash screen</figcaption>
+          </figure>
         </section>
 
         <section className="copec-blue-statement">
@@ -185,11 +190,6 @@ export default function CopecProject() {
           <figure className="copec-onboarding">
             <img src={onboarding} alt="Copec onboarding illustrations" />
             <figcaption>Onboarding</figcaption>
-          </figure>
-
-          <figure className="copec-splash">
-            <video src={splashScreen} autoPlay muted loop playsInline />
-            <figcaption>Splash screen</figcaption>
           </figure>
         </section>
 
