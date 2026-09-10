@@ -64,6 +64,9 @@ export default function CopecProject() {
               I worked on the early development and launch of Copec’s consumer app, with the goal of supporting a broader phygital transformation for the client.
             </p>
             <p>
+              Copec is one of Chile’s largest and most recognisable companies, operating the country’s most extensive service-station network alongside convenience stores, lubricants and a nationwide loyalty programme. For millions of drivers it’s part of everyday life, so the digital experience had to feel just as familiar and dependable.
+            </p>
+            <p>
               The challenge was to connect services that already existed across Copec’s physical network — payments, promotions, station discovery and customer services — through one clear mobile experience.
             </p>
           </div>
