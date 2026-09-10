@@ -150,12 +150,14 @@ export default function CopecProject() {
               </figure>
             </div>
 
-            <figure className="copec-driver-grid">
-              {[driver01, driver02, driver03].map((image, index) => (
-                <div className="photo-frame" key={index}>
-                  <img src={image} alt={`Copec customer taking part in field research ${index + 1}`} />
-                </div>
-              ))}
+            <figure className="copec-driver-block">
+              <div className="copec-driver-grid">
+                {[driver01, driver02, driver03].map((image, index) => (
+                  <div className="photo-frame" key={index}>
+                    <img src={image} alt={`Copec customer taking part in field research ${index + 1}`} />
+                  </div>
+                ))}
+              </div>
               <figcaption>
                 Early concepts tested with drivers on-site — at the pump and in the car, where the app would actually be used.
               </figcaption>
