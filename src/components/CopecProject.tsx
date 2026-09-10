@@ -4,6 +4,7 @@ import "./CopecProject.css";
 import hero from "../imports/copec/copec-hero.png";
 import researchStation from "../imports/copec/copec-research-station.png";
 import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
+import iconos from "../imports/copec/iconos.gif";
 import home from "../imports/copec/home.png";
 import map1 from "../imports/copec/map-1.png";
 import map2 from "../imports/copec/map-2.png";
@@ -190,6 +191,11 @@ export default function CopecProject() {
           <figure className="copec-onboarding">
             <img src={onboarding} alt="Copec onboarding illustrations" />
             <figcaption>Onboarding</figcaption>
+          </figure>
+
+          <figure className="copec-iconos">
+            <img src={iconos} alt="Copec iconography in motion" />
+            <figcaption>Iconography</figcaption>
           </figure>
         </section>
 
