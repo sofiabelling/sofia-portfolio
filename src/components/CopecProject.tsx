@@ -159,34 +159,10 @@ export default function CopecProject() {
           </div>
         </section>
 
-        <section className="copec-product">
-          <div className="copec-section copec-heading-grid">
-            <div>
-              <p className="copec-label">03 — PRODUCT EXPERIENCE</p>
-              <h2>One interface for many everyday interactions.</h2>
-            </div>
-            <div className="copec-copy">
-              <p className="copec-lead">
-                I helped translate the different services within Copec into a consistent mobile experience across onboarding, promotions, payments, scanning, transaction history, station discovery and feedback.
-              </p>
-            </div>
-          </div>
-
-          <figure className="copec-onboarding">
-            <img src={onboarding} alt="Copec onboarding illustrations" />
-            <figcaption>Onboarding</figcaption>
-          </figure>
-
-          <figure className="copec-iconos">
-            <img src={iconos} alt="Copec iconography in motion" />
-            <figcaption>Iconography</figcaption>
-          </figure>
-        </section>
-
         <section className="copec-system">
           <div className="copec-section copec-heading-grid">
             <div>
-              <p className="copec-label">04 — MUEVO DESIGN SYSTEM</p>
+              <p className="copec-label">03 — MUEVO DESIGN SYSTEM</p>
               <h2>A shared language built to scale.</h2>
             </div>
             <div className="copec-copy">
@@ -213,6 +189,30 @@ export default function CopecProject() {
               <figcaption><b>03</b> Reusable components</figcaption>
             </figure>
           </div>
+        </section>
+
+        <section className="copec-product">
+          <div className="copec-section copec-heading-grid">
+            <div>
+              <p className="copec-label">04 — PRODUCT EXPERIENCE</p>
+              <h2>One interface for many everyday interactions.</h2>
+            </div>
+            <div className="copec-copy">
+              <p className="copec-lead">
+                I helped translate the different services within Copec into a consistent mobile experience across onboarding, promotions, payments, scanning, transaction history, station discovery and feedback.
+              </p>
+            </div>
+          </div>
+
+          <figure className="copec-onboarding">
+            <img src={onboarding} alt="Copec onboarding illustrations" />
+            <figcaption>Onboarding</figcaption>
+          </figure>
+
+          <figure className="copec-iconos">
+            <img src={iconos} alt="Copec iconography in motion" />
+            <figcaption>Iconography</figcaption>
+          </figure>
         </section>
 
         <section className="copec-scale">
