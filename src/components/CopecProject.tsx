@@ -5,7 +5,6 @@ import hero from "../imports/copec/copec-hero.png";
 import researchStation from "../imports/copec/copec-research-station.png";
 import researchProcess from "../imports/copec/copec-research-process.png";
 import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
-import productOverview from "../imports/copec/copec-product-overview.png";
 import home from "../imports/copec/home.png";
 import map1 from "../imports/copec/map-1.png";
 import map2 from "../imports/copec/map-2.png";
@@ -214,9 +213,6 @@ export default function CopecProject() {
               </p>
             </div>
           </div>
-          <figure className="copec-product-overview">
-            <img src={productOverview} alt="Overview of the Copec app experience" />
-          </figure>
           <figure className="copec-billboard">
             <img src={billboard} alt="Copec app campaign billboard" />
           </figure>
