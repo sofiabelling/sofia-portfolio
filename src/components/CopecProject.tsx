@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import "./CopecProject.css";
 
-import hero from "../imports/copec/copec-hero.png";
+import hero from "../imports/copec/copec-product-overview.png";
 import researchStation from "../imports/copec/copec-research-station.png";
 import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
 import iconos from "../imports/copec/iconos.gif";
@@ -43,7 +43,7 @@ export default function CopecProject() {
   return (
     <main className="copec-case">
       <section className="copec-hero">
-        <img src={hero} alt="Copec mobile ecosystem" />
+        <img src={hero} alt="Overview of the Copec app experience" />
         <div className="copec-hero-shade" />
         <button className="copec-back" onClick={() => navigate("/work")}>← Work</button>
         <div className="copec-hero-copy">
