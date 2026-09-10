@@ -20,6 +20,9 @@ import typeStyles from "../imports/copec/copec-type-styles.png";
 import buttonStyles from "../imports/copec/copec-button-states.png";
 import blockStyles from "../imports/copec/copec-block-components.png";
 import billboard from "../imports/copec/copec-billboard.jpg";
+import promo1 from "../imports/copec/promotional-1.png";
+import promo2 from "../imports/copec/promotional-2.jpeg";
+import promo3 from "../imports/copec/promotional-3.webp";
 import splashScreen from "../imports/copec/splash-screen.mp4";
 import fieldUniformSolo from "../imports/copec/field-uniform-solo.jpg";
 import fieldUniformTeam from "../imports/copec/field-uniform-team.jpg";
@@ -240,6 +243,14 @@ export default function CopecProject() {
           <figure className="copec-billboard">
             <img src={billboard} alt="Copec app campaign billboard" />
           </figure>
+
+          <div className="copec-section copec-promo-grid">
+            {[promo1, promo2, promo3].map((src, index) => (
+              <figure key={index}>
+                <div className="photo-frame"><img src={src} alt={`Copec campaign material ${index + 1}`} /></div>
+              </figure>
+            ))}
+          </div>
         </section>
 
         <section className="copec-outcome">
