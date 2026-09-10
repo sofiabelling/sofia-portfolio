@@ -27,10 +27,10 @@ const screens = [
   { src: menu, label: "Menu" },
   { src: load, label: "Payment" },
   { src: map1, label: "Station discovery" },
-  { src: transactions, label: "Transactions" },
-  { src: loyalty, label: "Loyalty" },
   { src: map2, label: "Search" },
   { src: map3, label: "Filters" },
+  { src: transactions, label: "Transactions" },
+  { src: loyalty, label: "Loyalty" },
   { src: rateService, label: "Service feedback" },
 ];
 
