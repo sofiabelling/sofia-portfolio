@@ -15,7 +15,6 @@ import rateService from "../imports/copec/rate-service.png";
 import load from "../imports/copec/load.png";
 import menu from "../imports/copec/menu.png";
 import typeStyles from "../imports/copec/copec-type-styles.png";
-import colorStyles from "../imports/copec/copec-color-accessibility.png";
 import buttonStyles from "../imports/copec/copec-button-states.png";
 import blockStyles from "../imports/copec/copec-block-components.png";
 import billboard from "../imports/copec/copec-billboard.jpg";
@@ -220,17 +219,13 @@ export default function CopecProject() {
               <div className="copec-system-image"><img src={typeStyles} alt="Copec typography system" /></div>
               <figcaption><b>01</b> Typography</figcaption>
             </figure>
-            <figure>
-              <div className="copec-system-image"><img src={colorStyles} alt="Copec color and accessibility system" /></div>
-              <figcaption><b>02</b> Color & accessibility</figcaption>
-            </figure>
-            <figure>
+            <figure className="wide">
               <div className="copec-system-image"><img src={buttonStyles} alt="Copec button states" /></div>
-              <figcaption><b>03</b> Buttons & states</figcaption>
+              <figcaption><b>02</b> Buttons & states</figcaption>
             </figure>
             <figure className="wide">
               <div className="copec-system-image"><img src={blockStyles} alt="Copec reusable components" /></div>
-              <figcaption><b>04</b> Reusable components</figcaption>
+              <figcaption><b>03</b> Reusable components</figcaption>
             </figure>
           </div>
         </section>
