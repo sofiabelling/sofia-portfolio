@@ -20,6 +20,11 @@ import buttonStyles from "../imports/copec/copec-button-states.png";
 import blockStyles from "../imports/copec/copec-block-components.png";
 import billboard from "../imports/copec/copec-billboard.jpg";
 import splashScreen from "../imports/copec/splash-screen.mp4";
+import fieldUniformSolo from "../imports/copec/field-uniform-solo.jpg";
+import fieldUniformTeam from "../imports/copec/field-uniform-team.jpg";
+import driver01 from "../imports/copec/driver-01.jpg";
+import driver02 from "../imports/copec/driver-02.jpg";
+import driver03 from "../imports/copec/driver-03.jpg";
 
 const screens = [
   { src: home, label: "Home" },
@@ -109,6 +114,52 @@ export default function CopecProject() {
               <span>02</span><p>Prototype and test key interactions early.</p>
               <span>03</span><p>Validate proposals with customers on-site.</p>
               <span>04</span><p>Feed observations back into product decisions.</p>
+            </div>
+          </div>
+
+          <div className="copec-field-testing-gallery">
+            <div className="copec-field-testing-intro">
+              <h3>Research meant getting out of the office.</h3>
+              <p>
+                We spent time at Copec stations speaking with people in the context where
+                the product would actually be used — observing, interviewing and testing
+                ideas directly with drivers.
+              </p>
+            </div>
+
+            <div className="copec-uniform-grid">
+              <figure>
+                <div className="photo-frame">
+                  <img src={fieldUniformSolo} alt="Field testing at a Copec station wearing the station uniform" />
+                </div>
+                <figcaption>
+                  Field testing uniform on — looking official was apparently part of the methodology :)
+                </figcaption>
+              </figure>
+              <figure>
+                <div className="photo-frame">
+                  <img src={fieldUniformTeam} alt="Copec field testing team at a service station" />
+                </div>
+                <figcaption>Ready for another round of on-site interviews and usability testing.</figcaption>
+              </figure>
+            </div>
+
+            <div className="copec-driver-heading">
+              <h3>Talking directly with drivers.</h3>
+              <p>
+                Drivers at the stations volunteered their time so we could interview them
+                and put early product ideas in front of real users.
+              </p>
+            </div>
+
+            <div className="copec-driver-grid">
+              {[driver01, driver02, driver03].map((image, index) => (
+                <figure key={image}>
+                  <div className="photo-frame">
+                    <img src={image} alt={`Driver participating in Copec field research ${index + 1}`} />
+                  </div>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
