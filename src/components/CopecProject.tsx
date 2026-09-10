@@ -206,17 +206,6 @@ export default function CopecProject() {
           </div>
         </section>
 
-        <section className="copec-screens">
-          <div className="copec-section copec-screen-grid">
-            {screens.map((screen) => (
-              <figure key={screen.label}>
-                <div><img src={screen.src} alt={`Copec ${screen.label} screen`} /></div>
-                <figcaption>{screen.label}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-
         <section className="copec-scale">
           <div className="copec-section copec-heading-grid">
             <div>
@@ -229,6 +218,16 @@ export default function CopecProject() {
               </p>
             </div>
           </div>
+
+          <div className="copec-section copec-screen-grid">
+            {screens.map((screen) => (
+              <figure key={screen.label}>
+                <div><img src={screen.src} alt={`Copec ${screen.label} screen`} /></div>
+                <figcaption>{screen.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+
           <figure className="copec-billboard">
             <img src={billboard} alt="Copec app campaign billboard" />
           </figure>
