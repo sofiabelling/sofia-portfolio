@@ -290,7 +290,7 @@ function ProjectChapter({
   /* Mobile uses one persistent layout so the active/inactive state can
      animate instead of swapping two different trees. */
   if (isMobile) {
-    const mobileHeight = isActive ? 410 : 136;
+    const mobileHeight = isActive ? 450 : 136;
 
     return (
       <article
@@ -318,7 +318,7 @@ function ProjectChapter({
             position: "absolute",
             zIndex: 2,
             left: 0,
-            top: isActive ? "248px" : 0,
+            top: isActive ? "288px" : 0,
             width: isActive ? "100%" : "42%",
             height: isActive ? "162px" : "136px",
             display: "flex",
@@ -408,7 +408,7 @@ function ProjectChapter({
             top: 0,
             right: 0,
             width: isActive ? "100%" : "58%",
-            height: isActive ? "248px" : "136px",
+            height: isActive ? "288px" : "136px",
             padding: 0,
             border: 0,
             overflow: "hidden",
