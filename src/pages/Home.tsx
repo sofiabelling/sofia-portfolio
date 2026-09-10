@@ -26,6 +26,7 @@ export default function Home() {
   const heroRef = useRef<HTMLElement | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [activeSlug, setActiveSlug] = useState("copec");
+  const [tap, setTap] = useState<{ x: number; y: number; id: number } | null>(null);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -59,6 +60,14 @@ export default function Home() {
     heroRef.current.style.setProperty("--mouse-y", "38%");
   };
 
+  const handleHeroTap = (event: React.PointerEvent<HTMLElement>) => {
+    if (!isMobile || !heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    setTap({ x, y, id: Date.now() });
+  };
+
   return (
     <div style={{ minHeight: "100vh", background: BG, color: NAV, overflowX: "hidden" }}>
       {/* HERO */}
@@ -66,6 +75,7 @@ export default function Home() {
         ref={heroRef}
         onPointerMove={handleHeroPointerMove}
         onPointerLeave={resetHeroGlow}
+        onPointerDown={handleHeroTap}
         className="page-container"
         style={
           {
@@ -96,6 +106,14 @@ export default function Home() {
             0%, 100% { transform: translate3d(-8%, -2%, 0) scale(1); opacity: .72; }
             50% { transform: translate3d(8%, 5%, 0) scale(1.12); opacity: .95; }
           }
+          @keyframes heroTapFade {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(.55); }
+            28% { opacity: .9; }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1.25); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            [data-hero-tap] { display: none !important; }
+          }
         `}</style>
 
         <div
@@ -103,9 +121,15 @@ export default function Home() {
           style={{
             position: "absolute",
             zIndex: -3,
-            inset: isMobile ? "-90px -70px" : "-210px -260px",
+            inset: isMobile ? "-56px -48px" : "-130px -160px",
             pointerEvents: "none",
             overflow: "hidden",
+            maskImage: isMobile
+              ? "radial-gradient(120% 96% at 50% 32%, #000 42%, transparent 84%)"
+              : "radial-gradient(112% 100% at 50% 30%, #000 46%, transparent 82%)",
+            WebkitMaskImage: isMobile
+              ? "radial-gradient(120% 96% at 50% 32%, #000 42%, transparent 84%)"
+              : "radial-gradient(112% 100% at 50% 30%, #000 46%, transparent 82%)",
           }}
         >
           <div
@@ -142,6 +166,30 @@ export default function Home() {
             />
           )}
         </div>
+
+        {isMobile && tap && (
+          <div
+            key={tap.id}
+            data-hero-tap
+            aria-hidden
+            onAnimationEnd={() => setTap(null)}
+            style={{
+              position: "absolute",
+              zIndex: -2,
+              left: `${tap.x}%`,
+              top: `${tap.y}%`,
+              width: "40%",
+              aspectRatio: "1",
+              transform: "translate(-50%, -50%)",
+              borderRadius: "50%",
+              pointerEvents: "none",
+              background:
+                "radial-gradient(circle, rgba(166,91,255,.15), rgba(255,88,190,.08) 44%, transparent 70%)",
+              filter: "blur(22px)",
+              animation: "heroTapFade .7s ease-out forwards",
+            }}
+          />
+        )}
 
         <div
           style={{
