@@ -3,7 +3,6 @@ import "./CopecProject.css";
 
 import hero from "../imports/copec/copec-hero.png";
 import researchStation from "../imports/copec/copec-research-station.png";
-import researchProcess from "../imports/copec/copec-research-process.png";
 import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
 import home from "../imports/copec/home.png";
 import map1 from "../imports/copec/map-1.png";
@@ -104,17 +103,11 @@ export default function CopecProject() {
             <figcaption>Field testing at a Copec station — validating proposals where the product would actually be used.</figcaption>
           </figure>
 
-          <div className="copec-research-row">
-            <figure>
-              <img src={researchProcess} alt="Copec research, workshops and collaboration" />
-              <figcaption>Early interviews, usability sessions, workshops and iterative evaluation.</figcaption>
-            </figure>
-            <div className="copec-research-notes">
-              <span>01</span><p>Understand the existing service-station experience.</p>
-              <span>02</span><p>Prototype and test key interactions early.</p>
-              <span>03</span><p>Validate proposals with customers on-site.</p>
-              <span>04</span><p>Feed observations back into product decisions.</p>
-            </div>
+          <div className="copec-research-notes">
+            <div><span>01</span><p>Understand the existing service-station experience.</p></div>
+            <div><span>02</span><p>Prototype and test key interactions early.</p></div>
+            <div><span>03</span><p>Validate proposals with customers on-site.</p></div>
+            <div><span>04</span><p>Feed observations back into product decisions.</p></div>
           </div>
 
           <div className="copec-field-testing-gallery">
