@@ -7,7 +7,6 @@ import researchProcess from "../imports/copec/copec-research-process.png";
 import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
 import productOverview from "../imports/copec/copec-product-overview.png";
 import home from "../imports/copec/home.png";
-import coupons from "../imports/copec/coupons.png";
 import map1 from "../imports/copec/map-1.png";
 import map2 from "../imports/copec/map-2.png";
 import map3 from "../imports/copec/map-3.png";
@@ -15,6 +14,7 @@ import transactions from "../imports/copec/transactions.png";
 import loyalty from "../imports/copec/loyalty.png";
 import rateService from "../imports/copec/rate-service.png";
 import load from "../imports/copec/load.png";
+import menu from "../imports/copec/menu.png";
 import typeStyles from "../imports/copec/copec-type-styles.png";
 import colorStyles from "../imports/copec/copec-color-accessibility.png";
 import buttonStyles from "../imports/copec/copec-button-states.png";
@@ -24,7 +24,7 @@ import splashScreen from "../imports/copec/splash-screen.mp4";
 
 const screens = [
   { src: home, label: "Home" },
-  { src: coupons, label: "Coupons" },
+  { src: menu, label: "Menu" },
   { src: map1, label: "Station discovery" },
   { src: transactions, label: "Transactions" },
   { src: loyalty, label: "Loyalty" },
