@@ -241,9 +241,14 @@ export default function CopecProject() {
           </div>
 
           <div className="copec-section copec-promo-grid">
-            {[promo1, promo2, promo3].map((src, index) => (
-              <figure key={index}>
-                <div className="photo-frame"><img src={src} alt={`Copec campaign material ${index + 1}`} /></div>
+            {[
+              { src: promo1, alt: "Customer paying at a Copec pump from the app", caption: "Paying at the pump, straight from the app." },
+              { src: promo2, alt: "Customer scanning a code at a Copec station", caption: "Scanning on-site to start a service." },
+              { src: promo3, alt: "Customer using the Copec app from their car", caption: "The experience carries on from the car." },
+            ].map((promo) => (
+              <figure key={promo.caption}>
+                <div className="photo-frame"><img src={promo.src} alt={promo.alt} /></div>
+                <figcaption>{promo.caption}</figcaption>
               </figure>
             ))}
           </div>
