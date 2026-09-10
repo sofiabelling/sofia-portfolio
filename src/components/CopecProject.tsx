@@ -121,9 +121,9 @@ export default function CopecProject() {
             <div className="copec-field-testing-intro">
               <h3>Research meant getting out of the office.</h3>
               <p>
-                We spent time at Copec stations speaking with people in the context where
-                the product would actually be used — observing, interviewing and testing
-                ideas directly with drivers.
+                We spent time at Copec stations, observing and interviewing people in the
+                context where the product would actually be used. Drivers volunteered their
+                time so we could put early product ideas in front of real users.
               </p>
             </div>
 
@@ -142,14 +142,6 @@ export default function CopecProject() {
                 </div>
                 <figcaption>Ready for another round of on-site interviews and usability testing.</figcaption>
               </figure>
-            </div>
-
-            <div className="copec-driver-heading">
-              <h3>Talking directly with drivers.</h3>
-              <p>
-                Drivers at the stations volunteered their time so we could interview them
-                and put early product ideas in front of real users.
-              </p>
             </div>
 
             <div className="copec-driver-grid">

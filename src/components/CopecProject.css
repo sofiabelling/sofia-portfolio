@@ -13,10 +13,7 @@
 .copec-uniform-grid figure:first-child img{object-position:center 35%}
 .copec-uniform-grid figure:last-child img{object-position:center 34%}
 .copec-field-testing-gallery figcaption{text-align:left}
-.copec-driver-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin:72px 0 22px;padding-top:22px;border-top:1px solid #dfe2e9}
-.copec-driver-heading h3{font:700 clamp(28px,3vw,42px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;margin:0}
-.copec-driver-heading p{font:400 14px/1.55 Inter,sans-serif;color:#737a90;margin:0;max-width:460px}
-.copec-driver-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.copec-driver-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
 .copec-driver-grid .photo-frame{aspect-ratio:3/4;overflow:hidden;background:#e9ebee}
 .copec-driver-grid img{object-position:center center}
 
@@ -27,9 +24,7 @@
   .copec-uniform-grid .photo-frame,.copec-uniform-grid figure:first-child .photo-frame{height:auto;aspect-ratio:3/4}
   .copec-uniform-grid figure:first-child img{object-position:center 30%}
   .copec-uniform-grid figure:last-child img{object-position:center 30%}
-  .copec-driver-heading{display:block;margin-top:52px}
-  .copec-driver-heading p{margin-top:12px}
-  .copec-driver-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .copec-driver-grid{grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
   .copec-driver-grid .photo-frame{aspect-ratio:3/4}
   .copec-field-testing-gallery figcaption{font-size:9px}
 }
