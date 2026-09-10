@@ -6,6 +6,7 @@ import heroMobile from "../imports/copec/copec-product-overview.png";
 import researchStation from "../imports/copec/copec-research-station.png";
 import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
 import iconos from "../imports/copec/iconos.gif";
+import toolsUsed from "../imports/copec/tools-used.png";
 import home from "../imports/copec/home.png";
 import map1 from "../imports/copec/map-1.png";
 import map2 from "../imports/copec/map-2.png";
@@ -80,6 +81,11 @@ export default function CopecProject() {
             <div><span>CONTEXT</span><strong>Physical + digital services</strong></div>
             <div><span>IMPACT</span><strong>5M+ downloads</strong></div>
           </div>
+
+          <figure className="copec-tools">
+            <img src={toolsUsed} alt="Tools used on the Copec project" />
+            <figcaption>Tools</figcaption>
+          </figure>
 
           <figure className="copec-splash">
             <video src={splashScreen} autoPlay muted loop playsInline />
