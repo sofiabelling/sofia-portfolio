@@ -83,13 +83,6 @@ export default function CopecProject() {
           </figure>
         </section>
 
-        <section className="copec-blue-statement">
-          <div className="copec-section">
-            <p className="copec-label light">THE GOAL</p>
-            <h2>Make the digital layer feel like a natural extension of Copec.</h2>
-          </div>
-        </section>
-
         <section className="copec-section copec-research">
           <div className="copec-heading-grid">
             <div>
