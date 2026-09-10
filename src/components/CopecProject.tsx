@@ -240,10 +240,6 @@ export default function CopecProject() {
             ))}
           </div>
 
-          <figure className="copec-billboard">
-            <img src={billboard} alt="Copec app campaign billboard" />
-          </figure>
-
           <div className="copec-section copec-promo-grid">
             {[promo1, promo2, promo3].map((src, index) => (
               <figure key={index}>
@@ -251,6 +247,10 @@ export default function CopecProject() {
               </figure>
             ))}
           </div>
+
+          <figure className="copec-billboard">
+            <img src={billboard} alt="Copec app campaign billboard" />
+          </figure>
         </section>
 
         <section className="copec-outcome">
