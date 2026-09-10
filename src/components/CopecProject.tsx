@@ -150,27 +150,10 @@ export default function CopecProject() {
           </div>
         </section>
 
-        <section className="copec-collaboration">
-          <div className="copec-section copec-heading-grid">
-            <div>
-              <p className="copec-label light">03 — COLLABORATION</p>
-              <h2>Designing with the business, not around it.</h2>
-            </div>
-            <div className="copec-copy light-copy">
-              <p className="copec-lead">
-                I worked closely with Copec stakeholders and the wider product team throughout the process, connecting customer findings with business and technical requirements.
-              </p>
-              <p>
-                Research results and design proposals were discussed collaboratively, allowing us to align decisions across a large existing service ecosystem while keeping the customer experience coherent.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <section className="copec-product">
           <div className="copec-section copec-heading-grid">
             <div>
-              <p className="copec-label">04 — PRODUCT EXPERIENCE</p>
+              <p className="copec-label">03 — PRODUCT EXPERIENCE</p>
               <h2>One interface for many everyday interactions.</h2>
             </div>
             <div className="copec-copy">
@@ -194,7 +177,7 @@ export default function CopecProject() {
         <section className="copec-system">
           <div className="copec-section copec-heading-grid">
             <div>
-              <p className="copec-label">05 — MUEVO DESIGN SYSTEM</p>
+              <p className="copec-label">04 — MUEVO DESIGN SYSTEM</p>
               <h2>A shared language built to scale.</h2>
             </div>
             <div className="copec-copy">
@@ -237,7 +220,7 @@ export default function CopecProject() {
         <section className="copec-scale">
           <div className="copec-section copec-heading-grid">
             <div>
-              <p className="copec-label">06 — INTO THE REAL WORLD</p>
+              <p className="copec-label">05 — INTO THE REAL WORLD</p>
               <h2>The product became part of the physical brand.</h2>
             </div>
             <div className="copec-copy">
@@ -253,7 +236,7 @@ export default function CopecProject() {
 
         <section className="copec-outcome">
           <div className="copec-section">
-            <p className="copec-label light">07 — OUTCOME</p>
+            <p className="copec-label light">06 — OUTCOME</p>
             <h2>A product designed in context, built to operate at scale.</h2>
             <p className="copec-outcome-copy">
               I contributed from early exploration through launch, combining user research, field testing, UX/UI and systems thinking. The app has since reached more than 5 million downloads.
