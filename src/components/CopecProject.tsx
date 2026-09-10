@@ -25,13 +25,13 @@ import splashScreen from "../imports/copec/splash-screen.mp4";
 const screens = [
   { src: home, label: "Home" },
   { src: menu, label: "Menu" },
+  { src: load, label: "Payment" },
   { src: map1, label: "Station discovery" },
   { src: transactions, label: "Transactions" },
   { src: loyalty, label: "Loyalty" },
-  { src: rateService, label: "Service feedback" },
   { src: map2, label: "Search" },
   { src: map3, label: "Filters" },
-  { src: load, label: "Payment" },
+  { src: rateService, label: "Service feedback" },
 ];
 
 export default function CopecProject() {
