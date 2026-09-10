@@ -80,12 +80,11 @@ export default function CopecProject() {
             <div><span>ROLE</span><strong>UX/UI · Research · Design System</strong></div>
             <div><span>CONTEXT</span><strong>Physical + digital services</strong></div>
             <div><span>IMPACT</span><strong>5M+ downloads</strong></div>
+            <div className="copec-meta-tools">
+              <span>TOOLS</span>
+              <img src={toolsUsed} alt="Figma, LottieFiles, Photoshop, InVision" />
+            </div>
           </div>
-
-          <figure className="copec-tools">
-            <img src={toolsUsed} alt="Tools used on the Copec project" />
-            <figcaption>Tools</figcaption>
-          </figure>
 
           <figure className="copec-splash">
             <video src={splashScreen} autoPlay muted loop playsInline />
