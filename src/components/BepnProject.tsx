@@ -505,7 +505,127 @@ export default function BepnProject({
         </div>
       </section>
 
-      {/* 03 COUNTRY EXPLORER */}
+      {/* 03 PRIMARY ACTION */}
+      <section
+        style={{
+          background: "#fff",
+          padding: `${sectionY} ${side}`,
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1500px",
+            margin: "0 auto",
+          }}
+        >
+          <p
+            style={{
+              ...labelStyle,
+              marginBottom: "28px",
+            }}
+          >
+            03 — PRIMARY ACTION
+          </p>
+
+          <div
+            style={{
+              ...grid(
+                "1.05fr .95fr",
+                "90px"
+              ),
+              alignItems: "end",
+              marginBottom: isMobile
+                ? "56px"
+                : "80px",
+            }}
+          >
+            <h2
+              style={{
+                ...headingStyle,
+                fontSize: isMobile
+                  ? "clamp(50px, 14vw, 68px)"
+                  : "clamp(62px, 7vw, 108px)",
+              }}
+            >
+              One action
+              <br />
+              always stays
+              <br />
+              obvious.
+            </h2>
+
+            <p
+              style={{
+                ...bodyStyle,
+                color: "rgba(0,0,0,.56)",
+                margin: 0,
+              }}
+            >
+              The large bottom control is always
+              the strongest visual element because
+              connecting or disconnecting is the
+              core task of the product.
+            </p>
+          </div>
+
+          <div
+            style={{
+              ...grid(
+                "1fr 1fr",
+                "14px"
+              ),
+            }}
+          >
+            <div
+              style={{
+                background: DARK,
+                padding: isMobile
+                  ? "30px"
+                  : "50px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src={disconnectedState}
+                alt="Bepn disconnected state"
+                style={{
+                  height: isMobile
+                    ? "590px"
+                    : "700px",
+                  maxWidth: "100%",
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+
+            <div
+              style={{
+                background: DARK,
+                padding: isMobile
+                  ? "30px"
+                  : "50px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src={connectedState}
+                alt="Bepn connected state"
+                style={{
+                  height: isMobile
+                    ? "590px"
+                    : "700px",
+                  maxWidth: "100%",
+                  objectFit: "contain",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 04 COUNTRY EXPLORER */}
       <section
         style={{
           padding: `${sectionY} ${side}`,
@@ -519,7 +639,7 @@ export default function BepnProject({
             marginBottom: "28px",
           }}
         >
-          03 — COUNTRY EXPLORER
+          04 — COUNTRY EXPLORER
         </p>
 
         <div
@@ -618,126 +738,6 @@ export default function BepnProject({
                   height: isMobile
                     ? "580px"
                     : "690px",
-                  maxWidth: "100%",
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 04 PRIMARY ACTION */}
-      <section
-        style={{
-          background: "#fff",
-          padding: `${sectionY} ${side}`,
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1500px",
-            margin: "0 auto",
-          }}
-        >
-          <p
-            style={{
-              ...labelStyle,
-              marginBottom: "28px",
-            }}
-          >
-            04 — PRIMARY ACTION
-          </p>
-
-          <div
-            style={{
-              ...grid(
-                "1.05fr .95fr",
-                "90px"
-              ),
-              alignItems: "end",
-              marginBottom: isMobile
-                ? "56px"
-                : "80px",
-            }}
-          >
-            <h2
-              style={{
-                ...headingStyle,
-                fontSize: isMobile
-                  ? "clamp(50px, 14vw, 68px)"
-                  : "clamp(62px, 7vw, 108px)",
-              }}
-            >
-              One action
-              <br />
-              always stays
-              <br />
-              obvious.
-            </h2>
-
-            <p
-              style={{
-                ...bodyStyle,
-                color: "rgba(0,0,0,.56)",
-                margin: 0,
-              }}
-            >
-              The large bottom control is always
-              the strongest visual element because
-              connecting or disconnecting is the
-              core task of the product.
-            </p>
-          </div>
-
-          <div
-            style={{
-              ...grid(
-                "1fr 1fr",
-                "14px"
-              ),
-            }}
-          >
-            <div
-              style={{
-                background: DARK,
-                padding: isMobile
-                  ? "30px"
-                  : "50px",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <img
-                src={disconnectedState}
-                alt="Bepn disconnected state"
-                style={{
-                  height: isMobile
-                    ? "590px"
-                    : "700px",
-                  maxWidth: "100%",
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-
-            <div
-              style={{
-                background: DARK,
-                padding: isMobile
-                  ? "30px"
-                  : "50px",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <img
-                src={connectedState}
-                alt="Bepn connected state"
-                style={{
-                  height: isMobile
-                    ? "590px"
-                    : "700px",
                   maxWidth: "100%",
                   objectFit: "contain",
                 }}
