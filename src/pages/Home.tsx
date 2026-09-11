@@ -160,28 +160,20 @@ export default function Home() {
             style={{
               position: "absolute",
               zIndex: -3,
-              inset: 0,
-              overflow: "hidden",
               pointerEvents: "none",
+              width: "27%",
+              aspectRatio: "1",
+              left: "calc(var(--mouse-x) - 13.5%)",
+              top: "calc(var(--mouse-y) - 13.5%)",
+              borderRadius: "50%",
+              background: "radial-gradient(circle, rgba(166,91,255,.18) 0%, rgba(255,88,190,.10) 35%, rgba(84,219,236,.055) 58%, transparent 72%)",
+              filter: "blur(40px)",
+              opacity: "var(--glow-opacity, 0)",
+              transform: "translate3d(0,0,0)",
+              transition: "left .22s cubic-bezier(.2,.75,.25,1), top .22s cubic-bezier(.2,.75,.25,1), opacity .35s ease",
+              willChange: "left, top, opacity",
             }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                width: "54%",
-                aspectRatio: "1",
-                left: "calc(var(--mouse-x) - 27%)",
-                top: "calc(var(--mouse-y) - 27%)",
-                borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(166,91,255,.18) 0%, rgba(255,88,190,.10) 35%, rgba(84,219,236,.055) 58%, transparent 72%)",
-                filter: "blur(40px)",
-                opacity: "var(--glow-opacity, 0)",
-                transform: "translate3d(0,0,0)",
-                transition: "left .22s cubic-bezier(.2,.75,.25,1), top .22s cubic-bezier(.2,.75,.25,1), opacity .35s ease",
-                willChange: "left, top, opacity",
-              }}
-            />
-          </div>
+          />
         )}
 
         {isMobile && tap && (
