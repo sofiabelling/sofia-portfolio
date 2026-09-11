@@ -52,12 +52,15 @@ export default function Home() {
     const y = ((event.clientY - rect.top) / rect.height) * 100;
     heroRef.current.style.setProperty("--mouse-x", `${x}%`);
     heroRef.current.style.setProperty("--mouse-y", `${y}%`);
+    heroRef.current.style.setProperty("--glow-opacity", "1");
   };
 
   const resetHeroGlow = () => {
     if (!heroRef.current) return;
-    heroRef.current.style.setProperty("--mouse-x", "64%");
-    heroRef.current.style.setProperty("--mouse-y", "38%");
+    // Fade out in place rather than snapping the position back — a
+    // reposition here (e.g. triggered by scroll re-running hit-testing
+    // under a stationary cursor) reads as the glow "jumping" to a corner.
+    heroRef.current.style.setProperty("--glow-opacity", "0");
   };
 
   const handleHeroTap = (event: React.PointerEvent<HTMLElement>) => {
@@ -87,6 +90,7 @@ export default function Home() {
             paddingBottom: isMobile ? "44px" : "82px",
             "--mouse-x": "64%",
             "--mouse-y": "38%",
+            "--glow-opacity": 0,
           } as React.CSSProperties
         }
       >
@@ -148,7 +152,19 @@ export default function Home() {
             }}
           />
 
-          {!isMobile && (
+        </div>
+
+        {!isMobile && (
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              zIndex: -3,
+              inset: 0,
+              overflow: "hidden",
+              pointerEvents: "none",
+            }}
+          >
             <div
               style={{
                 position: "absolute",
@@ -159,13 +175,14 @@ export default function Home() {
                 borderRadius: "50%",
                 background: "radial-gradient(circle, rgba(166,91,255,.18) 0%, rgba(255,88,190,.10) 35%, rgba(84,219,236,.055) 58%, transparent 72%)",
                 filter: "blur(40px)",
+                opacity: "var(--glow-opacity, 0)",
                 transform: "translate3d(0,0,0)",
-                transition: "left .22s cubic-bezier(.2,.75,.25,1), top .22s cubic-bezier(.2,.75,.25,1)",
-                willChange: "left, top",
+                transition: "left .22s cubic-bezier(.2,.75,.25,1), top .22s cubic-bezier(.2,.75,.25,1), opacity .35s ease",
+                willChange: "left, top, opacity",
               }}
             />
-          )}
-        </div>
+          </div>
+        )}
 
         {isMobile && tap && (
           <div
