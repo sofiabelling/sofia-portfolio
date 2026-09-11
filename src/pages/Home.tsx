@@ -92,10 +92,10 @@ export default function Home() {
       >
         <style>{`
           @keyframes heroColorDrift {
-            0% { transform: translate3d(-4%, -2%, 0) scale(1); }
-            33% { transform: translate3d(7%, 4%, 0) scale(1.08); }
-            66% { transform: translate3d(-1%, 8%, 0) scale(.98); }
-            100% { transform: translate3d(-4%, -2%, 0) scale(1); }
+            0% { transform: translate3d(-3%, -1.5%, 0) scale(1); }
+            33% { transform: translate3d(4%, 2.5%, 0) scale(1.04); }
+            66% { transform: translate3d(-1%, 4%, 0) scale(.99); }
+            100% { transform: translate3d(-3%, -1.5%, 0) scale(1); }
           }
           @keyframes heroHueShift {
             0% { filter: blur(72px) hue-rotate(0deg); }
@@ -126,10 +126,10 @@ export default function Home() {
             overflow: "hidden",
             maskImage: isMobile
               ? "radial-gradient(120% 96% at 50% 32%, #000 42%, transparent 84%)"
-              : "radial-gradient(96% 86% at 50% 30%, #000 36%, transparent 68%)",
+              : "radial-gradient(100% 92% at 50% 30%, #000 30%, transparent 80%)",
             WebkitMaskImage: isMobile
               ? "radial-gradient(120% 96% at 50% 32%, #000 42%, transparent 84%)"
-              : "radial-gradient(96% 86% at 50% 30%, #000 36%, transparent 68%)",
+              : "radial-gradient(100% 92% at 50% 30%, #000 30%, transparent 80%)",
           }}
         >
           <div
