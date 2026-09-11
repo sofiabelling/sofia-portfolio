@@ -121,15 +121,15 @@ export default function Home() {
           style={{
             position: "absolute",
             zIndex: -3,
-            inset: isMobile ? "-56px -48px" : "-130px -160px",
+            inset: isMobile ? "-56px -48px" : "-70px -90px",
             pointerEvents: "none",
             overflow: "hidden",
             maskImage: isMobile
               ? "radial-gradient(120% 96% at 50% 32%, #000 42%, transparent 84%)"
-              : "radial-gradient(112% 100% at 50% 30%, #000 46%, transparent 82%)",
+              : "radial-gradient(96% 86% at 50% 30%, #000 36%, transparent 68%)",
             WebkitMaskImage: isMobile
               ? "radial-gradient(120% 96% at 50% 32%, #000 42%, transparent 84%)"
-              : "radial-gradient(112% 100% at 50% 30%, #000 46%, transparent 82%)",
+              : "radial-gradient(96% 86% at 50% 30%, #000 36%, transparent 68%)",
           }}
         >
           <div
@@ -139,7 +139,7 @@ export default function Home() {
               borderRadius: "50%",
               background: isMobile
                 ? "radial-gradient(circle at 24% 38%, rgba(255,86,198,.24), transparent 34%), radial-gradient(circle at 70% 30%, rgba(114,87,232,.24), transparent 36%), radial-gradient(circle at 58% 72%, rgba(83,220,237,.18), transparent 34%)"
-                : "radial-gradient(circle at 24% 36%, rgba(255,86,198,.20), transparent 30%), radial-gradient(circle at 72% 30%, rgba(114,87,232,.22), transparent 34%), radial-gradient(circle at 60% 72%, rgba(83,220,237,.16), transparent 32%)",
+                : "radial-gradient(circle at 24% 36%, rgba(255,86,198,.20), transparent 24%), radial-gradient(circle at 72% 30%, rgba(114,87,232,.22), transparent 27%), radial-gradient(circle at 60% 72%, rgba(83,220,237,.16), transparent 26%)",
               opacity: isMobile ? .72 : .76,
               animation: isMobile
                 ? "heroMobilePulse 6.4s ease-in-out infinite, heroHueShift 8.8s ease-in-out infinite"
