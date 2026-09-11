@@ -10,11 +10,6 @@ import countrySelect from "../imports/bepn_curated_assets/country-select.png"
 import connectedState from "../imports/bepn_curated_assets/connected-state.png"
 import disconnectedState from "../imports/bepn_curated_assets/disconnected-state.png"
 
-import wireframe1 from "../imports/bepn_curated_assets/wireframe-01.png"
-import wireframe2 from "../imports/bepn_curated_assets/wireframe-02.png"
-import wireframe3 from "../imports/bepn_curated_assets/wireframe-03.png"
-import wireframe4 from "../imports/bepn_curated_assets/wireframe-04.png"
-
 interface BepnProjectProps {
   project: any
 }
@@ -859,94 +854,7 @@ export default function BepnProject({
         </div>
       </section>
 
-      {/* 06 WIREFRAMES — very light */}
-      <section
-        style={{
-          padding: `${sectionY} ${side}`,
-          maxWidth: "1500px",
-          margin: "0 auto",
-        }}
-      >
-        <p
-          style={{
-            ...labelStyle,
-            marginBottom: "28px",
-          }}
-        >
-          06 — FROM FLOW TO INTERFACE
-        </p>
-
-        <div
-          style={{
-            ...grid(
-              ".8fr 1.2fr",
-              "90px"
-            ),
-            alignItems: "end",
-            marginBottom: "60px",
-          }}
-        >
-          <h2
-            style={{
-              ...headingStyle,
-              fontSize: isMobile
-                ? "clamp(46px, 13vw, 65px)"
-                : "clamp(56px, 6vw, 96px)",
-            }}
-          >
-            Keeping the
-            <br />
-            structure simple.
-          </h2>
-
-          <p
-            style={{
-              ...bodyStyle,
-              color: "rgba(0,0,0,.52)",
-              margin: 0,
-              maxWidth: "600px",
-            }}
-          >
-            The early flow focused on the few
-            actions users actually needed:
-            onboarding, choosing a country and
-            connecting.
-          </p>
-        </div>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: isMobile
-              ? "1fr 1fr"
-              : "repeat(4, 1fr)",
-            gap: "12px",
-          }}
-        >
-          {[wireframe1, wireframe2, wireframe3, wireframe4].map(
-            (img, i) => (
-              <div
-                key={i}
-                style={{
-                  background: "#111",
-                  padding: "20px",
-                }}
-              >
-                <img
-                  src={img}
-                  alt={`Bepn wireframe ${i + 1}`}
-                  style={{
-                    width: "100%",
-                    display: "block",
-                  }}
-                />
-              </div>
-            )
-          )}
-        </div>
-      </section>
-
-      {/* 07 OUTCOME */}
+      {/* 06 OUTCOME */}
       <section
         style={{
           background: DARK,
@@ -975,7 +883,7 @@ export default function BepnProject({
               marginBottom: "42px",
             }}
           >
-            07 — OUTCOME
+            06 — OUTCOME
           </p>
 
           <h2
