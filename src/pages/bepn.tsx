@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 
-const CYAN = "#55F1F3"
-const BLACK = "#090909"
-const OFF_WHITE = "#F6F6F2"
+const CYAN = "#00FFF0"
+const BLACK = "#191B25"
+const OFF_WHITE = "#FFFFFF"
 
 const images = {
   // Replace these paths with your exported BEPN images
@@ -163,9 +163,9 @@ export default function Bepn() {
             }}
           >
             BEPN reimagines the traditional VPN experience as a spatial
-            journey. Instead of navigating technical lists and settings,
-            users explore countries, connections and signals through a visual
-            digital landscape.
+            journey. The user becomes the astronaut, exploring a universe of
+            countries, connections and signals instead of navigating technical
+            lists and settings.
           </p>
         </div>
 
@@ -269,6 +269,25 @@ export default function Bepn() {
 
           <div
             style={{
+              display: "flex",
+              gap: "12px",
+              flexWrap: "wrap",
+              marginTop: "-48px",
+              marginBottom: "72px",
+              fontSize: "12px",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+            }}
+          >
+            <span>#FFFFFF</span>
+            <span style={{ opacity: 0.35 }}>·</span>
+            <span>#191B25</span>
+            <span style={{ opacity: 0.35 }}>·</span>
+            <span style={{ color: CYAN }}>#00FFF0</span>
+          </div>
+
+          <div
+            style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
               gap: "22px",
@@ -278,21 +297,21 @@ export default function Bepn() {
             <VisualCard
               eyebrow="Color"
               title="Cyan signals"
-              text="Bright cyan details create contrast against the dark interface and act as visual signals throughout the experience."
+              text="White, deep navy and electric cyan form the core palette, keeping the interface tied to the universe concept while making key actions easy to scan."
               image={images.palette}
             />
 
             <VisualCard
               eyebrow="Illustration"
               title="Space environments"
-              text="Isometric illustrations turn the VPN experience into a small exploratory world."
+              text="Isometric illustrations build the explorer narrative: the user is the astronaut moving through a universe of locations."
               image={images.illustration}
             />
 
             <VisualCard
               eyebrow="Icons"
               title="Light navigation"
-              text="Linear iconography keeps secondary controls quiet while maintaining the visual language."
+              text="Linear cyan icons keep navigation visually light, helping secondary actions stay quiet around the main connection control."
               image={images.icons}
             />
           </div>
@@ -333,9 +352,9 @@ export default function Bepn() {
               marginTop: "36px",
             }}
           >
-            Server selection becomes an explorable network. Countries behave
-            like points within a digital map rather than rows inside a
-            conventional menu.
+            Server selection becomes an explorable network of flags. Users
+            can move around the map, discover locations visually and keep the
+            experience closer to exploration than a conventional dropdown.
           </p>
 
           <div
@@ -433,8 +452,10 @@ export default function Bepn() {
                 marginTop: "34px",
               }}
             >
-              The primary connection control remains visually dominant while
-              the rest of the interface stays lightweight around it.
+              The primary connection control remains the strongest visual
+              element in the interface. Positioned at the bottom center, it
+              stays easy to reach while secondary navigation remains lighter
+              around it.
             </p>
 
             <div
@@ -448,11 +469,11 @@ export default function Bepn() {
                 letterSpacing: "0.08em",
               }}
             >
-              <span>START</span>
-              <span style={{ color: CYAN }}>→</span>
-              <span>CONNECTING</span>
-              <span style={{ color: CYAN }}>→</span>
-              <span>CONNECTED</span>
+              <span style={{ opacity: 0.55 }}>STOP</span>
+              <span style={{ color: CYAN }}>·</span>
+              <span style={{ color: CYAN }}>START</span>
+              <span style={{ color: CYAN }}>·</span>
+              <span style={{ opacity: 0.55 }}>STOP</span>
             </div>
           </div>
 
