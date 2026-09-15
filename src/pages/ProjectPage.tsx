@@ -15,9 +15,15 @@ import nix89 from "../imports/nix/page-89.jpg";
 import nix90 from "../imports/nix/page-90.jpg";
 import nix91 from "../imports/nix/page-91.jpg";
 import nix96 from "../imports/nix/page-96.jpg";
-import nix98 from "../imports/nix/page-98.jpg";
-import nix99 from "../imports/nix/page-99.jpg";
-import nix100 from "../imports/nix/page-100.jpg";
+import nixKids98 from "../imports/nix/kids testing/page_098_image_01_2086x2400.jpeg";
+import nixKids99a from "../imports/nix/kids testing/page_099_image_01_1763x2326.jpeg";
+import nixKids99b from "../imports/nix/kids testing/page_099_image_02_1508x2309.jpeg";
+import nixKids100a from "../imports/nix/kids testing/page_100_image_01_1594x2400.jpeg";
+import nixKids100b from "../imports/nix/kids testing/page_100_image_02_1519x2106.jpeg";
+import nixDepthBlob from "../imports/nix/leap motion and kinect test/page_077_image_02_340x299.jpeg";
+import nixLeapDevice from "../imports/nix/leap motion and kinect test/page_092_image_02_707x393.jpeg";
+import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_image_01_1323x1361.jpeg";
+import nixLeapTest2 from "../imports/nix/leap motion and kinect test/page_093_image_02_1335x1346.jpeg";
 
 
 import BepnProject from "../components/BepnProject";
@@ -178,6 +184,22 @@ function NixCaseStudy() {
           </div>
         </div>
 
+        <div className="nix-hardware-feature">
+          <div className="nix-processing-copy">
+            <p className="case-label">HARDWARE TESTS</p>
+            <h3>Kinect v2, chosen after testing the alternatives.</h3>
+            <p>
+              Before settling on Kinect v2, I tested a Leap Motion controller and plain webcam colour-tracking to see which best supported a child’s full-body shadow gesture in a dark room. Leap Motion read hand and finger detail well but expected the user close to the sensor on a desk — not how a child would stand to cast a shadow. Kinect v2’s depth data covered the whole body at a distance, which matched how NIX was actually meant to be used.
+            </p>
+          </div>
+          <div className="nix-hardware-images">
+            <img src={nixLeapDevice} alt="Leap Motion controller being tested with a child" />
+            <img src={nixLeapTest1} alt="Child testing hand-tracking on a laptop" />
+            <img src={nixLeapTest2} alt="Child testing a gesture-controlled scene" />
+            <img src={nixDepthBlob} alt="Kinect depth data isolating a hand shape" />
+          </div>
+        </div>
+
         <Divider />
 
         <section className="nix-two-col">
@@ -209,11 +231,14 @@ function NixCaseStudy() {
           </div>
         </section>
 
-        <div className="nix-prototype-grid">
-          <img src={nix98} alt="NIX prototype overview" />
-          <img src={nix99} alt="NIX prototype user test" />
-          <img src={nix100} alt="NIX prototype interaction" />
+        <div className="nix-kids-grid">
+          <img src={nixKids100b} alt="The NIX title screen projected in a dark room" />
+          <img src={nixKids98} alt="Child watching the NIX window scene" />
+          <img src={nixKids99a} alt="Child making a bird shadow gesture" />
+          <img src={nixKids99b} alt="Bird shadow responding to the child's gesture" />
+          <img src={nixKids100a} alt="Full storyworld projected during testing" />
         </div>
+        <p className="nix-caption">Testing the final chapter with children, in the dark room it was designed for.</p>
 
         <section className="nix-ending">
           <p className="case-label">OUTCOME</p>

@@ -273,10 +273,17 @@ body {
 .nix-processing-copy>p:last-child { color: #aaa; }
 .nix-processing-images { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .nix-processing-images img { width: 100%; display: block; }
+.nix-hardware-feature { background: #f4f4f1; margin-top: 48px; padding: 60px; display: grid; grid-template-columns: .7fr 1.3fr; gap: 60px; align-items: start; }
+.nix-hardware-feature .nix-processing-copy>p:last-child { color: #666; }
+.nix-hardware-images { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.nix-hardware-images img { width: 100%; height: 100%; object-fit: cover; display: block; background: #e4e4e0; }
 .nix-test-pair img { background: #efefed; }
 .nix-prototype-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 12px; margin-top: 70px; }
 .nix-prototype-grid img { width: 100%; display: block; }
 .nix-prototype-grid img:first-child { grid-row: span 2; height: 100%; object-fit: cover; }
+.nix-kids-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 70px; }
+.nix-kids-grid img { width: 100%; height: 100%; object-fit: cover; display: block; background: #efefed; }
+.nix-kids-grid img:first-child { grid-column: span 2; grid-row: span 2; }
 .nix-ending { margin-top: 120px; padding: 100px 0 20px; border-top: 1px solid #ddd; max-width: 850px; }
 .nix-ending h2 { font: 700 clamp(42px,6vw,76px)/1 'Bricolage Grotesque',sans-serif; letter-spacing: -.05em; margin-bottom: 32px; }
 .nix-ending>p { max-width: 650px; }
@@ -327,8 +334,12 @@ body {
   .nix-tech-card h3 { margin-top: 34px; }
   .nix-processing-feature { margin: 64px -24px 0; padding: 48px 24px; grid-template-columns: 1fr; gap: 38px; }
   .nix-processing-images { grid-template-columns: 1fr; }
+  .nix-hardware-feature { margin: 36px -24px 0; padding: 40px 24px; grid-template-columns: 1fr; gap: 28px; }
+  .nix-hardware-images { grid-template-columns: 1fr 1fr; }
   .nix-prototype-grid { grid-template-columns: 1fr; }
   .nix-prototype-grid img:first-child { grid-row: auto; height: auto; }
+  .nix-kids-grid { grid-template-columns: 1fr 1fr; margin-top: 48px; }
+  .nix-kids-grid img:first-child { grid-column: span 2; grid-row: auto; }
   .nix-ending { margin-top: 80px; padding-top: 72px; }
   .generic-back { top: 82px; left: 24px; }
   .generic-hero-copy { left: 24px; right: 24px; bottom: 38px; }
