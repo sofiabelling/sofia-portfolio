@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
 import nixHero from "../imports/nix/nix-hero.jpg";
 import nix57 from "../imports/nix/page-57.jpg";
+import nixRefPuppetry from "../imports/nix/references/page_044_image_01_3094x2391.png";
+import nixRefMuseum from "../imports/nix/references/page_060_image_01_1693x1664.jpeg";
+import nixRefBirdcage from "../imports/nix/references/page_061_image_01_780x900.png";
+import nixRefWings from "../imports/nix/references/page_062_image_01_780x802.png";
+import nixRefBook from "../imports/nix/references/page_064_image_02_434x461.jpeg";
 import nix65 from "../imports/nix/page-65.jpg";
 import nixProcBlob from "../imports/nix/Processing tests/page_077_image_01_939x709.jpeg";
 import nixProcDepth from "../imports/nix/Processing tests/page_077_image_02_340x299.jpeg";
@@ -109,7 +114,44 @@ function NixCaseStudy() {
 
         <section className="nix-two-col">
           <div>
-            <SectionLabel>03 — DESIGN PRINCIPLE</SectionLabel>
+            <SectionLabel>03 — REFERENCES</SectionLabel>
+            <h2>Shadow as play already had a history.</h2>
+          </div>
+          <div className="nix-body-copy">
+            <p>
+              Before designing NIX, I looked at how shadow and darkness have been used as material for play and storytelling elsewhere — from centuries-old shadow puppetry to interactive art installations and children’s books that turn a flashlight into an instrument of discovery rather than a way to check under the bed.
+            </p>
+          </div>
+        </section>
+
+        <div className="nix-reference-grid">
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefPuppetry} alt="Traditional shadow puppet theatre" /></div>
+            <figcaption>Traditional shadow puppet theatre — storytelling built entirely from light and silhouette.</figcaption>
+          </figure>
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefMuseum} alt="Children playing with an interactive shadow installation" /></div>
+            <figcaption>Interactive shadow installations that already turn projected silhouettes into play.</figcaption>
+          </figure>
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefBirdcage} alt="Shadow interaction releasing birds from a cage" /></div>
+            <figcaption>Shadow-augmented objects — a cage that releases birds, a plant that grows.</figcaption>
+          </figure>
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefWings} alt="Interactive shadow installation giving a person wings" /></div>
+            <figcaption>Gesture-driven shadow characters — wings and birds triggered by the body.</figcaption>
+          </figure>
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefBook} alt="Cover of Linterna Mágica by Lizi Boyd" /></div>
+            <figcaption><em>Linterna Mágica</em> (Lizi Boyd) — a children’s book that treats darkness as a place to explore, not fear.</figcaption>
+          </figure>
+        </div>
+
+        <Divider />
+
+        <section className="nix-two-col">
+          <div>
+            <SectionLabel>04 — DESIGN PRINCIPLE</SectionLabel>
             <h2>Use the thing that creates the fear as the material for play.</h2>
           </div>
           <div className="nix-body-copy">
@@ -130,7 +172,7 @@ function NixCaseStudy() {
         <Divider />
 
         <section>
-          <SectionLabel>04 — INTERACTION</SectionLabel>
+          <SectionLabel>05 — INTERACTION</SectionLabel>
           <div className="nix-section-heading-row">
             <h2 className="nix-display">The child becomes part of the projected world.</h2>
             <p>
@@ -147,7 +189,7 @@ function NixCaseStudy() {
         <Divider />
 
         <section className="nix-tech-section">
-          <SectionLabel>05 — TECHNOLOGY</SectionLabel>
+          <SectionLabel>06 — TECHNOLOGY</SectionLabel>
           <h2 className="nix-display">A physical interface built with Kinect + Processing.</h2>
           <div className="nix-tech-grid">
             <div className="nix-tech-card">
@@ -195,7 +237,7 @@ function NixCaseStudy() {
 
         <section className="nix-two-col">
           <div>
-            <SectionLabel>06 — TESTING & ITERATION</SectionLabel>
+            <SectionLabel>07 — TESTING & ITERATION</SectionLabel>
             <h2>Testing the body, the technology and the darkness itself.</h2>
           </div>
           <div className="nix-body-copy">
@@ -213,7 +255,7 @@ function NixCaseStudy() {
         <Divider />
 
         <section>
-          <SectionLabel>07 — PROTOTYPE</SectionLabel>
+          <SectionLabel>08 — PROTOTYPE</SectionLabel>
           <div className="nix-section-heading-row">
             <h2 className="nix-display">A first working chapter, tested in the environment it was designed for.</h2>
             <p>
