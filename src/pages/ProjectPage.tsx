@@ -8,11 +8,9 @@ import nixRefMuseum from "../imports/nix/references/page_060_image_01_1693x1664.
 import nixRefBirdcage from "../imports/nix/references/page_061_image_01_780x900.png";
 import nixRefWings from "../imports/nix/references/page_062_image_01_780x802.png";
 import nixRefBook from "../imports/nix/references/page_064_image_02_434x461.jpeg";
-import nix65 from "../imports/nix/page-65.jpg";
 import nixProcBlob from "../imports/nix/Processing tests/page_077_image_01_939x709.jpeg";
 import nixProcDepth from "../imports/nix/Processing tests/page_077_image_02_340x299.jpeg";
 import nix82 from "../imports/nix/page-82.jpg";
-import nix83 from "../imports/nix/page-83.jpg";
 import nixStoryboard from "../imports/nix/storyboard.png";
 import nix96 from "../imports/nix/page-96.jpg";
 import nixKids98 from "../imports/nix/kids testing/page_098_image_01_2086x2400.jpeg";
@@ -149,30 +147,8 @@ function NixCaseStudy() {
 
         <Divider />
 
-        <section className="nix-two-col">
-          <div>
-            <SectionLabel>04 — DESIGN PRINCIPLE</SectionLabel>
-            <h2>Use the thing that creates the fear as the material for play.</h2>
-          </div>
-          <div className="nix-body-copy">
-            <p>
-              Shadows became the core interaction material. They belong naturally to darkness, require no conventional controller, and invite children to experiment with their hands, bodies and imagination.
-            </p>
-            <p>
-              Instead of asking a child to watch a story, NIX makes them participate in it. Their body completes scenes, activates characters and changes what happens next.
-            </p>
-          </div>
-        </section>
-
-        <div className="nix-image-pair">
-          <figure><img src={nix65} alt="Hand-shadow research from NIX thesis" /><figcaption>Shadow language and hand-form references.</figcaption></figure>
-          <figure><img src={nix83} alt="Child testing hand shadows" /><figcaption>User testing of shadow gestures.</figcaption></figure>
-        </div>
-
-        <Divider />
-
         <section>
-          <SectionLabel>05 — INTERACTION</SectionLabel>
+          <SectionLabel>04 — INTERACTION</SectionLabel>
           <div className="nix-section-heading-row">
             <h2 className="nix-display">The child becomes part of the projected world.</h2>
             <p>
@@ -189,7 +165,7 @@ function NixCaseStudy() {
         <Divider />
 
         <section className="nix-tech-section">
-          <SectionLabel>06 — TECHNOLOGY</SectionLabel>
+          <SectionLabel>05 — TECHNOLOGY</SectionLabel>
           <h2 className="nix-display">A physical interface built with Kinect + Processing.</h2>
           <div className="nix-tech-grid">
             <div className="nix-tech-card">
@@ -237,7 +213,7 @@ function NixCaseStudy() {
 
         <section className="nix-two-col">
           <div>
-            <SectionLabel>07 — TESTING & ITERATION</SectionLabel>
+            <SectionLabel>06 — TESTING & ITERATION</SectionLabel>
             <h2>Testing the body, the technology and the darkness itself.</h2>
           </div>
           <div className="nix-body-copy">
@@ -255,7 +231,7 @@ function NixCaseStudy() {
         <Divider />
 
         <section>
-          <SectionLabel>08 — PROTOTYPE</SectionLabel>
+          <SectionLabel>07 — PROTOTYPE</SectionLabel>
           <div className="nix-section-heading-row">
             <h2 className="nix-display">A first working chapter, tested in the environment it was designed for.</h2>
             <p>
