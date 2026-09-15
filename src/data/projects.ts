@@ -1,4 +1,4 @@
-import nixHero from "../imports/nix/nix-hero.jpg";
+import nixHero from "../imports/nix/nix-hero.png";
 import bepnHero from "../imports/bepn_curated_assets/country-explorer.png";
 import copecCaseHero from "../imports/copec_case.png";
 import copecThumbnail from "../imports/copec/copec-hero.png";

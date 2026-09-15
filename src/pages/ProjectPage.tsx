@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
-import nixHero from "../imports/nix/nix-hero.jpg";
+import nixHero from "../imports/nix/nix-hero.png";
 import nix57 from "../imports/nix/page-57.jpg";
 import nixRefPuppetry from "../imports/nix/references/page_044_image_01_3094x2391.png";
 import nixRefMuseum from "../imports/nix/references/page_060_image_01_1693x1664.jpeg";
