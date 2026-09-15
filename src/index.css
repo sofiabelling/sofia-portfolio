@@ -277,6 +277,8 @@ body {
 .nix-hardware-feature .nix-processing-copy>p:last-child { color: #666; }
 .nix-hardware-images { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .nix-hardware-images img { width: 100%; height: 100%; object-fit: cover; display: block; background: #e4e4e0; }
+.nix-hardware-images-three { grid-template-columns: repeat(3,1fr); }
+.nix-hardware-images-three img { aspect-ratio: 3/4; }
 .nix-test-pair img { background: #efefed; }
 .nix-prototype-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 12px; margin-top: 70px; }
 .nix-prototype-grid img { width: 100%; display: block; }
@@ -336,6 +338,8 @@ body {
   .nix-processing-images { grid-template-columns: 1fr; }
   .nix-hardware-feature { margin: 36px -24px 0; padding: 40px 24px; grid-template-columns: 1fr; gap: 28px; }
   .nix-hardware-images { grid-template-columns: 1fr 1fr; }
+  .nix-hardware-images-three { grid-template-columns: 1fr 1fr; }
+  .nix-hardware-images-three img:last-child { grid-column: span 2; aspect-ratio: 16/9; }
   .nix-prototype-grid { grid-template-columns: 1fr; }
   .nix-prototype-grid img:first-child { grid-row: auto; height: auto; }
   .nix-kids-grid { grid-template-columns: 1fr 1fr; margin-top: 48px; }

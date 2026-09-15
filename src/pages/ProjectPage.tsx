@@ -4,8 +4,8 @@ import { projects } from "../data/projects";
 import nixHero from "../imports/nix/nix-hero.jpg";
 import nix57 from "../imports/nix/page-57.jpg";
 import nix65 from "../imports/nix/page-65.jpg";
-import nix76 from "../imports/nix/page-76.jpg";
-import nix77 from "../imports/nix/page-77.jpg";
+import nixProcBlob from "../imports/nix/Processing tests/page_077_image_01_939x709.jpeg";
+import nixProcDepth from "../imports/nix/Processing tests/page_077_image_02_340x299.jpeg";
 import nix82 from "../imports/nix/page-82.jpg";
 import nix83 from "../imports/nix/page-83.jpg";
 import nixStoryboard from "../imports/nix/storyboard.png";
@@ -15,7 +15,6 @@ import nixKids99a from "../imports/nix/kids testing/page_099_image_01_1763x2326.
 import nixKids99b from "../imports/nix/kids testing/page_099_image_02_1508x2309.jpeg";
 import nixKids100a from "../imports/nix/kids testing/page_100_image_01_1594x2400.jpeg";
 import nixKids100b from "../imports/nix/kids testing/page_100_image_02_1519x2106.jpeg";
-import nixDepthBlob from "../imports/nix/leap motion and kinect test/page_077_image_02_340x299.jpeg";
 import nixLeapDevice from "../imports/nix/leap motion and kinect test/page_092_image_02_707x393.jpeg";
 import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_image_01_1323x1361.jpeg";
 import nixLeapTest2 from "../imports/nix/leap motion and kinect test/page_093_image_02_1335x1346.jpeg";
@@ -172,8 +171,8 @@ function NixCaseStudy() {
             </p>
           </div>
           <div className="nix-processing-images">
-            <img src={nix76} alt="Processing depth threshold test" />
-            <img src={nix77} alt="Processing blob tracking test" />
+            <img src={nixProcDepth} alt="Processing depth data isolating a hand shape" />
+            <img src={nixProcBlob} alt="Processing blob tracking test" />
           </div>
         </div>
 
@@ -185,11 +184,10 @@ function NixCaseStudy() {
               Before settling on Kinect v2, I tested a Leap Motion controller and plain webcam colour-tracking to see which best supported a child’s full-body shadow gesture in a dark room. Leap Motion read hand and finger detail well but expected the user close to the sensor on a desk — not how a child would stand to cast a shadow. Kinect v2’s depth data covered the whole body at a distance, which matched how NIX was actually meant to be used.
             </p>
           </div>
-          <div className="nix-hardware-images">
+          <div className="nix-hardware-images nix-hardware-images-three">
             <img src={nixLeapDevice} alt="Leap Motion controller being tested with a child" />
             <img src={nixLeapTest1} alt="Child testing hand-tracking on a laptop" />
             <img src={nixLeapTest2} alt="Child testing a gesture-controlled scene" />
-            <img src={nixDepthBlob} alt="Kinect depth data isolating a hand shape" />
           </div>
         </div>
 
