@@ -38,6 +38,11 @@ function NixCaseStudy() {
   const quoteRef = useRef<HTMLElement | null>(null);
 
   const handleQuoteMove = (event: React.PointerEvent<HTMLElement>) => {
+    // Touch "moves" are usually scroll gestures, not deliberate hovering --
+    // following them would make the spotlight jump around while someone
+    // just scrolls past. Keep the interactive follow to mouse/pen and let
+    // touch devices show the ambient drift on its own.
+    if (event.pointerType === "touch") return;
     const el = quoteRef.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -120,7 +125,6 @@ function NixCaseStudy() {
           className="nix-quote-block"
           ref={quoteRef as React.RefObject<HTMLElement>}
           onPointerMove={handleQuoteMove}
-          onPointerDown={handleQuoteMove}
           onPointerLeave={handleQuoteLeave}
         >
           <div className="nix-quote-spotlight" aria-hidden="true" />
