@@ -8,12 +8,7 @@ import nix76 from "../imports/nix/page-76.jpg";
 import nix77 from "../imports/nix/page-77.jpg";
 import nix82 from "../imports/nix/page-82.jpg";
 import nix83 from "../imports/nix/page-83.jpg";
-import nix86 from "../imports/nix/page-86.jpg";
-import nix87 from "../imports/nix/page-87.jpg";
-import nix88 from "../imports/nix/page-88.jpg";
-import nix89 from "../imports/nix/page-89.jpg";
-import nix90 from "../imports/nix/page-90.jpg";
-import nix91 from "../imports/nix/page-91.jpg";
+import nixStoryboard from "../imports/nix/storyboard.png";
 import nix96 from "../imports/nix/page-96.jpg";
 import nixKids98 from "../imports/nix/kids testing/page_098_image_01_2086x2400.jpeg";
 import nixKids99a from "../imports/nix/kids testing/page_099_image_01_1763x2326.jpeg";
@@ -145,11 +140,9 @@ function NixCaseStudy() {
           </div>
         </section>
 
-        <div className="nix-story-grid">
-          {[nix86, nix87, nix88, nix89, nix90, nix91].map((image, index) => (
-            <img key={image} src={image} alt={`NIX storyboard sequence ${index + 1}`} />
-          ))}
-        </div>
+        <figure className="nix-storyboard-figure">
+          <img src={nixStoryboard} alt="NIX full storyboard sequence" />
+        </figure>
         <p className="nix-caption">Storyboard and interaction sequence for the first chapter.</p>
 
         <Divider />

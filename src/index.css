@@ -260,8 +260,8 @@ body {
 .nix-image-pair img { width: 100%; display: block; }
 .nix-section-heading-row { display: grid; grid-template-columns: 1.3fr .7fr; gap: 90px; align-items: end; }
 .nix-section-heading-row>p { padding-bottom: 6px; }
-.nix-story-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 70px; background: #efefed; padding: 12px; }
-.nix-story-grid img { width: 100%; display: block; }
+.nix-storyboard-figure { margin-top: 70px; background: #efefed; padding: 12px; }
+.nix-storyboard-figure img { width: 100%; display: block; }
 .nix-caption { margin-left: 12px; }
 .nix-tech-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 64px; }
 .nix-tech-card { background: #f4f4f1; padding: 32px; min-height: 250px; }
@@ -328,7 +328,7 @@ body {
   .nix-wide-figure { margin-top: 52px; }
   .nix-quote-block { margin: 76px -24px 0; padding: 78px 24px; }
   .nix-image-pair { grid-template-columns: 1fr; gap: 44px; margin-top: 48px; }
-  .nix-story-grid { grid-template-columns: 1fr 1fr; margin: 48px -12px 0; padding: 8px; gap: 8px; }
+  .nix-storyboard-figure { margin: 48px -12px 0; padding: 8px; }
   .nix-tech-grid { grid-template-columns: 1fr; margin-top: 46px; }
   .nix-tech-card { min-height: 0; padding: 26px; }
   .nix-tech-card h3 { margin-top: 34px; }
