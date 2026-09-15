@@ -253,9 +253,37 @@ body {
 .nix-wide-figure { margin: 80px 0 0; }
 .nix-wide-figure img { width: 100%; display: block; background: #f1f1ef; }
 .nix-wide-figure figcaption,.nix-image-pair figcaption,.nix-caption { font-size: 10px; color: #909090; margin-top: 10px; }
-.nix-quote-block { background: #130a22; color: #fff; margin: 110px calc((1180px - 100vw)/2) 0; padding: 120px max(60px,calc((100vw - 1180px)/2)); text-align: center; }
-.nix-quote { font: 700 clamp(36px,6vw,82px)/1 'Bricolage Grotesque',sans-serif; letter-spacing: -.05em; }
-.nix-quote-block span { display: block; font: italic 700 clamp(25px,3vw,42px) 'Playfair Display',serif; margin: 22px 0; color: #777; }
+.nix-quote-block { position: relative; overflow: hidden; isolation: isolate; background: #130a22; color: #fff; margin: 110px calc((1180px - 100vw)/2) 0; padding: 120px max(60px,calc((100vw - 1180px)/2)); text-align: center; cursor: default; }
+.nix-quote { position: relative; z-index: 1; font: 700 clamp(36px,6vw,82px)/1 'Bricolage Grotesque',sans-serif; letter-spacing: -.05em; transition: color .4s ease, text-shadow .4s ease; }
+.nix-quote-block span { position: relative; z-index: 1; display: block; font: italic 700 clamp(25px,3vw,42px) 'Playfair Display',serif; margin: 22px 0; color: #777; transition: color .4s ease; }
+
+@property --mx { syntax: '<percentage>'; inherits: false; initial-value: 30%; }
+@property --my { syntax: '<percentage>'; inherits: false; initial-value: 35%; }
+
+@keyframes nixQuoteDrift {
+  0%   { --mx: 18%; --my: 28%; }
+  25%  { --mx: 78%; --my: 22%; }
+  50%  { --mx: 68%; --my: 78%; }
+  75%  { --mx: 24%; --my: 72%; }
+  100% { --mx: 18%; --my: 28%; }
+}
+
+.nix-quote-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--mx) var(--my), rgba(255,246,220,.55) 0%, rgba(255,236,190,.16) 32%, transparent 62%);
+  opacity: .5;
+  animation: nixQuoteDrift 16s ease-in-out infinite;
+}
+.nix-quote-block.is-lit .nix-quote-spotlight { animation: none; opacity: 1; }
+.nix-quote-block.is-lit .nix-quote { text-shadow: 0 0 28px rgba(255,244,214,.65); }
+.nix-quote-block.is-lit span { color: #b9a8d6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nix-quote-spotlight { animation: none; opacity: .3; }
+}
 .nix-image-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 70px; }
 .nix-image-pair img { width: 100%; display: block; }
 .nix-reference-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px 24px; margin-top: 64px; }

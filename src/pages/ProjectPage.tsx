@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects";
 import nixHero from "../imports/nix/nix-hero.png";
 import nix57 from "../imports/nix/page-57.jpg";
@@ -35,6 +35,22 @@ function Divider() {
 
 function NixCaseStudy() {
   const navigate = useNavigate();
+  const quoteRef = useRef<HTMLElement | null>(null);
+
+  const handleQuoteMove = (event: React.PointerEvent<HTMLElement>) => {
+    const el = quoteRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    el.style.setProperty("--mx", `${x}%`);
+    el.style.setProperty("--my", `${y}%`);
+    el.classList.add("is-lit");
+  };
+
+  const handleQuoteLeave = () => {
+    quoteRef.current?.classList.remove("is-lit");
+  };
 
   return (
     <main className="nix-case">
@@ -100,7 +116,14 @@ function NixCaseStudy() {
           <figcaption>Early observation and testing with the target audience.</figcaption>
         </figure>
 
-        <section className="nix-quote-block">
+        <section
+          className="nix-quote-block"
+          ref={quoteRef as React.RefObject<HTMLElement>}
+          onPointerMove={handleQuoteMove}
+          onPointerDown={handleQuoteMove}
+          onPointerLeave={handleQuoteLeave}
+        >
+          <div className="nix-quote-spotlight" aria-hidden="true" />
           <p className="nix-quote">DARKNESS = FEAR</p>
           <span>becomes</span>
           <p className="nix-quote">DARKNESS = PLAY = CURIOSITY</p>
