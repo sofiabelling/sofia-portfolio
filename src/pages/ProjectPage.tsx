@@ -10,9 +10,7 @@ import nixRefWings from "../imports/nix/references/page_062_image_01_780x802.png
 import nixRefBook from "../imports/nix/references/page_064_image_02_434x461.jpeg";
 import nixProcBlob from "../imports/nix/Processing tests/page_077_image_01_939x709.jpeg";
 import nixProcDepth from "../imports/nix/Processing tests/page_077_image_02_340x299.jpeg";
-import nix82 from "../imports/nix/page-82.jpg";
 import nixStoryboard from "../imports/nix/storyboard.png";
-import nix96 from "../imports/nix/page-96.jpg";
 import nixKids98 from "../imports/nix/kids testing/page_098_image_01_2086x2400.jpeg";
 import nixKids99a from "../imports/nix/kids testing/page_099_image_01_1763x2326.jpeg";
 import nixKids99b from "../imports/nix/kids testing/page_099_image_02_1508x2309.jpeg";
@@ -211,29 +209,13 @@ function NixCaseStudy() {
 
         <Divider />
 
-        <section className="nix-two-col">
-          <div>
-            <SectionLabel>06 — TESTING & ITERATION</SectionLabel>
-            <h2>Testing the body, the technology and the darkness itself.</h2>
-          </div>
-          <div className="nix-body-copy">
+        <section>
+          <SectionLabel>06 — TESTING & PROTOTYPE</SectionLabel>
+          <div className="nix-section-heading-row">
+            <h2 className="nix-display">A first working chapter, tested in the environment it was designed for.</h2>
             <p>
               I tested hand-shadow difficulty with children, compared alternative tracking hardware, and experimented with projection backgrounds. A dark grey background gave the strongest result: it preserved the feeling of darkness while keeping the projected silhouettes legible and shadow-like.
             </p>
-          </div>
-        </section>
-
-        <div className="nix-image-pair nix-test-pair">
-          <figure><img src={nix82} alt="NIX shadow gesture user testing" /><figcaption>Gesture testing with children aged 4–6.</figcaption></figure>
-          <figure><img src={nix96} alt="NIX projection background tests" /><figcaption>Projection and background-colour experiments.</figcaption></figure>
-        </div>
-
-        <Divider />
-
-        <section>
-          <SectionLabel>07 — PROTOTYPE</SectionLabel>
-          <div className="nix-section-heading-row">
-            <h2 className="nix-display">A first working chapter, tested in the environment it was designed for.</h2>
             <p>
               The final thesis prototype brought the research, story, sound, shadows and tracking together in a single interactive chapter. The experience was designed to take place inside a child’s room, where the same darkness that usually creates anxiety becomes the condition that makes the interaction possible.
             </p>
