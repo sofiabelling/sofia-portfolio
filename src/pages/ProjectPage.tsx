@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router";
 import { useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects";
 import nixHero from "../imports/nix/nix-hero.png";
+import toolsNix from "../imports/nix/tools-nix.png";
 import nix57 from "../imports/nix/page-57.jpg";
 import nixRefPuppetry from "../imports/nix/references/page_044_image_01_3094x2391.png";
 import nixRefMuseum from "../imports/nix/references/page_060_image_01_1693x1664.jpeg";
@@ -11,7 +12,7 @@ import nixRefBook from "../imports/nix/references/page_064_image_02_434x461.jpeg
 import nixProcBlob from "../imports/nix/Processing tests/page_077_image_01_939x709.jpeg";
 import nixProcDepth from "../imports/nix/Processing tests/page_077_image_02_340x299.jpeg";
 import nixStoryboard from "../imports/nix/storyboard.png";
-import nixKidsBird1 from "../imports/nix/kids testing/proyector3.jpeg";
+import nixKidsBird1 from "../imports/nix/kids testing/proyector2.jpeg";
 import nixKidsBird2 from "../imports/nix/kids testing/proyector4.jpeg";
 import nixLeapDevice from "../imports/nix/leap motion and kinect test/page_092_image_02_707x393.jpeg";
 import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_image_01_1323x1361.jpeg";
@@ -91,9 +92,12 @@ function NixCaseStudy() {
 
         <section className="nix-meta-grid">
           <div><span>ROLE</span><strong>Research · Interaction · Visual Design · Prototyping</strong></div>
-          <div><span>TOOLS</span><strong>Processing · Kinect v2 · After Effects · Projection</strong></div>
           <div><span>CONTEXT</span><strong>Universidad del Desarrollo · Santiago, Chile</strong></div>
           <div><span>AUDIENCE</span><strong>Children aged 4–7</strong></div>
+          <div className="nix-meta-tools">
+            <span>TOOLS</span>
+            <img src={toolsNix} alt="Kinect, Processing, After Effects, Photoshop, Projector" />
+          </div>
         </section>
 
         <Divider />
