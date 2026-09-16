@@ -14,6 +14,7 @@ import nixProcDepth from "../imports/nix/Processing tests/page_077_image_02_340x
 import nixStoryboard from "../imports/nix/storyboard.png";
 import nixKidsBird1 from "../imports/nix/kids testing/proyector2.jpeg";
 import nixKidsBird2 from "../imports/nix/kids testing/proyector4.jpeg";
+import nixHandsTest from "../imports/nix/manosprueba1.MOV";
 import nixLeapDevice from "../imports/nix/leap motion and kinect test/page_092_image_02_707x393.jpeg";
 import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_image_01_1323x1361.jpeg";
 import nixLeapTest2 from "../imports/nix/leap motion and kinect test/page_093_image_02_1335x1346.jpeg";
@@ -255,6 +256,11 @@ function NixCaseStudy() {
           <img src={nixKidsBird2} alt="Bird shadow responding to the child's gesture" />
         </div>
         <p className="nix-caption">Testing the final chapter with children, in the dark room it was designed for.</p>
+
+        <figure className="nix-testing-video">
+          <video src={nixHandsTest} autoPlay muted loop playsInline />
+          <figcaption>Hand-gesture testing during prototype development.</figcaption>
+        </figure>
 
         <section className="nix-ending">
           <p className="case-label">OUTCOME</p>

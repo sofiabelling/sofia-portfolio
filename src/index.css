@@ -319,6 +319,8 @@ body {
 .nix-prototype-grid img:first-child { grid-row: span 2; height: 100%; object-fit: cover; }
 .nix-kids-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 70px; }
 .nix-kids-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: #efefed; }
+.nix-testing-video { width: min(380px,60vw); margin: 56px auto 0; text-align: center; }
+.nix-testing-video video { display: block; width: 100%; border-radius: 4px; background: #111; }
 .nix-ending { margin-top: 120px; padding: 100px 0 20px; border-top: 1px solid #ddd; max-width: 850px; }
 .nix-ending h2 { font: 700 clamp(42px,6vw,76px)/1 'Bricolage Grotesque',sans-serif; letter-spacing: -.05em; margin-bottom: 32px; }
 .nix-ending>p { max-width: 650px; }
