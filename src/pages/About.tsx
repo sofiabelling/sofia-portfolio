@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import portrait from "../imports/IMG_5673.jpg";
 
-const NAV = "#1A1940";
-const VIOLET = "#7257E8";
-const BG = "#fbfbf8";
-const TEXT = "#777A97";
+const NAV = "var(--text)";
+const VIOLET = "var(--accent)";
+const BG = "var(--bg)";
+const TEXT = "var(--text-muted)";
 
 const experience = [
   {
@@ -234,7 +234,7 @@ export default function About() {
                   aspectRatio: "3 / 4",
                   overflow: "hidden",
                   borderRadius: isMobile ? "22px" : "30px",
-                  background: "#ECEAF4",
+                  background: "var(--surface-alt-2)",
                   boxShadow: "0 26px 70px rgba(60,45,130,.10)",
                 }}
               >
