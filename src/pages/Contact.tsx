@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
-const NAV = "#1a1940"
-const VIOLET = "#7257E8"
+const NAV = "var(--text)"
+const VIOLET = "var(--accent)"
 
 function BarcelonaTime() {
   const [time, setTime] = useState("")
@@ -33,7 +33,7 @@ function BarcelonaTime() {
   }, [])
 
   return (
-    <p className="mono-label" style={{ margin: 0, color: "rgba(80,64,160,0.4)" }}>
+    <p className="mono-label" style={{ margin: 0, color: "rgba(var(--muted-violet-rgb),0.4)" }}>
       Barcelona — {date} · {time}
     </p>
   )
@@ -79,7 +79,7 @@ export default function Contact() {
   return (
     <div
       style={{
-        background: "#f7f8f4",
+        background: "var(--bg)",
         minHeight: "100vh",
         position: "relative",
         overflow: "hidden",
@@ -134,16 +134,16 @@ export default function Contact() {
               fontFamily: "'Inter', sans-serif",
               fontSize: "16px",
               lineHeight: 1.6,
-              color: "rgba(80,64,160,0.55)",
+              color: "rgba(var(--muted-violet-rgb),0.55)",
             }}
           >
             Or email directly:{" "}
             <a
               href="mailto:hello@sofiadsgn.com"
               style={{
-                color: "#5040a0",
+                color: "var(--accent)",
                 textDecoration: "none",
-                borderBottom: "1px solid rgba(80,64,160,0.3)",
+                borderBottom: "1px solid rgba(var(--muted-violet-rgb),0.3)",
               }}
             >
               hello@sofiadsgn.com
@@ -177,7 +177,7 @@ export default function Contact() {
                 style={{
                   fontFamily: "'Inter', sans-serif",
                   fontSize: "15px",
-                  color: "rgba(80,64,160,0.55)",
+                  color: "rgba(var(--muted-violet-rgb),0.55)",
                 }}
               >
                 Thanks {form.name.split(" ")[0] || ""}! I&rsquo;ll be in touch soon.
@@ -189,7 +189,7 @@ export default function Contact() {
               style={{ display: "flex", flexDirection: "column", gap: "30px" }}
             >
               <div style={fieldWrap}>
-                <label className="mono-label" style={{ color: "rgba(80,64,160,0.5)" }}>
+                <label className="mono-label" style={{ color: "rgba(var(--muted-violet-rgb),0.5)" }}>
                   Name
                 </label>
                 <input
@@ -203,7 +203,7 @@ export default function Contact() {
               </div>
 
               <div style={fieldWrap}>
-                <label className="mono-label" style={{ color: "rgba(80,64,160,0.5)" }}>
+                <label className="mono-label" style={{ color: "rgba(var(--muted-violet-rgb),0.5)" }}>
                   Email
                 </label>
                 <input
@@ -217,7 +217,7 @@ export default function Contact() {
               </div>
 
               <div style={fieldWrap}>
-                <label className="mono-label" style={{ color: "rgba(80,64,160,0.5)" }}>
+                <label className="mono-label" style={{ color: "rgba(var(--muted-violet-rgb),0.5)" }}>
                   Message
                 </label>
                 <textarea

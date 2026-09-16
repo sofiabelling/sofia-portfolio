@@ -14,6 +14,7 @@
   --card-border: #e4e0f4;
   --card-border-active: #d9d3f2;
   --card-border-hover: #d5cef1;
+  --muted-violet-rgb: 80,64,160;
 }
 
 [data-theme="dark"] {
@@ -29,6 +30,7 @@
   --card-border: rgba(255,255,255,0.10);
   --card-border-active: rgba(255,255,255,0.18);
   --card-border-hover: rgba(255,255,255,0.22);
+  --muted-violet-rgb: 196,188,235;
 }
 
 html, body, #root {
