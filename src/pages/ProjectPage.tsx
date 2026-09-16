@@ -193,33 +193,17 @@ function NixCaseStudy() {
             </p>
           </div>
 
-          <div className="nix-hardware-feature">
-            <div className="nix-processing-copy">
-              <p className="case-label">HARDWARE TESTS</p>
-              <h3>Kinect v2, chosen after testing the alternatives.</h3>
-              <p>
-                I tested a Leap Motion controller and webcam colour-tracking before settling on Kinect v2. Leap Motion read hand detail well, but only at desk range; Kinect v2’s depth sensing covered a child’s whole body at the distance NIX actually needed.
-              </p>
-            </div>
-            <div className="nix-hardware-images">
-              <img src={nixLeapDevice} alt="Leap Motion controller being tested with a child" />
-              <img src={nixLeapTest1} alt="Child testing hand-tracking on a laptop" />
-            </div>
+          <div className="nix-hardware-images">
+            <img src={nixLeapDevice} alt="Leap Motion controller being tested with a child" />
+            <img src={nixLeapTest1} alt="Child testing hand-tracking on a laptop" />
           </div>
+          <p className="nix-caption">Hardware tests: Leap Motion vs. Kinect v2 for tracking a full body at a distance.</p>
 
-          <div className="nix-processing-feature">
-            <div className="nix-processing-copy">
-              <p className="case-label">PROCESSING TESTS</p>
-              <h3>Turning depth information into an interaction.</h3>
-              <p>
-                I created a depth-data matrix as a 3D point cloud, then adjusted minimum and maximum thresholds to isolate a specific set of pixels. Blob tracking made the gesture recognition more precise: if the child’s hand shape was not correct, the next animation would not trigger.
-              </p>
-            </div>
-            <div className="nix-processing-images">
-              <img src={nixProcDepth} alt="Processing depth data isolating a hand shape" />
-              <img src={nixProcBlob} alt="Processing blob tracking test" />
-            </div>
+          <div className="nix-processing-images">
+            <img src={nixProcDepth} alt="Processing depth data isolating a hand shape" />
+            <img src={nixProcBlob} alt="Processing blob tracking test" />
           </div>
+          <p className="nix-caption">Processing tests: isolating hand shapes and tracking blob positions in the depth data.</p>
         </section>
 
         <Divider />
