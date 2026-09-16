@@ -13,7 +13,7 @@ export default function Root() {
   }, [pathname]);
 
   return (
-    <div style={{ background: "#f7f8f4", minHeight: "100vh", color: "#171717" }}>
+    <div style={{ background: "var(--bg)", minHeight: "100vh", color: "var(--text)" }}>
       <Nav />
       <Outlet />
     </div>

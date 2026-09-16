@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { projects } from "../data/projects";
 
-const BG = "#fbfbf8";
-const NAV = "#1A1940";
-const VIOLET = "#7257E8";
-const TEXT = "#7F819D";
-const SOFT = "#AAA4DE";
+const BG = "var(--bg)";
+const NAV = "var(--text)";
+const VIOLET = "var(--accent)";
+const TEXT = "var(--text-muted)";
+const SOFT = "var(--text-muted)";
 
 const FEATURED_ORDER = ["copec", "nix", "bepn", "dashboard", "joel-sartore"];
 
@@ -360,7 +360,7 @@ function ProjectChapter({
           position: "relative",
           height: `${mobileHeight}px`,
           overflow: "hidden",
-          border: `1px solid ${isActive ? "#D9D3F2" : "#E4E0F4"}`,
+          border: `1px solid ${isActive ? "var(--card-border-active)" : "var(--card-border)"}`,
           borderRadius: "12px",
           background: BG,
           cursor: "pointer",
@@ -510,7 +510,7 @@ function ProjectChapter({
         position: "relative",
         height: "260px",
         overflow: "hidden",
-        border: `1px solid ${hovered ? "#D5CEF1" : "#E4E0F4"}`,
+        border: `1px solid ${hovered ? "var(--card-border-hover)" : "var(--card-border)"}`,
         borderRadius: "12px",
         background: project.bg,
         cursor: isActive ? "default" : "pointer",

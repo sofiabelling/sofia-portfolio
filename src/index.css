@@ -1,6 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800;12..96,900&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import 'tailwindcss';
 
+:root {
+  --bg: #f7f8f4;
+  --surface: #ffffff;
+  --surface-alt: #f4f4f1;
+  --surface-alt-2: #eef0f8;
+  --text: #1a1940;
+  --text-muted: #6b6f85;
+  --border: rgba(26,25,64,0.12);
+  --accent: #7257e8;
+  --accent-soft: #c9beff;
+  --card-border: #e4e0f4;
+  --card-border-active: #d9d3f2;
+  --card-border-hover: #d5cef1;
+}
+
+[data-theme="dark"] {
+  --bg: #0c0c13;
+  --surface: #16161f;
+  --surface-alt: #1c1c27;
+  --surface-alt-2: #1a1a2a;
+  --text: #f1f0f7;
+  --text-muted: #9d9db3;
+  --border: rgba(255,255,255,0.12);
+  --accent: #8f7cf0;
+  --accent-soft: #4a3f80;
+  --card-border: rgba(255,255,255,0.10);
+  --card-border-active: rgba(255,255,255,0.18);
+  --card-border-hover: rgba(255,255,255,0.22);
+}
+
 html, body, #root {
   height: 100%;
 }
@@ -12,15 +42,16 @@ html, body, #root {
 }
 
 body {
-  background: #f7f8f4;
-  color: #1a1940;
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background .25s ease, color .25s ease;
 }
 
 ::selection {
-  background: #1a1940;
-  color: #ffffff;
+  background: var(--text);
+  color: var(--bg);
 }
 
 ::-webkit-scrollbar { width: 4px; }
@@ -212,6 +243,34 @@ body {
 .portfolio-nav-wrap.over-dark .portfolio-nav a { color: rgba(255,255,255,.82); }
 .portfolio-nav-wrap.over-dark .portfolio-nav a:hover,
 .portfolio-nav-wrap.over-dark .portfolio-nav a.active { color: #fff; background: rgba(114,87,232,.32); }
+
+.nav-theme-toggle {
+  width: 30px; height: 30px; border: 0; border-radius: 50%; background: transparent; color: #171717;
+  display: grid; place-items: center; cursor: pointer; margin-left: 2px; flex-shrink: 0;
+  transition: background .15s ease, color .15s ease;
+}
+.nav-theme-toggle:hover { background: rgba(114,87,232,.10); color: #7257E8; }
+.portfolio-nav-wrap.over-dark .nav-theme-toggle { color: rgba(255,255,255,.82); }
+.portfolio-nav-wrap.over-dark .nav-theme-toggle:hover { color: #fff; background: rgba(114,87,232,.32); }
+
+.mobile-theme-toggle {
+  position: fixed; top: calc(18px + env(safe-area-inset-top)); right: 18px; z-index: 101;
+  width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.76); border-radius: 50%;
+  background: rgba(255,255,255,.90); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  display: grid; place-items: center; color: #171717; cursor: pointer;
+  box-shadow: 0 10px 30px rgba(64,45,150,.15);
+}
+
+[data-theme="dark"] .portfolio-nav { background: rgba(20,18,32,.72); border-color: rgba(255,255,255,.10); box-shadow: 0 8px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06); }
+[data-theme="dark"] .portfolio-nav a { color: rgba(255,255,255,.78); }
+[data-theme="dark"] .portfolio-nav a:hover { color: #fff; }
+[data-theme="dark"] .portfolio-nav a.active { color: #fff; background: rgba(140,120,255,.28); }
+[data-theme="dark"] .nav-theme-toggle { color: rgba(255,255,255,.78); }
+[data-theme="dark"] .nav-theme-toggle:hover { background: rgba(140,120,255,.22); color: #fff; }
+[data-theme="dark"] .portfolio-mobile-nav { background: rgba(18,16,28,.88); border-color: rgba(255,255,255,.10); box-shadow: 0 10px 34px rgba(0,0,0,.45); }
+[data-theme="dark"] .portfolio-mobile-nav button { color: rgba(255,255,255,.5); }
+[data-theme="dark"] .portfolio-mobile-nav button.active { color: #A998FA; background: rgba(140,120,255,.18); }
+[data-theme="dark"] .mobile-theme-toggle { background: rgba(20,18,32,.82); border-color: rgba(255,255,255,.14); color: rgba(255,255,255,.85); box-shadow: 0 10px 30px rgba(0,0,0,.4); }
 
 .portfolio-mobile-nav {
   position: fixed; left: 24px; right: 24px; bottom: calc(16px + env(safe-area-inset-bottom));
@@ -803,7 +862,7 @@ body {
 }
 
 .editorial-role-line b {
-  color: #171441;
+  color: var(--editorial-strong, #171441);
   font-weight: 500;
 }
 
@@ -817,9 +876,11 @@ body {
 }
 
 .editorial-meta-block strong {
-  color: #4a3fbf;
+  color: var(--editorial-strong-accent, #4a3fbf);
   font-weight: 500;
 }
+
+[data-theme="dark"] { --editorial-strong: #f1f0f7; --editorial-strong-accent: #b6a8ff; }
 
 /* ---------- ABOUT: qualities floating around the portrait ---------- */
 .constellation-item {

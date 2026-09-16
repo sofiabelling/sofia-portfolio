@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router";
+import { useTheme } from "../theme/ThemeContext";
 
 const VIOLET = "#7257E8";
 const LILAC = "#C9BEFF";
@@ -302,6 +303,45 @@ function IconContact({ active = false }: IconProps) {
   );
 }
 
+function IconThemeToggle({ theme }: { theme: "light" | "dark" }) {
+  return theme === "dark" ? (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"
+        fill="currentColor"
+      />
+    </svg>
+  ) : (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" fill="currentColor" />
+      <g stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+        <path d="M12 2.5V5" />
+        <path d="M12 19V21.5" />
+        <path d="M4.2 4.2L6 6" />
+        <path d="M18 18L19.8 19.8" />
+        <path d="M2.5 12H5" />
+        <path d="M19 12H21.5" />
+        <path d="M4.2 19.8L6 18" />
+        <path d="M18 6L19.8 4.2" />
+      </g>
+    </svg>
+  );
+}
+
+function ThemeToggleButton({ className }: { className?: string }) {
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <button
+      type="button"
+      className={className}
+      onClick={toggleTheme}
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      <IconThemeToggle theme={theme} />
+    </button>
+  );
+}
+
 const MOBILE_LINKS = [
   { label: "Home", to: "/", Icon: IconHome },
   { label: "Work", to: "/work", Icon: IconWork },
@@ -331,33 +371,36 @@ export default function Nav() {
 
   if (isMobile) {
     return (
-      <nav className="portfolio-mobile-nav custom-mobile-nav">
-        {MOBILE_LINKS.map(({ label, to, Icon }) => {
-          const active =
-            to === "/"
-              ? location.pathname === "/"
-              : location.pathname.startsWith(to);
+      <>
+        <ThemeToggleButton className="mobile-theme-toggle" />
+        <nav className="portfolio-mobile-nav custom-mobile-nav">
+          {MOBILE_LINKS.map(({ label, to, Icon }) => {
+            const active =
+              to === "/"
+                ? location.pathname === "/"
+                : location.pathname.startsWith(to);
 
-          return (
-            <button
-              key={to}
-              className={`custom-nav-item ${
-                active ? "active" : "inactive"
-              }`}
-              onClick={() => navigate(to)}
-              aria-label={label}
-            >
-              <span className="custom-nav-icon-wrap">
-                <Icon active={active} />
-              </span>
+            return (
+              <button
+                key={to}
+                className={`custom-nav-item ${
+                  active ? "active" : "inactive"
+                }`}
+                onClick={() => navigate(to)}
+                aria-label={label}
+              >
+                <span className="custom-nav-icon-wrap">
+                  <Icon active={active} />
+                </span>
 
-              <span className="custom-nav-label">
-                {label}
-              </span>
-            </button>
-          );
-        })}
-      </nav>
+                <span className="custom-nav-label">
+                  {label}
+                </span>
+              </button>
+            );
+          })}
+        </nav>
+      </>
     );
   }
 
@@ -383,6 +426,8 @@ export default function Nav() {
             {label}
           </NavLink>
         ))}
+
+        <ThemeToggleButton className="nav-theme-toggle" />
       </nav>
     </div>
   );
