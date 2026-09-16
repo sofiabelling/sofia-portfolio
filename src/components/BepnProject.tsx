@@ -16,9 +16,9 @@ interface BepnProjectProps {
 
 const DARK = "#171F28"
 const DARKER = "#10171F"
-const PAPER = "#F3F5F2"
+const PAPER = "var(--bg)"
 const CYAN = "#16F4E7"
-const TEXT = "#111820"
+const TEXT = "var(--text)"
 
 const labelStyle = {
   fontFamily: "'Inter', sans-serif",
@@ -339,7 +339,7 @@ export default function BepnProject({
             <p
               style={{
                 ...bodyStyle,
-                color: "rgba(0,0,0,.56)",
+                color: "var(--text-muted)",
                 marginTop: "28px",
               }}
             >
@@ -508,7 +508,7 @@ export default function BepnProject({
       {/* 03 PRIMARY ACTION */}
       <section
         style={{
-          background: "#fff",
+          background: "var(--surface)",
           padding: `${sectionY} ${side}`,
         }}
       >
@@ -557,7 +557,7 @@ export default function BepnProject({
             <p
               style={{
                 ...bodyStyle,
-                color: "rgba(0,0,0,.56)",
+                color: "var(--text-muted)",
                 margin: 0,
               }}
             >
@@ -672,7 +672,7 @@ export default function BepnProject({
           <p
             style={{
               ...bodyStyle,
-              color: "rgba(0,0,0,.56)",
+              color: "var(--text-muted)",
               maxWidth: "620px",
               margin: 0,
             }}
