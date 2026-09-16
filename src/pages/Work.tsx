@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { projects, allTags, type Tag } from "../data/projects";
 
-const VIOLET = "#7257E8";
-const NAV = "#1A1940";
-const BG = "#FBFBF8";
-const SOFT = "#AAA4DE";
+const VIOLET = "var(--accent)";
+const NAV = "var(--text)";
+const BG = "var(--bg)";
+const SOFT = "var(--text-muted)";
 
 const THUMBNAIL_STYLE: Record<
   string,
@@ -218,7 +218,7 @@ function ProjectTile({
               gap: "7px",
               padding: "8px 11px",
               borderRadius: "999px",
-              background: NAV,
+              background: "#171441",
               color: "#fff",
               opacity: isHovered ? 1 : 0,
               transform: isHovered ? "translateY(0)" : "translateY(5px)",
