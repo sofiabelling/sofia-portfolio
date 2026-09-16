@@ -312,6 +312,7 @@ body {
 .nix-meta-grid strong { font: 600 14px/1.45 'Bricolage Grotesque',sans-serif; }
 .nix-meta-tools { grid-column: 1/-1; margin-top: 4px; }
 .nix-meta-tools img { display: block; width: min(470px,100%); height: auto; margin-top: 6px; mix-blend-mode: multiply; }
+[data-theme="dark"] .nix-meta-tools img { mix-blend-mode: normal; background: #fff; border-radius: 14px; padding: 14px; }
 .nix-two-col h2 { font: 700 clamp(32px,4vw,52px)/1.06 'Bricolage Grotesque',sans-serif; letter-spacing: -.035em; max-width: 650px; }
 .nix-wide-figure { margin: 80px 0 0; }
 .nix-wide-figure img { width: 100%; display: block; background: #f1f1ef; }
