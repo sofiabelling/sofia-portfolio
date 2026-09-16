@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects";
 import nixHero from "../imports/nix/nix-hero.png";
 import toolsNix from "../imports/nix/tools-nix.png";
-import nixRefPuppetry from "../imports/nix/references/page_044_image_01_3094x2391.png";
 import nixRefMuseum from "../imports/nix/references/page_060_image_01_1693x1664.jpeg";
 import nixRefBirdcage from "../imports/nix/references/page_061_image_01_780x900.png";
 import nixRefWings from "../imports/nix/references/page_062_image_01_780x802.png";
@@ -17,8 +16,6 @@ import nixHandsTest from "../imports/nix/manosprueba1.MOV";
 import nixLeapDevice from "../imports/nix/leap motion and kinect test/page_092_image_02_707x393.jpeg";
 import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_image_01_1323x1361.jpeg";
 import nixLeapTest2 from "../imports/nix/leap motion and kinect test/page_093_image_02_1335x1346.jpeg";
-import chineseShadow1 from "../imports/nix/chinese shadow1.png";
-import chineseShadow2 from "../imports/nix/chinese shadow2.png";
 
 
 import BepnProject from "../components/BepnProject";
@@ -36,24 +33,6 @@ function Divider() {
 function NixCaseStudy() {
   const navigate = useNavigate();
   const quoteRef = useRef<HTMLElement | null>(null);
-  const referencesRef = useRef<HTMLDivElement | null>(null);
-  const [shadowsVisible, setShadowsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = referencesRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShadowsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   const handleQuoteMove = (event: React.PointerEvent<HTMLElement>) => {
     // Touch "moves" are usually scroll gestures, not deliberate hovering --
@@ -156,54 +135,35 @@ function NixCaseStudy() {
 
         <Divider />
 
-        <div className="nix-references-wrap" ref={referencesRef}>
-          <img
-            className={`nix-shadow-decor nix-shadow-decor-a${shadowsVisible ? " is-visible" : ""}`}
-            src={chineseShadow1}
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            className={`nix-shadow-decor nix-shadow-decor-b${shadowsVisible ? " is-visible" : ""}`}
-            src={chineseShadow2}
-            alt=""
-            aria-hidden="true"
-          />
-
-          <section className="nix-two-col">
-            <div>
-              <SectionLabel>03 — REFERENCES</SectionLabel>
-              <h2>Shadow as play already had a history.</h2>
-            </div>
-            <div className="nix-body-copy">
-              <p>
-                Before designing NIX, I looked at how shadow and darkness have been used as material for play and storytelling elsewhere — from centuries-old shadow puppetry to interactive art installations and children’s books that turn a flashlight into an instrument of discovery rather than a way to check under the bed.
-              </p>
-            </div>
-          </section>
-
-          <div className="nix-reference-grid">
-            <figure>
-              <div className="nix-reference-frame"><img src={nixRefPuppetry} alt="Traditional shadow puppet theatre" /></div>
-              <figcaption>Traditional shadow puppet theatre — storytelling built entirely from light and silhouette.</figcaption>
-            </figure>
-            <figure>
-              <div className="nix-reference-frame"><img src={nixRefMuseum} alt="Children playing with an interactive shadow installation" /></div>
-              <figcaption>Interactive shadow installations that already turn projected silhouettes into play.</figcaption>
-            </figure>
-            <figure>
-              <div className="nix-reference-frame"><img src={nixRefBirdcage} alt="Shadow interaction releasing birds from a cage" /></div>
-              <figcaption>Shadow-augmented objects — a cage that releases birds, a plant that grows.</figcaption>
-            </figure>
-            <figure>
-              <div className="nix-reference-frame"><img src={nixRefWings} alt="Interactive shadow installation giving a person wings" /></div>
-              <figcaption>Gesture-driven shadow characters — wings and birds triggered by the body.</figcaption>
-            </figure>
-            <figure>
-              <div className="nix-reference-frame"><img src={nixRefBook} alt="Cover of Linterna Mágica by Lizi Boyd" /></div>
-              <figcaption><em>Linterna Mágica</em> (Lizi Boyd) — a children’s book that treats darkness as a place to explore, not fear.</figcaption>
-            </figure>
+        <section className="nix-two-col">
+          <div>
+            <SectionLabel>03 — REFERENCES</SectionLabel>
+            <h2>Shadow as play already had a history.</h2>
           </div>
+          <div className="nix-body-copy">
+            <p>
+              Before designing NIX, I looked at how shadow and darkness have been used as material for play and storytelling elsewhere — from centuries-old shadow puppetry to interactive art installations and children’s books that turn a flashlight into an instrument of discovery rather than a way to check under the bed.
+            </p>
+          </div>
+        </section>
+
+        <div className="nix-reference-grid">
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefMuseum} alt="Children playing with an interactive shadow installation" /></div>
+            <figcaption>Interactive shadow installations that already turn projected silhouettes into play.</figcaption>
+          </figure>
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefBirdcage} alt="Shadow interaction releasing birds from a cage" /></div>
+            <figcaption>Shadow-augmented objects — a cage that releases birds, a plant that grows.</figcaption>
+          </figure>
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefWings} alt="Interactive shadow installation giving a person wings" /></div>
+            <figcaption>Gesture-driven shadow characters — wings and birds triggered by the body.</figcaption>
+          </figure>
+          <figure>
+            <div className="nix-reference-frame"><img src={nixRefBook} alt="Cover of Linterna Mágica by Lizi Boyd" /></div>
+            <figcaption><em>Linterna Mágica</em> (Lizi Boyd) — a children’s book that treats darkness as a place to explore, not fear.</figcaption>
+          </figure>
         </div>
 
         <Divider />
