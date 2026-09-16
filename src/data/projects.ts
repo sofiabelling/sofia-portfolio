@@ -2,6 +2,7 @@ import nixHero from "../imports/nix/nix-hero.png";
 import bepnHero from "../imports/bepn_curated_assets/country-explorer.png";
 import copecCaseHero from "../imports/copec_case.png";
 import copecThumbnail from "../imports/copec/copec-hero.png";
+import joelSartoreCaseHero from "../imports/Joel Sartore/joelsartoreinspo.png";
 
 export type Tag = "UX" | "UI" | "Research" | "Interaction" | "Animation" | "3D" | "Branding" | "Mobile";
 
@@ -107,7 +108,8 @@ export const projects: Project[] = [
       "Joel Sartore has spent decades photographing endangered species for the Photo Ark project. The challenge was designing a digital experience that honours the weight of that mission — letting the animals hold the frame, without letting the interface disappear entirely.",
     body: "The design strips away decoration to focus on imagery. Navigation is minimal and peripheral. Each animal gets its own moment. The project called for deep research into conservation storytelling and careful decisions around contrast, type scale, and negative space.",
     bg: "#111118",
-    img: "https://images.unsplash.com/photo-1503656142023-618e7d1f435a?w=1200&h=800&fit=crop&auto=format",
+    img: joelSartoreCaseHero,
+    imgPosition: "62% 42%",
     tools: [
       { name: "Figma", icon: "🎨" },
       { name: "After Effects", icon: "🎬" },

@@ -15,7 +15,7 @@ const THUMBNAIL_STYLE: Record<
   nix: { fit: "cover", position: "center 48%" },
   bepn: { fit: "cover", position: "center 36%" },
   dashboard: { fit: "cover", position: "center" },
-  "joel-sartore": { fit: "cover", position: "center 44%" },
+  "joel-sartore": { fit: "cover", position: "62% 42%" },
 };
 
 export default function Work() {
