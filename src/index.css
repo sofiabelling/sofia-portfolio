@@ -254,7 +254,7 @@ body {
 .nix-two-col h2 { font: 700 clamp(32px,4vw,52px)/1.06 'Bricolage Grotesque',sans-serif; letter-spacing: -.035em; max-width: 650px; }
 .nix-wide-figure { margin: 80px 0 0; }
 .nix-wide-figure img { width: 100%; display: block; background: #f1f1ef; }
-.nix-wide-figure figcaption,.nix-image-pair figcaption,.nix-caption { font-size: 10px; color: #909090; margin-top: 10px; }
+.nix-wide-figure figcaption,.nix-image-pair figcaption,.nix-testing-video figcaption,.nix-caption { font-size: 10px; color: #909090; margin-top: 10px; }
 .nix-quote-block { position: relative; overflow: hidden; isolation: isolate; background: #130a22; color: #fff; margin: 110px calc((1180px - 100vw)/2) 0; padding: 120px max(60px,calc((100vw - 1180px)/2)); text-align: center; cursor: default; }
 .nix-quote { position: relative; z-index: 1; font: 700 clamp(36px,6vw,82px)/1 'Bricolage Grotesque',sans-serif; letter-spacing: -.05em; transition: color .4s ease, text-shadow .4s ease; }
 .nix-quote-block span { position: relative; z-index: 1; display: block; font: italic 700 clamp(25px,3vw,42px) 'Playfair Display',serif; margin: 22px 0; color: #777; transition: color .4s ease; }
@@ -307,7 +307,7 @@ body {
 .nix-prototype-grid img:first-child { grid-row: span 2; height: 100%; object-fit: cover; }
 .nix-kids-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 70px; }
 .nix-kids-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: #efefed; }
-.nix-testing-video { width: min(380px,60vw); margin: 56px auto 0; text-align: center; }
+.nix-testing-video { margin-top: 70px; }
 .nix-testing-video video { display: block; width: 100%; border-radius: 4px; background: #111; }
 .nix-ending { margin-top: 120px; padding: 100px 0 20px; border-top: 1px solid #ddd; max-width: 850px; }
 .nix-ending h2 { font: 700 clamp(42px,6vw,76px)/1 'Bricolage Grotesque',sans-serif; letter-spacing: -.05em; margin-bottom: 32px; }
@@ -359,6 +359,7 @@ body {
   .nix-processing-images { margin-top: 36px; }
   .nix-prototype-grid { grid-template-columns: 1fr; }
   .nix-prototype-grid img:first-child { grid-row: auto; height: auto; }
+  .nix-testing-video { margin-top: 48px; }
   .nix-kids-grid { margin-top: 48px; }
   .nix-ending { margin-top: 80px; padding-top: 72px; }
   .generic-back { top: 82px; left: 24px; }
