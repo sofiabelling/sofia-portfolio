@@ -11,11 +11,8 @@ import nixRefBook from "../imports/nix/references/page_064_image_02_434x461.jpeg
 import nixProcBlob from "../imports/nix/Processing tests/page_077_image_01_939x709.jpeg";
 import nixProcDepth from "../imports/nix/Processing tests/page_077_image_02_340x299.jpeg";
 import nixStoryboard from "../imports/nix/storyboard.png";
-import nixKids98 from "../imports/nix/kids testing/page_098_image_01_2086x2400.jpeg";
-import nixKids99a from "../imports/nix/kids testing/page_099_image_01_1763x2326.jpeg";
-import nixKids99b from "../imports/nix/kids testing/page_099_image_02_1508x2309.jpeg";
-import nixKids100a from "../imports/nix/kids testing/page_100_image_01_1594x2400.jpeg";
-import nixKids100b from "../imports/nix/kids testing/page_100_image_02_1519x2106.jpeg";
+import nixKidsBird1 from "../imports/nix/kids testing/proyector3.jpeg";
+import nixKidsBird2 from "../imports/nix/kids testing/proyector4.jpeg";
 import nixLeapDevice from "../imports/nix/leap motion and kinect test/page_092_image_02_707x393.jpeg";
 import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_image_01_1323x1361.jpeg";
 import nixLeapTest2 from "../imports/nix/leap motion and kinect test/page_093_image_02_1335x1346.jpeg";
@@ -250,11 +247,8 @@ function NixCaseStudy() {
         </section>
 
         <div className="nix-kids-grid">
-          <img src={nixKids100b} alt="The NIX title screen projected in a dark room" />
-          <img src={nixKids98} alt="Child watching the NIX window scene" />
-          <img src={nixKids99a} alt="Child making a bird shadow gesture" />
-          <img src={nixKids99b} alt="Bird shadow responding to the child's gesture" />
-          <img src={nixKids100a} alt="Full storyworld projected during testing" />
+          <img src={nixKidsBird1} alt="Child making a bird shadow gesture" />
+          <img src={nixKidsBird2} alt="Bird shadow responding to the child's gesture" />
         </div>
         <p className="nix-caption">Testing the final chapter with children, in the dark room it was designed for.</p>
 
