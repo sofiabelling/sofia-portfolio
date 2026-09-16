@@ -15,7 +15,6 @@ import nixKidsBird2 from "../imports/nix/kids testing/proyector4.jpeg";
 import nixHandsTest from "../imports/nix/manosprueba1.MOV";
 import nixLeapDevice from "../imports/nix/leap motion and kinect test/page_092_image_02_707x393.jpeg";
 import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_image_01_1323x1361.jpeg";
-import nixLeapTest2 from "../imports/nix/leap motion and kinect test/page_093_image_02_1335x1346.jpeg";
 
 
 import BepnProject from "../components/BepnProject";
@@ -201,6 +200,20 @@ function NixCaseStudy() {
           </div>
         </section>
 
+        <div className="nix-hardware-feature">
+          <div className="nix-processing-copy">
+            <p className="case-label">HARDWARE TESTS</p>
+            <h3>Kinect v2, chosen after testing the alternatives.</h3>
+            <p>
+              I tested a Leap Motion controller and webcam colour-tracking before settling on Kinect v2. Leap Motion read hand detail well, but only at desk range; Kinect v2’s depth sensing covered a child’s whole body at the distance NIX actually needed.
+            </p>
+          </div>
+          <div className="nix-hardware-images">
+            <img src={nixLeapDevice} alt="Leap Motion controller being tested with a child" />
+            <img src={nixLeapTest1} alt="Child testing hand-tracking on a laptop" />
+          </div>
+        </div>
+
         <div className="nix-processing-feature">
           <div className="nix-processing-copy">
             <p className="case-label">PROCESSING TESTS</p>
@@ -212,21 +225,6 @@ function NixCaseStudy() {
           <div className="nix-processing-images">
             <img src={nixProcDepth} alt="Processing depth data isolating a hand shape" />
             <img src={nixProcBlob} alt="Processing blob tracking test" />
-          </div>
-        </div>
-
-        <div className="nix-hardware-feature">
-          <div className="nix-processing-copy">
-            <p className="case-label">HARDWARE TESTS</p>
-            <h3>Kinect v2, chosen after testing the alternatives.</h3>
-            <p>
-              Before settling on Kinect v2, I tested a Leap Motion controller and plain webcam colour-tracking to see which best supported a child’s full-body shadow gesture in a dark room. Leap Motion read hand and finger detail well but expected the user close to the sensor on a desk — not how a child would stand to cast a shadow. Kinect v2’s depth data covered the whole body at a distance, which matched how NIX was actually meant to be used.
-            </p>
-          </div>
-          <div className="nix-hardware-images nix-hardware-images-three">
-            <img src={nixLeapDevice} alt="Leap Motion controller being tested with a child" />
-            <img src={nixLeapTest1} alt="Child testing hand-tracking on a laptop" />
-            <img src={nixLeapTest2} alt="Child testing a gesture-controlled scene" />
           </div>
         </div>
 
