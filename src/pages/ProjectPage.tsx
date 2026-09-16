@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects";
 import nixHero from "../imports/nix/nix-hero.png";
 import toolsNix from "../imports/nix/tools-nix.png";
-import nix57 from "../imports/nix/page-57.jpg";
 import nixRefPuppetry from "../imports/nix/references/page_044_image_01_3094x2391.png";
 import nixRefMuseum from "../imports/nix/references/page_060_image_01_1693x1664.jpeg";
 import nixRefBirdcage from "../imports/nix/references/page_061_image_01_780x900.png";
@@ -129,11 +128,6 @@ function NixCaseStudy() {
           <span>becomes</span>
           <p className="nix-quote">DARKNESS = PLAY = CURIOSITY</p>
         </section>
-
-        <figure className="nix-wide-figure">
-          <img src={nix57} alt="NIX observations and testing with children" />
-          <figcaption>Early observation and testing with the target audience.</figcaption>
-        </figure>
 
         <figure className="nix-testing-video">
           <video src={nixHandsTest} autoPlay muted loop playsInline />
