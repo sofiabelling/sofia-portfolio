@@ -127,11 +127,6 @@ function NixCaseStudy() {
           <p className="nix-quote">DARKNESS = PLAY = CURIOSITY</p>
         </section>
 
-        <figure className="nix-testing-video">
-          <video src={nixHandsTest} autoPlay muted loop playsInline />
-          <figcaption>Hand-gesture testing during prototype development.</figcaption>
-        </figure>
-
         <Divider />
 
         <section className="nix-two-col">
@@ -226,6 +221,11 @@ function NixCaseStudy() {
           <img src={nixKidsBird2} alt="Bird shadow responding to the child's gesture" />
         </div>
         <p className="nix-caption">Testing the final chapter with children, in the dark room it was designed for.</p>
+
+        <figure className="nix-testing-video">
+          <video src={nixHandsTest} autoPlay muted loop playsInline />
+          <figcaption>Hand-gesture testing during prototype development.</figcaption>
+        </figure>
 
         <section className="nix-ending">
           <p className="case-label">OUTCOME</p>
