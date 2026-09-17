@@ -90,10 +90,8 @@ export default function BepnProject({
   }, [])
 
   const side = isMobile
-    ? "20px"
-    : isTablet
-      ? "36px"
-      : "44px"
+    ? "24px"
+    : "60px"
 
   const sectionY = isMobile
     ? "82px"
