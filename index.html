@@ -36,20 +36,6 @@
     />
     <meta name="twitter:image" content="https://sofias2.com/og-image.png" />
     <!-- figma:head-end -->
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem("theme");
-          var theme =
-            stored === "light" || stored === "dark"
-              ? stored
-              : window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "dark"
-                : "light";
-          document.documentElement.setAttribute("data-theme", theme);
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body>
     <!-- figma:body-start -->
