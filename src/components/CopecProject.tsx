@@ -1,12 +1,20 @@
 import { useNavigate } from "react-router";
+import ToolBadges from "./ToolBadges";
 import "./CopecProject.css";
+
+const COPEC_TOOLS = [
+  { name: "Figma", bg: "#2c2c34", fg: "#a259ff", glyph: "F" },
+  { name: "LottieFiles", bg: "#00ddb3", fg: "#ffffff", glyph: "L" },
+  { name: "Photoshop", bg: "#001e36", fg: "#31a8ff", glyph: "Ps" },
+  { name: "InVision", bg: "#ff3366", fg: "#ffffff", glyph: "In" },
+  { name: "Rive App", bg: "#000000", fg: "#ffffff", glyph: "R" },
+];
 
 import heroDesktop from "../imports/copec/copec-hero.png";
 import heroMobile from "../imports/copec/copec-product-overview.png";
 import researchStation from "../imports/copec/copec-research-station.png";
 import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
 import iconos from "../imports/copec/iconos.gif";
-import toolsUsed from "../imports/copec/tools-used.png";
 import home from "../imports/copec/Home.png";
 import map1 from "../imports/copec/map-1.png";
 import map2 from "../imports/copec/map-2.png";
@@ -82,7 +90,7 @@ export default function CopecProject() {
             <div><span>IMPACT</span><strong>5M+ downloads</strong></div>
             <div className="copec-meta-tools">
               <span>TOOLS</span>
-              <img src={toolsUsed} alt="Figma, LottieFiles, Photoshop, InVision" />
+              <ToolBadges tools={COPEC_TOOLS} />
             </div>
           </div>
 

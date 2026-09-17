@@ -351,7 +351,7 @@ function ProjectChapter({
 
     return (
       <article
-        onClick={() => !isActive && onActivate()}
+        onClick={onOpen}
         onPointerDown={() => setHovered(true)}
         onPointerUp={() => setHovered(false)}
         onPointerCancel={() => setHovered(false)}
@@ -503,8 +503,8 @@ function ProjectChapter({
 
   return (
     <article
-      onClick={() => !isActive && onActivate()}
-      onMouseEnter={() => setHovered(true)}
+      onClick={onOpen}
+      onMouseEnter={() => { setHovered(true); onActivate(); }}
       onMouseLeave={() => setHovered(false)}
       style={{
         position: "relative",
@@ -513,7 +513,7 @@ function ProjectChapter({
         border: `1px solid ${hovered ? "var(--card-border-hover)" : "var(--card-border)"}`,
         borderRadius: "12px",
         background: project.bg,
-        cursor: isActive ? "default" : "pointer",
+        cursor: "pointer",
         transform: hovered ? "translate3d(0,-3px,0)" : isActive ? "translate3d(0,-1px,0)" : "translate3d(0,0,0)",
         boxShadow: hovered ? "0 14px 34px rgba(26,25,64,.08)" : "0 0 0 rgba(26,25,64,0)",
         willChange: "transform",

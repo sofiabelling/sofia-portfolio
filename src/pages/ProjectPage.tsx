@@ -2,7 +2,10 @@ import { useParams, useNavigate } from "react-router";
 import { useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects";
 import nixHero from "../imports/nix/nix-hero.png";
-import toolsNix from "../imports/nix/tools-nix.png";
+import ToolBadges from "../components/ToolBadges";
+import kinectIcon from "../imports/nix/tool-icons/kinect.png";
+import processingIcon from "../imports/nix/tool-icons/processing.png";
+import projectorIcon from "../imports/nix/tool-icons/projector.png";
 import nixRefMuseum from "../imports/nix/references/page_060_image_01_1693x1664.jpeg";
 import nixRefBirdcage from "../imports/nix/references/page_061_image_01_780x900.png";
 import nixRefWings from "../imports/nix/references/page_062_image_01_780x802.png";
@@ -20,6 +23,13 @@ import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_im
 import BepnProject from "../components/BepnProject";
 import CopecProject from "../components/CopecProject";
 
+const NIX_TOOLS = [
+  { name: "Kinect", bg: "#000000", fg: "#a259ff", image: kinectIcon },
+  { name: "Processing", bg: "#1f1f26", fg: "#3e82f7", image: processingIcon },
+  { name: "After Effects", bg: "#00005b", fg: "#9999ff", glyph: "Ae" },
+  { name: "Photoshop", bg: "#001e36", fg: "#31a8ff", glyph: "Ps" },
+  { name: "Projector", bg: "#ee3f62", fg: "#ffffff", image: projectorIcon },
+];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="case-label">{children}</p>;
@@ -94,7 +104,7 @@ function NixCaseStudy() {
           <div><span>AUDIENCE</span><strong>Children aged 4–7</strong></div>
           <div className="nix-meta-tools">
             <span>TOOLS</span>
-            <img src={toolsNix} alt="Kinect, Processing, After Effects, Photoshop, Projector" />
+            <ToolBadges tools={NIX_TOOLS} />
           </div>
         </section>
 
