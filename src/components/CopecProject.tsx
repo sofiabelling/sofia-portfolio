@@ -10,9 +10,9 @@ const COPEC_TOOLS = [
   { name: "Rive App", bg: "#000000", fg: "#ffffff", glyph: "R" },
 ];
 
-import heroDesktop from "../imports/copec/copec-hero.png";
+import heroDesktop from "../imports/copec/copec-hero.webp";
 import heroMobile from "../imports/copec/copec-product-overview.png";
-import researchStation from "../imports/copec/copec-research-station.png";
+import researchStation from "../imports/copec/copec-research-station.webp";
 import onboarding from "../imports/copec/copec-onboarding_illustrations.png";
 import iconos from "../imports/copec/iconos.gif";
 import home from "../imports/copec/Home.png";

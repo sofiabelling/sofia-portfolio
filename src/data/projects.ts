@@ -1,8 +1,8 @@
-import nixHero from "../imports/nix/nix-hero.png";
+import nixHero from "../imports/nix/nix-hero.webp";
 import bepnHero from "../imports/bepn_curated_assets/country-explorer.png";
 import copecCaseHero from "../imports/copec_case.png";
-import copecThumbnail from "../imports/copec/copec-hero.png";
-import joelSartoreCaseHero from "../imports/Joel Sartore/joelsartoreinspo.png";
+import copecThumbnail from "../imports/copec/copec-hero.webp";
+import joelSartoreCaseHero from "../imports/Joel Sartore/joelsartoreinspo.webp";
 
 export type Tag = "UX" | "UI" | "Research" | "Interaction" | "Animation" | "3D" | "Branding" | "Mobile";
 

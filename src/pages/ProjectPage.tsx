@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useRef, useState } from "react";
 import { projects } from "../data/projects";
-import nixHero from "../imports/nix/nix-hero.png";
+import nixHero from "../imports/nix/nix-hero.webp";
 import ToolBadges from "../components/ToolBadges";
 import kinectIcon from "../imports/nix/tool-icons/kinect.png";
 import processingIcon from "../imports/nix/tool-icons/processing.png";
@@ -12,7 +12,7 @@ import nixRefWings from "../imports/nix/references/page_062_image_01_780x802.png
 import nixRefBook from "../imports/nix/references/page_064_image_02_434x461.jpeg";
 import nixProcBlob from "../imports/nix/Processing tests/page_077_image_01_939x709.jpeg";
 import nixProcDepth from "../imports/nix/Processing tests/page_077_image_02_340x299.jpeg";
-import nixStoryboard from "../imports/nix/storyboard.png";
+import nixStoryboard from "../imports/nix/storyboard.webp";
 import nixKidsBird1 from "../imports/nix/kids testing/proyector2.jpeg";
 import nixKidsBird2 from "../imports/nix/kids testing/proyector4.jpeg";
 import nixHandsTest from "../imports/nix/manosprueba1.MOV";
