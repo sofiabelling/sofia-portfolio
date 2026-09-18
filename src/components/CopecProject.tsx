@@ -32,7 +32,6 @@ import promo1 from "../imports/copec/promotional-1.png";
 import promo2 from "../imports/copec/promotional-2.jpeg";
 import promo3 from "../imports/copec/promotional-3.webp";
 import splashScreen from "../imports/copec/splash-screen.mp4";
-import fieldUniformSolo from "../imports/copec/field-uniform-solo.jpg";
 import fieldUniformTeam from "../imports/copec/field-uniform-team.jpg";
 import driver01 from "../imports/copec/driver-01.jpg";
 import driver02 from "../imports/copec/driver-02.jpg";
@@ -116,35 +115,14 @@ export default function CopecProject() {
             </div>
           </div>
 
-          <figure className="copec-field">
-            <img src={researchStation} alt="Field testing at a Copec service station" />
-            <figcaption>Field testing at a Copec station — validating proposals where the product would actually be used.</figcaption>
-          </figure>
-
-          <div className="copec-research-notes">
-            <div><span>01</span><p>Understand the existing service-station experience.</p></div>
-            <div><span>02</span><p>Prototype and test key interactions early.</p></div>
-            <div><span>03</span><p>Validate proposals with customers on-site.</p></div>
-            <div><span>04</span><p>Feed observations back into product decisions.</p></div>
-          </div>
-
           <div className="copec-field-testing-gallery">
-            <div className="copec-field-testing-intro">
-              <h3>Research meant getting out of the office.</h3>
-              <p>
-                We spent time at Copec stations, observing and interviewing people in the
-                context where the product would actually be used. Drivers volunteered their
-                time so we could put early product ideas in front of real users.
-              </p>
-            </div>
-
             <div className="copec-uniform-grid">
               <figure>
                 <div className="photo-frame">
-                  <img src={fieldUniformSolo} alt="Field testing at a Copec station wearing the station uniform" />
+                  <img src={researchStation} alt="On location at a Copec service station during field research" />
                 </div>
                 <figcaption>
-                  Field testing uniform on — looking official was apparently part of the methodology :)
+                  On-site at the service station, where all of this testing actually happened.
                 </figcaption>
               </figure>
               <figure>
