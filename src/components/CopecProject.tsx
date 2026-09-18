@@ -37,6 +37,12 @@ import driver01 from "../imports/copec/driver-01.jpg";
 import driver02 from "../imports/copec/driver-02.jpg";
 import driver03 from "../imports/copec/driver-03.jpg";
 
+const COPEC_SYSTEM = [
+  { number: "01", label: "Typography", img: typeStyles, alt: "Copec typography system" },
+  { number: "02", label: "Buttons & states", img: buttonStyles, alt: "Copec button states" },
+  { number: "03", label: "Reusable components", img: blockStyles, alt: "Copec reusable components" },
+];
+
 const screens = [
   { src: home, label: "Home" },
   { src: menu, label: "Menu" },
@@ -164,19 +170,18 @@ export default function CopecProject() {
             </div>
           </div>
 
-          <div className="copec-section copec-system-grid">
-            <figure className="wide">
-              <div className="copec-system-image"><img src={typeStyles} alt="Copec typography system" /></div>
-              <figcaption><b>01</b> Typography</figcaption>
-            </figure>
-            <figure className="wide">
-              <div className="copec-system-image"><img src={buttonStyles} alt="Copec button states" /></div>
-              <figcaption><b>02</b> Buttons & states</figcaption>
-            </figure>
-            <figure className="wide">
-              <div className="copec-system-image"><img src={blockStyles} alt="Copec reusable components" /></div>
-              <figcaption><b>03</b> Reusable components</figcaption>
-            </figure>
+          <div className="copec-section copec-system-index">
+            {COPEC_SYSTEM.map((item) => (
+              <figure className="system-entry" key={item.number}>
+                <div className="system-entry-label">
+                  <span className="system-entry-number" aria-hidden="true">{item.number}</span>
+                  <figcaption>{item.label}</figcaption>
+                </div>
+                <div className="copec-system-image">
+                  <img src={item.img} alt={item.alt} />
+                </div>
+              </figure>
+            ))}
           </div>
         </section>
 
