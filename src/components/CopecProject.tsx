@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import ToolBadges from "./ToolBadges";
 import "./CopecProject.css";
@@ -38,9 +39,9 @@ import driver02 from "../imports/copec/driver-02.jpg";
 import driver03 from "../imports/copec/driver-03.jpg";
 
 const COPEC_SYSTEM = [
-  { number: "01", label: "Typography", img: typeStyles, alt: "Copec typography system" },
-  { number: "02", label: "Buttons & states", img: buttonStyles, alt: "Copec button states" },
-  { number: "03", label: "Reusable components", img: blockStyles, alt: "Copec reusable components" },
+  { label: "Typography", img: typeStyles, alt: "Copec typography system" },
+  { label: "Buttons & states", img: buttonStyles, alt: "Copec button states" },
+  { label: "Reusable components", img: blockStyles, alt: "Copec reusable components" },
 ];
 
 const screens = [
@@ -57,6 +58,22 @@ const screens = [
 
 export default function CopecProject() {
   const navigate = useNavigate();
+  const systemScrollRef = useRef<HTMLDivElement>(null);
+  const [systemActive, setSystemActive] = useState(0);
+
+  const handleSystemScroll = () => {
+    const el = systemScrollRef.current;
+    if (!el) return;
+    const slideWidth = el.scrollWidth / COPEC_SYSTEM.length;
+    setSystemActive(Math.round(el.scrollLeft / slideWidth));
+  };
+
+  const scrollToSystemSlide = (index: number) => {
+    const el = systemScrollRef.current;
+    if (!el) return;
+    const slideWidth = el.scrollWidth / COPEC_SYSTEM.length;
+    el.scrollTo({ left: slideWidth * index, behavior: "smooth" });
+  };
 
   return (
     <main className="copec-case">
@@ -170,18 +187,27 @@ export default function CopecProject() {
             </div>
           </div>
 
-          <div className="copec-section copec-system-index">
-            {COPEC_SYSTEM.map((item) => (
-              <figure className="system-entry" key={item.number}>
-                <div className="system-entry-label">
-                  <span className="system-entry-number" aria-hidden="true">{item.number}</span>
+          <div className="copec-system-gallery">
+            <div className="copec-system-scroll" ref={systemScrollRef} onScroll={handleSystemScroll}>
+              {COPEC_SYSTEM.map((item) => (
+                <figure className="system-slide" key={item.label}>
+                  <div className="copec-system-image">
+                    <img src={item.img} alt={item.alt} />
+                  </div>
                   <figcaption>{item.label}</figcaption>
-                </div>
-                <div className="copec-system-image">
-                  <img src={item.img} alt={item.alt} />
-                </div>
-              </figure>
-            ))}
+                </figure>
+              ))}
+            </div>
+            <div className="copec-system-dots">
+              {COPEC_SYSTEM.map((item, index) => (
+                <button
+                  key={item.label}
+                  className={index === systemActive ? "active" : ""}
+                  aria-label={`Show ${item.label}`}
+                  onClick={() => scrollToSystemSlide(index)}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
