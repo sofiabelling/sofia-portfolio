@@ -212,18 +212,6 @@ export default function CopecProject() {
         </section>
 
         <section className="copec-product">
-          <div className="copec-section copec-heading-grid">
-            <div>
-              <p className="copec-label">04 — PRODUCT EXPERIENCE</p>
-              <h2>One interface for many everyday interactions.</h2>
-            </div>
-            <div className="copec-copy">
-              <p className="copec-lead">
-                I helped translate the different services within Copec into a consistent mobile experience across onboarding, promotions, payments, scanning, transaction history, station discovery and feedback.
-              </p>
-            </div>
-          </div>
-
           <figure className="copec-onboarding">
             <img src={onboarding} alt="Copec onboarding illustrations" />
             <figcaption>Onboarding</figcaption>
