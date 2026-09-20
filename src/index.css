@@ -923,3 +923,34 @@ body {
   flex-shrink: 0;
   transition: color 0.18s ease, border-color 0.18s ease;
 }
+
+/* NIX — research narrative */
+.nix-research-heading { margin-top: 18px; }
+.nix-research-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 68px; }
+.nix-research-card { min-height: 300px; padding: 34px; border: 1px solid var(--border); background: var(--surface-alt); display: flex; flex-direction: column; }
+.nix-research-card-featured { background: #130a22; color: #fff; border-color: #130a22; }
+.nix-research-card>span { font-size: 9px; letter-spacing: .15em; opacity: .62; margin-bottom: auto; }
+.nix-research-card>strong { display: block; font: 700 clamp(27px,3vw,42px)/1.02 'Bricolage Grotesque',sans-serif; letter-spacing: -.035em; margin: 52px 0 18px; max-width: 430px; }
+.nix-research-card>p { font-size: 14px; line-height: 1.72; color: var(--text-muted); max-width: 510px; }
+.nix-research-card-featured>p { color: rgba(255,255,255,.7); }
+.nix-research-figure { margin-top: 18px; }
+.nix-research-figure img { width: 100%; display: block; background: #f4f4f1; }
+.nix-research-figure figcaption { font-size: 10px; color: var(--text-muted); margin-top: 10px; }
+.nix-design-translation { margin-top: 76px; }
+.nix-design-translation-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border-top: 1px solid var(--border); margin-top: 20px; }
+.nix-design-translation-grid p { padding: 28px 28px 30px 0; border-bottom: 1px solid var(--border); }
+.nix-design-translation-grid p:nth-child(odd) { border-right: 1px solid var(--border); padding-right: 38px; }
+.nix-design-translation-grid p:nth-child(even) { padding-left: 38px; }
+.nix-design-translation-grid span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: var(--text-muted); margin-bottom: 10px; }
+.nix-design-translation-grid strong { display: block; font: 600 18px/1.35 'Bricolage Grotesque',sans-serif; }
+
+@media (max-width: 767px) {
+  .nix-research-grid { grid-template-columns: 1fr; margin-top: 44px; }
+  .nix-research-card { min-height: 265px; padding: 26px; }
+  .nix-research-card>strong { margin-top: 44px; }
+  .nix-research-figure { margin: 12px -12px 0; }
+  .nix-design-translation { margin-top: 58px; }
+  .nix-design-translation-grid { grid-template-columns: 1fr; }
+  .nix-design-translation-grid p:nth-child(odd) { border-right: 0; padding-right: 0; }
+  .nix-design-translation-grid p:nth-child(even) { padding-left: 0; }
+}
