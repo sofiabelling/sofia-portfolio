@@ -173,19 +173,6 @@ function NixCaseStudy() {
             </div>
           </div>
 
-          <div className="nix-imagination-story">
-            <div className="nix-imagination-copy">
-              <p className="case-label">THE KEY PSYCHOLOGICAL INSIGHT</p>
-              <h3>Imagination works both ways.</h3>
-              <p>At this age, children often accept what their senses suggest and fill unknowns with fantasy. Instead of fighting that tendency, NIX uses it as the design material.</p>
-            </div>
-            <div className="nix-thought-pair">
-              <div className="nix-thought-line fear"><span>SHADOW</span><i>→</i><span>UNKNOWN</span><i>→</i><strong>IMAGINATION</strong><i>→</i><b>FEAR</b></div>
-              <div className="nix-thought-switch">same stimulus ↓ new association</div>
-              <div className="nix-thought-line play"><span>SHADOW</span><i>→</i><strong>PLAY</strong><i>→</i><span>CHARACTER</span><i>→</i><b>CURIOSITY</b></div>
-            </div>
-          </div>
-
           <div className="nix-field-research">
             <div className="nix-field-heading">
               <div><p className="case-label">RESEARCHING THROUGH THEIR WORLD</p><h3>Not only reading about children — observing how they played.</h3></div>
