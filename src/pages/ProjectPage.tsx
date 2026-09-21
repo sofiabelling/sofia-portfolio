@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
 import nixHero from "../imports/nix/nix-hero.webp";
 import ToolBadges from "../components/ToolBadges";
@@ -46,27 +46,6 @@ function Divider() {
 
 function NixCaseStudy() {
   const navigate = useNavigate();
-  const quoteRef = useRef<HTMLElement | null>(null);
-
-  const handleQuoteMove = (event: React.PointerEvent<HTMLElement>) => {
-    // Touch "moves" are usually scroll gestures, not deliberate hovering --
-    // following them would make the spotlight jump around while someone
-    // just scrolls past. Keep the interactive follow to mouse/pen and let
-    // touch devices show the ambient drift on its own.
-    if (event.pointerType === "touch") return;
-    const el = quoteRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * 100;
-    const y = ((event.clientY - rect.top) / rect.height) * 100;
-    el.style.setProperty("--mx", `${x}%`);
-    el.style.setProperty("--my", `${y}%`);
-    el.classList.add("is-lit");
-  };
-
-  const handleQuoteLeave = () => {
-    quoteRef.current?.classList.remove("is-lit");
-  };
 
   return (
     <main className="nix-case">
@@ -130,20 +109,12 @@ function NixCaseStudy() {
           </div>
         </section>
 
-        <section
-          className="nix-quote-block"
-          ref={quoteRef as React.RefObject<HTMLElement>}
-          onPointerMove={handleQuoteMove}
-          onPointerLeave={handleQuoteLeave}
-        >
+        <section className="nix-quote-block">
           <div className="nix-quote-glow" aria-hidden="true" />
-          <div className="nix-shadow-creatures" aria-hidden="true"><i>✦</i><i>●</i><i>✧</i><i>◒</i><i>★</i></div>
-          <p className="nix-quote-kicker">MOVE THE LIGHT THROUGH THE DARK</p>
-          <div className="nix-quote-stage">
-            <p className="nix-quote nix-quote-fear"><span>DARKNESS</span><b>=</b><span className="nix-fear-word">FEAR</span></p>
-            <p className="nix-quote nix-quote-play"><span>DARKNESS</span><b>=</b><span>PLAY</span><b>+</b><span>CURIOSITY</span></p>
-          </div>
-          <div className="nix-quote-transform"><i /> <span>the same shadow, a different story</span> <i /></div>
+          <p className="nix-quote-kicker">THE SAME SHADOW, A DIFFERENT STORY</p>
+          <p className="nix-quote nix-quote-fear"><span>DARKNESS</span><b>=</b><span>FEAR</span></p>
+          <span className="nix-quote-divider" aria-hidden="true" />
+          <p className="nix-quote nix-quote-play"><span>DARKNESS</span><b>=</b><span>PLAY</span><b>+</b><span>CURIOSITY</span></p>
         </section>
 
         <Divider />
