@@ -17,6 +17,8 @@ import nixKidsBird1 from "../imports/nix/kids testing/proyector2.jpeg";
 import nixKidsBird2 from "../imports/nix/kids testing/proyector4.jpeg";
 import nixHandsTest from "../imports/nix/manosprueba1.MOV";
 import nixUserResearch from "../imports/nix/page-57.jpg";
+import nixShadowPlay from "../imports/nix/page-62.jpg";
+import nixPrototypeResearch from "../imports/nix/page-83.jpg";
 import nixLeapDevice from "../imports/nix/leap motion and kinect test/page_092_image_02_707x393.jpeg";
 import nixLeapTest1 from "../imports/nix/leap motion and kinect test/page_093_image_01_1323x1361.jpeg";
 
@@ -132,68 +134,69 @@ function NixCaseStudy() {
           onPointerMove={handleQuoteMove}
           onPointerLeave={handleQuoteLeave}
         >
-          <div className="nix-quote-spotlight" aria-hidden="true" />
-          <p className="nix-quote">DARKNESS = FEAR</p>
-          <span>becomes</span>
-          <p className="nix-quote">DARKNESS = PLAY = CURIOSITY</p>
+          <div className="nix-quote-glow" aria-hidden="true" />
+          <div className="nix-quote-stars" aria-hidden="true"><i>✦</i><i>·</i><i>✧</i><i>·</i></div>
+          <p className="nix-quote nix-quote-fear"><span>DARKNESS</span><b>=</b><span>FEAR</span></p>
+          <div className="nix-quote-transform"><i /> <span>reframed through play</span> <i /></div>
+          <p className="nix-quote nix-quote-play"><span>DARKNESS</span><b>=</b><span>PLAY</span><b>=</b><span>CURIOSITY</span></p>
         </section>
 
         <Divider />
 
         <section className="nix-research-section">
           <SectionLabel>03 — USER & PSYCHOLOGY RESEARCH</SectionLabel>
-          <div className="nix-section-heading-row nix-research-heading">
-            <h2 className="nix-display">Why 4–7? The age was part of the design decision.</h2>
-            <p>
-              I did not begin with the technology. I began by asking when fear of darkness is most present, how children at that age interpret what they see, and how an experience could change that association without trying to rationalise the fear away.
-            </p>
+          <div className="nix-research-hero">
+            <div>
+              <p className="nix-research-eyebrow">THE TARGET WAS A RESEARCH DECISION</p>
+              <h2 className="nix-display">Why 4–7?</h2>
+              <p className="nix-research-lede">Preschool years are a key period for fear of darkness. At the same time, imagination, perception and symbolic thinking strongly shape how children understand what they see.</p>
+            </div>
+            <div className="nix-age-visual" aria-label="Target age 4 to 7 years">
+              <div className="nix-age-number">4–7</div>
+              <div className="nix-age-track"><span>2</span><span>3</span><strong>4</strong><strong>5</strong><strong>6</strong><strong>7</strong><span>8</span></div>
+              <p>years · intuitive / symbolic stage</p>
+            </div>
           </div>
 
-          <div className="nix-research-grid">
-            <article className="nix-research-card nix-research-card-featured">
-              <span>01 · DEVELOPMENT</span>
-              <strong>4–7 years</strong>
-              <p>
-                My research identified the preschool years as a particularly relevant period for fear of darkness. The thesis therefore focused on children aged 4–7: old enough to actively participate in a story, but still in a stage where imagination, perception and fantasy strongly shape how the world is understood.
-              </p>
-            </article>
-            <article className="nix-research-card">
-              <span>02 · COGNITION</span>
-              <strong>Intuitive + symbolic thinking</strong>
-              <p>
-                Using Piaget’s preoperational stage as a theoretical lens, I explored animism, magical thinking and symbolic play. A shadow can easily become a monster — but that same imaginative capacity can also turn it into a bird, a snail or something funny.
-              </p>
-            </article>
-            <article className="nix-research-card">
-              <span>03 · EMOTION</span>
-              <strong>Re-associate, don’t erase</strong>
-              <p>
-                The objective was primary prevention, not treatment of a diagnosed phobia. I studied gradual exposure, counterconditioning and emotional staging to understand how darkness could be paired with responses that are incompatible with fear: curiosity, play, music and pleasure.
-              </p>
-            </article>
-            <article className="nix-research-card">
-              <span>04 · LANGUAGE</span>
-              <strong>Play is how children participate</strong>
-              <p>
-                Literature, specialist interviews and observation consistently pointed toward experiential play rather than logical explanation. That insight became central to NIX: the child learns by moving, discovering, imagining and seeing their own actions transform the dark environment.
-              </p>
-            </article>
+          <div className="nix-psych-story">
+            <figure className="nix-psych-image nix-psych-image-main">
+              <img src={nixShadowPlay} alt="Shadow-play research from the NIX thesis" />
+              <figcaption>Studying shadow as a material for fantasy, expression and play.</figcaption>
+            </figure>
+            <div className="nix-psych-diagram">
+              <p className="case-label">THE PSYCHOLOGICAL INSIGHT</p>
+              <div className="nix-thought-path nix-thought-path-fear"><span>SHADOW</span><i>→</i><span>I SEE SOMETHING</span><i>→</i><strong>IMAGINATION</strong><i>→</i><span>FEAR</span></div>
+              <p className="nix-psych-pivot">But imagination works both ways.</p>
+              <div className="nix-thought-path nix-thought-path-play"><span>SHADOW</span><i>→</i><strong>PLAY</strong><i>→</i><span>CHARACTER</span><i>→</i><span>CURIOSITY</span></div>
+              <p className="nix-psych-note">Instead of trying to explain fear away logically, NIX uses the child's own symbolic language to change the emotional association with darkness.</p>
+            </div>
           </div>
 
-          <figure className="nix-research-figure">
-            <img src={nixUserResearch} alt="Thesis observations and shadow-play tests with children" />
-            <figcaption>Early observation and shadow-play sessions with the target group during the thesis research.</figcaption>
-          </figure>
+          <div className="nix-research-proof">
+            <div className="nix-proof-copy">
+              <p className="case-label">RESEARCHING THROUGH THEIR WORLD</p>
+              <h3>Observe. Play. Test.</h3>
+              <p>The thesis combined psychology literature, specialist interviews, participant observation and hands-on shadow experiments with children.</p>
+              <div className="nix-method-chips"><span>Psychology</span><span>Expert interviews</span><span>Observation</span><span>Play testing</span></div>
+            </div>
+            <figure className="nix-proof-photo nix-proof-photo-a"><img src={nixUserResearch} alt="Observation and user testing documented in the NIX thesis" /><figcaption>Observation + early interaction studies</figcaption></figure>
+            <figure className="nix-proof-photo nix-proof-photo-b"><img src={nixPrototypeResearch} alt="NIX prototype research and testing" /><figcaption>Turning shadow research into interaction</figcaption></figure>
+          </div>
 
           <div className="nix-design-translation">
             <p className="case-label">RESEARCH → DESIGN</p>
-            <div className="nix-design-translation-grid">
-              <p><span>Instead of explaining</span><strong>Let the child experience darkness safely.</strong></p>
-              <p><span>Instead of avoiding</span><strong>Move progressively through darker scenes.</strong></p>
-              <p><span>Instead of a controller</span><strong>Use the child’s body and shadow as the interface.</strong></p>
-              <p><span>Instead of fighting imagination</span><strong>Use fantasy to transform the meaning of the shadow.</strong></p>
+            <div className="nix-translation-flow">
+              <article><span>01</span><div className="nix-mini-icon">◐</div><small>EXPERIENCE, NOT EXPLAIN</small><strong>Let the child encounter darkness safely.</strong></article>
+              <article><span>02</span><div className="nix-mini-icon">◒</div><small>GRADUAL APPROACH</small><strong>Move progressively through darker scenes.</strong></article>
+              <article><span>03</span><div className="nix-mini-icon">☝</div><small>ACTIVE BODY</small><strong>Make the child's shadow the interface.</strong></article>
+              <article><span>04</span><div className="nix-mini-icon">✦</div><small>USE IMAGINATION</small><strong>Transform the shadow into playful characters.</strong></article>
             </div>
           </div>
+
+          <blockquote className="nix-research-thesis">
+            <span>THE IDEA THAT UNLOCKED NIX</span>
+            <p>What if the imagination creating the fear could also be used to transform it?</p>
+          </blockquote>
         </section>
 
         <Divider />
