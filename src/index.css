@@ -249,7 +249,7 @@ body {
 /* === NIX case study: monochrome editorial world inside violet portfolio === */
 .case-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px; }
 .case-divider { width: 100%; height: 1px; background: #e7e7e7; margin: 88px 0; }
-.nix-case { background: var(--bg); color: var(--text); overflow: hidden; --nix-light: #f2c879; }
+.nix-case { background: var(--bg); color: var(--text); overflow: hidden; --nix-light: #ffcf4d; }
 .nix-hero { height: min(92vh,920px); min-height: 650px; position: relative; background: #080808; overflow: hidden; }
 .nix-hero > img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; filter: grayscale(1) contrast(1.04); }
 .nix-hero-shade { position: absolute; inset: 0; background: linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.24) 42%,rgba(0,0,0,.06) 68%,rgba(0,0,0,.35) 100%); }
@@ -926,7 +926,7 @@ body {
 
 /* NIX — darkness statement: warm light through the dark */
 .nix-quote-block{--mx:50%;--my:50%;min-height:560px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);position:relative;overflow:hidden;padding-top:100px;padding-bottom:100px}
-.nix-quote-glow{position:absolute;inset:0;opacity:.72;background:radial-gradient(circle 150px at var(--mx) var(--my),rgba(255,248,222,.96) 0,rgba(255,220,150,.5) 20%,rgba(242,169,60,.22) 44%,transparent 72%);filter:blur(3px);transition:opacity .3s ease;mix-blend-mode:screen}
+.nix-quote-glow{position:absolute;inset:0;opacity:.78;background:radial-gradient(circle 150px at var(--mx) var(--my),rgba(255,252,230,1) 0,rgba(255,214,90,.62) 22%,rgba(255,180,40,.28) 46%,transparent 72%);filter:blur(3px);transition:opacity .3s ease;mix-blend-mode:screen}
 .nix-quote-block.is-lit .nix-quote-glow{opacity:1}
 .nix-quote-kicker{position:relative;z-index:3;font:500 11px/1.2 'Inter',sans-serif;letter-spacing:.16em;color:rgba(255,255,255,.46);margin-bottom:38px}
 .nix-quote-stage{position:relative;z-index:2;width:100%;min-height:185px;display:grid;place-items:center}
@@ -970,12 +970,6 @@ body {
 .nix-age-window span{font:italic 700 27px 'Playfair Display',serif}
 .nix-age-window b{font-size:10px;letter-spacing:.13em;color:var(--nix-light)}
 .nix-age-visual>p{font-size:12px;color:var(--text-muted);margin:14px 0 0}
-.nix-psychology-grid{display:grid;grid-template-columns:repeat(4,1fr);margin:88px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.nix-psychology-grid article{padding:38px 28px 42px;border-right:1px solid var(--border)}
-.nix-psychology-grid article:last-child{border-right:0}
-.nix-psychology-grid span{font-size:11px;color:var(--nix-light);font-weight:700}
-.nix-psychology-grid h3{font:700 22px/1.15 'Bricolage Grotesque',sans-serif;margin:32px 0 13px}
-.nix-psychology-grid p{font-size:14px;line-height:1.65;color:var(--text-muted)}
 .nix-imagination-story{background:var(--surface-alt-2);color:var(--text);border-radius:8px;padding:70px;display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;align-items:center}
 .nix-imagination-copy h3{font:italic 700 clamp(36px,4vw,58px)/1 'Playfair Display',serif;margin:14px 0 22px}
 .nix-imagination-copy>p:last-child{color:var(--text-muted);line-height:1.7}
@@ -999,11 +993,6 @@ body {
 .nix-research-gallery figcaption{position:absolute;left:12px;bottom:12px;background:rgba(12,12,19,.82);backdrop-filter:blur(8px);border-radius:999px;padding:8px 11px;font-size:10px;color:var(--text)}
 .nix-field-research .nix-method-chips{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
 .nix-method-chips span{border:1px solid var(--border);border-radius:999px;padding:9px 13px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
-.nix-expert-insight{margin-top:100px}
-.nix-expert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
-.nix-expert-grid blockquote{margin:0;background:var(--surface-alt);border-radius:8px;padding:32px}
-.nix-expert-grid blockquote p{font:italic 700 25px/1.15 'Playfair Display',serif;margin-bottom:28px}
-.nix-expert-grid blockquote span{font-size:13px;line-height:1.6;color:var(--text-muted)}
 .nix-design-translation{margin-top:100px}
 .nix-translation-title{font:700 clamp(32px,4vw,52px)/1.05 'Bricolage Grotesque',sans-serif;max-width:720px;margin:14px 0 40px}
 .nix-translation-flow{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -1017,5 +1006,5 @@ body {
 .nix-research-thesis span{font-size:9px;letter-spacing:.18em;opacity:.85;color:var(--nix-light)}
 .nix-research-thesis p{max-width:900px;margin:28px auto 0;font:700 clamp(42px,6vw,78px)/.98 'Bricolage Grotesque',sans-serif;letter-spacing:-.055em}
 
-@media(max-width:900px){.nix-research-intro,.nix-age-chapter,.nix-imagination-story,.nix-field-heading{grid-template-columns:1fr;gap:36px}.nix-age-chapter{padding:42px}.nix-psychology-grid{grid-template-columns:1fr 1fr}.nix-psychology-grid article:nth-child(2){border-right:0}.nix-psychology-grid article:nth-child(-n+2){border-bottom:1px solid var(--border)}.nix-research-gallery{grid-template-columns:1fr 1fr;grid-template-rows:330px 220px 220px}.nix-research-gallery figure.wide{grid-column:1/-1;grid-row:auto}.nix-expert-grid{grid-template-columns:1fr}.nix-translation-flow{grid-template-columns:1fr 1fr}.nix-translation-flow article:last-child{grid-column:1/-1}.nix-imagination-story{padding:48px}}
-@media(max-width:767px){.nix-quote-block{min-height:450px}.nix-quote-kicker{margin-bottom:24px}.nix-quote-stage{min-height:145px}.nix-shadow-creatures i:nth-child(1){left:8%}.nix-shadow-creatures i:nth-child(3){right:8%}.nix-quote-transform{font-size:15px}.nix-quote{gap:.14em}.nix-research-intro{margin-bottom:52px}.nix-research-lede{font-size:16px}.nix-age-chapter{padding:28px 22px;border-radius:20px}.nix-age-copy .nix-age-number{margin:22px 0 28px}.nix-age-copy h3{font-size:25px}.nix-age-visual{padding:28px 18px;border-radius:16px}.nix-age-track>*{font-size:12px}.nix-psychology-grid{grid-template-columns:1fr;margin:58px 0}.nix-psychology-grid article{border-right:0;border-bottom:1px solid var(--border)}.nix-psychology-grid article:last-child{border-bottom:0}.nix-imagination-story{padding:36px 22px;border-radius:20px}.nix-thought-line{padding:18px 12px;font-size:9px;gap:5px}.nix-field-research,.nix-expert-insight,.nix-design-translation{margin-top:70px}.nix-research-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 180px 180px}.nix-research-gallery figure.wide{grid-column:1/-1}.nix-research-gallery figcaption{font-size:9px}.nix-expert-grid blockquote{padding:26px}.nix-translation-flow{grid-template-columns:1fr}.nix-translation-flow article:last-child{grid-column:auto}.nix-research-thesis{margin:72px -12px 0;padding:70px 24px}}
+@media(max-width:900px){.nix-research-intro,.nix-age-chapter,.nix-imagination-story,.nix-field-heading{grid-template-columns:1fr;gap:36px}.nix-age-chapter{padding:42px}.nix-research-gallery{grid-template-columns:1fr 1fr;grid-template-rows:330px 220px 220px}.nix-research-gallery figure.wide{grid-column:1/-1;grid-row:auto}.nix-translation-flow{grid-template-columns:1fr 1fr}.nix-translation-flow article:last-child{grid-column:1/-1}.nix-imagination-story{padding:48px}}
+@media(max-width:767px){.nix-quote-block{min-height:450px}.nix-quote-kicker{margin-bottom:24px}.nix-quote-stage{min-height:145px}.nix-shadow-creatures i:nth-child(1){left:8%}.nix-shadow-creatures i:nth-child(3){right:8%}.nix-quote-transform{font-size:15px}.nix-quote{gap:.14em}.nix-research-intro{margin-bottom:52px}.nix-research-lede{font-size:16px}.nix-age-chapter{padding:28px 22px;border-radius:20px}.nix-age-copy .nix-age-number{margin:22px 0 28px}.nix-age-copy h3{font-size:25px}.nix-age-visual{padding:28px 18px;border-radius:16px}.nix-age-track>*{font-size:12px}.nix-imagination-story{padding:36px 22px;border-radius:20px}.nix-thought-line{padding:18px 12px;font-size:9px;gap:5px}.nix-field-research,.nix-design-translation{margin-top:70px}.nix-research-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 180px 180px}.nix-research-gallery figure.wide{grid-column:1/-1}.nix-research-gallery figcaption{font-size:9px}.nix-translation-flow{grid-template-columns:1fr}.nix-translation-flow article:last-child{grid-column:auto}.nix-research-thesis{margin:72px -12px 0;padding:70px 24px}}

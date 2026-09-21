@@ -164,21 +164,13 @@ function NixCaseStudy() {
               <p className="case-label">WHY 4–7?</p>
               <div className="nix-age-number">4–7</div>
               <h3>A small age range with a very particular way of seeing the world.</h3>
-              <p>My research showed that fear of darkness is especially present during the preschool years. I focused on ages 4–7: a period described in the thesis through Piaget's intuitive / preoperational stage, where perception, fantasy and symbolic thinking strongly influence how children make sense of ambiguous things.</p>
-              <p>That mattered because a shadow is never just a shadow. Imagination can turn an incomplete shape into something frightening — but that same ability to invent meaning can also turn it into a bird, a snail or a character in a story.</p>
+              <p>Fear of darkness is especially present during the preschool years — Piaget's intuitive stage, where perception, fantasy and symbolic thinking shape how children read ambiguous things. A shadow is never just a shadow: imagination can turn it into something frightening, or just as easily into a bird, a snail or a character in a story.</p>
             </div>
             <div className="nix-age-visual" aria-label="Target age 4 to 7 years">
               <div className="nix-age-track"><span>2</span><span>3</span><strong>4</strong><strong>5</strong><strong>6</strong><strong>7</strong><span>8</span></div>
               <div className="nix-age-window"><span>fear of darkness</span><b>IMAGINATION · SYMBOLIC PLAY · PERCEPTION</b></div>
               <p>Research focus → preschool / intuitive stage</p>
             </div>
-          </div>
-
-          <div className="nix-psychology-grid">
-            <article><span>01</span><h3>Fear is developmental.</h3><p>Fear itself is adaptive and common in childhood. The project was not about removing fear; it explored primary prevention before persistent avoidance could become more disruptive.</p></article>
-            <article><span>02</span><h3>Avoidance reinforces the problem.</h3><p>Always switching on a light or relying on a parent can confirm the idea that darkness is unsafe. NIX instead creates a controlled reason to remain in the dark and interact with it.</p></article>
-            <article><span>03</span><h3>Play is their language.</h3><p>The literature and specialist interviews repeatedly pointed toward play, active discovery and symbolic expression rather than logical explanations of why the child “shouldn't” be afraid.</p></article>
-            <article><span>04</span><h3>Approach should be gradual.</h3><p>Research into exposure and desensitisation informed a progressive experience: start from safety, introduce darker moments, reward interaction and pair the feared context with positive emotion.</p></article>
           </div>
 
           <div className="nix-imagination-story">
@@ -207,15 +199,6 @@ function NixCaseStudy() {
               <figure><img src={nixResearch5} alt="NIX research activity"/><figcaption>Testing through active participation</figcaption></figure>
             </div>
             <div className="nix-method-chips"><span>Psychology literature</span><span>Expert interviews</span><span>Participant observation</span><span>Play testing</span><span>Shadow experiments</span></div>
-          </div>
-
-          <div className="nix-expert-insight">
-            <p className="case-label">WHAT THE SPECIALISTS REINFORCED</p>
-            <div className="nix-expert-grid">
-              <blockquote><p>Don't rely on rational explanation.</p><span>At 4–7, observation, imagery and active experience are stronger channels for the message.</span></blockquote>
-              <blockquote><p>Use play to approach the stimulus.</p><span>Play creates a motivating context where darkness can be paired with pleasure, creativity and achievement.</span></blockquote>
-              <blockquote><p>Build the experience progressively.</p><span>Move from lower to higher difficulty and reinforce each successful interaction.</span></blockquote>
-            </div>
           </div>
 
           <div className="nix-design-translation">
