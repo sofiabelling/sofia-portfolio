@@ -205,11 +205,10 @@ function NixCaseStudy() {
             <p className="case-label">RESEARCH → DESIGN</p>
             <h3 className="nix-translation-title">Every psychological insight became an interaction decision.</h3>
             <div className="nix-translation-flow">
-              <article><span>01</span><div className="nix-mini-icon">◐</div><small>EXPERIENCE, NOT EXPLAIN</small><strong>Let the child discover that darkness can hold something enjoyable.</strong></article>
-              <article><span>02</span><div className="nix-mini-icon">◒</div><small>GRADUAL APPROACH</small><strong>Move through progressively darker moments instead of forcing exposure.</strong></article>
-              <article><span>03</span><div className="nix-mini-icon">☝</div><small>ACTIVE BODY</small><strong>Make the child the protagonist by turning their own shadow into the interface.</strong></article>
-              <article><span>04</span><div className="nix-mini-icon">✦</div><small>SYMBOLIC PLAY</small><strong>Turn ambiguous shadows into creatures, stories and actions.</strong></article>
-              <article><span>05</span><div className="nix-mini-icon">☺</div><small>POSITIVE ASSOCIATION</small><strong>Pair darkness with sound, curiosity, success and play.</strong></article>
+              <article><span>01</span><div className="nix-mini-icon">◒</div><small>GRADUAL APPROACH</small><strong>Move through progressively darker moments instead of forcing exposure.</strong></article>
+              <article><span>02</span><div className="nix-mini-icon">☝</div><small>ACTIVE BODY</small><strong>Make the child the protagonist by turning their own shadow into the interface.</strong></article>
+              <article><span>03</span><div className="nix-mini-icon">✦</div><small>SYMBOLIC PLAY</small><strong>Turn ambiguous shadows into creatures, stories and actions.</strong></article>
+              <article><span>04</span><div className="nix-mini-icon">☺</div><small>POSITIVE ASSOCIATION</small><strong>Pair darkness with sound, curiosity, success and play.</strong></article>
             </div>
           </div>
 
