@@ -146,7 +146,7 @@ export default function About() {
                     display: "block",
                     margin: "0 0 14px",
                     fontFamily: "'Bricolage Grotesque', sans-serif",
-                    fontSize: isMobile ? "clamp(48px,13vw,66px)" : "clamp(68px,6.2vw,106px)",
+                    fontSize: isMobile ? "clamp(40px,11vw,58px)" : "clamp(38px,4.2vw,88px)",
                     fontWeight: 800,
                     lineHeight: 0.92,
                     letterSpacing: "-0.055em",
@@ -165,46 +165,45 @@ export default function About() {
                 together.
               </h1>
 
-              {!isMobile && (
-                <div
-                  style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "8px",
-                    marginTop: "30px",
-                  }}
-                >
-                  {["Product design", "Interaction", "Visual culture", "Creative technology"].map(
-                    (item) => (
-                      <span
-                        key={item}
-                        style={{
-                          padding: "8px 11px",
-                          border: "1px solid rgba(114,87,232,.13)",
-                          borderRadius: "999px",
-                          fontFamily: "'JetBrains Mono', monospace",
-                          fontSize: "10px",
-                          letterSpacing: ".07em",
-                          textTransform: "uppercase",
-                          color: "#9994C9",
-                        }}
-                      >
-                        {item}
-                      </span>
-                    ),
-                  )}
-                </div>
-              )}
             </div>
 
             <div
               style={{
                 position: "relative",
                 width: "100%",
-                maxWidth: isMobile ? "290px" : "430px",
+                maxWidth: isMobile ? "290px" : "320px",
                 justifySelf: isMobile ? "center" : "end",
               }}
             >
+              {!isMobile &&
+                [
+                  { item: "Product design", top: "-14px", left: "18px" },
+                  { item: "Interaction", top: "-14px", right: "18px" },
+                  { item: "Visual culture", bottom: "-14px", left: "18px" },
+                  { item: "Creative technology", bottom: "-14px", right: "18px" },
+                ].map(({ item, ...pos }) => (
+                  <span
+                    key={item}
+                    style={{
+                      position: "absolute",
+                      zIndex: 2,
+                      ...pos,
+                      padding: "8px 11px",
+                      border: "1px solid rgba(114,87,232,.16)",
+                      borderRadius: "999px",
+                      background: "var(--bg)",
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "10px",
+                      letterSpacing: ".07em",
+                      textTransform: "uppercase",
+                      color: "#9994C9",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {item}
+                  </span>
+                ))}
+
               <div
                 style={{
                   position: "relative",
@@ -271,21 +270,6 @@ export default function About() {
                 ✦
               </span>
 
-              {!isMobile && (
-                <span
-                  className="mono-label"
-                  style={{
-                    position: "absolute",
-                    left: "-50px",
-                    bottom: "24px",
-                    color: "#A7A2D6",
-                    transform: "rotate(-90deg)",
-                    transformOrigin: "left bottom",
-                  }}
-                >
-                  that’s me ↗
-                </span>
-              )}
             </div>
           </div>
 
