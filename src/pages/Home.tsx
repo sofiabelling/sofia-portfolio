@@ -293,22 +293,29 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="home-carousel">
+        <div className="home-carousel" role="region" aria-roledescription="carousel" aria-label="Selected work">
+          <span className="sr-only" aria-live="polite" aria-atomic="true">
+            {featured[activeWorkIndex]?.title}, project {activeWorkIndex + 1} of {featured.length}
+          </span>
+
           <div className="home-carousel-track" ref={workTrackRef} onScroll={handleWorkScroll}>
-            {featured.map((project) => {
+            {featured.map((project, index) => {
               const thumb = THUMBNAIL_STYLE[project.slug] ?? {};
               const metaLines = project.meta ?? [project.industry.toUpperCase()];
               return (
                 <button
                   key={project.slug}
                   type="button"
-                  className="home-carousel-slide"
+                  className={`home-carousel-slide${index === activeWorkIndex ? " is-active" : ""}`}
                   style={{ background: project.bg }}
+                  aria-label={`View ${project.title} case study`}
+                  aria-current={index === activeWorkIndex}
+                  tabIndex={index === activeWorkIndex ? 0 : -1}
                   onClick={() => navigate(`/work/${project.slug}`)}
                 >
                   <img
                     src={project.img}
-                    alt={project.title}
+                    alt=""
                     className="home-carousel-image"
                     style={{
                       objectFit: thumb.fit ?? "cover",
@@ -316,7 +323,7 @@ export default function Home() {
                     }}
                   />
                   <div className="home-carousel-scrim" aria-hidden="true" />
-                  <div className="home-carousel-info">
+                  <div className="home-carousel-info" aria-hidden="true">
                     <span className="home-carousel-year">{project.year}</span>
                     <h2>{project.title}</h2>
                     <div className="home-carousel-meta">
@@ -329,16 +336,29 @@ export default function Home() {
             })}
           </div>
 
-          <div className="home-carousel-dots">
-            {featured.map((project, index) => (
-              <button
-                key={project.slug}
-                type="button"
-                className={index === activeWorkIndex ? "active" : ""}
-                aria-label={`Show ${project.title}`}
-                onClick={() => scrollToWorkSlide(index)}
-              />
-            ))}
+          <button
+            type="button"
+            className="home-carousel-arrow prev"
+            aria-label="Previous project"
+            onClick={() => scrollToWorkSlide((activeWorkIndex - 1 + featured.length) % featured.length)}
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            className="home-carousel-arrow next"
+            aria-label="Next project"
+            onClick={() => scrollToWorkSlide((activeWorkIndex + 1) % featured.length)}
+          >
+            →
+          </button>
+
+          <div className="home-carousel-controls" aria-hidden="true">
+            <span className="home-carousel-count">{String(activeWorkIndex + 1).padStart(2, "0")}</span>
+            <div className="home-carousel-progress">
+              <span style={{ transform: `scaleX(${(activeWorkIndex + 1) / featured.length})` }} />
+            </div>
+            <span className="home-carousel-count muted">{String(featured.length).padStart(2, "0")}</span>
           </div>
         </div>
       </section>
