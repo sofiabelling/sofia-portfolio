@@ -55,9 +55,6 @@ export default function Work() {
           }}
         >
           <div>
-            <p className="mono-label" style={{ margin: "0 0 13px", color: "#9B96CE" }}>
-              Project archive
-            </p>
             <h1
               style={{
                 margin: 0,

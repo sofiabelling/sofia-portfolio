@@ -103,10 +103,6 @@ export default function Contact() {
         ====================================================== */}
 
         <div>
-          <p className="mono-label" style={{ margin: "0 0 28px" }}>
-            Say hello
-          </p>
-
           <h1
             style={{
               fontFamily: "'Bricolage Grotesque', sans-serif",

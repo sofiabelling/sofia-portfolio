@@ -127,23 +127,10 @@ export default function About() {
         <section style={{ marginBottom: isMobile ? "90px" : "128px" }}>
           <div
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-            }}
-          >
-            <SectionLabel>01 — About</SectionLabel>
-            <SectionLabel>Barcelona · 2026</SectionLabel>
-          </div>
-
-          <div
-            style={{
               display: "grid",
               gridTemplateColumns: isMobile ? "1fr" : "minmax(0,1.06fr) minmax(340px,.94fr)",
               gap: isMobile ? "32px" : "70px",
               alignItems: "start",
-              marginTop: isMobile ? "24px" : "34px",
             }}
           >
             <div>
