@@ -304,57 +304,6 @@ export default function About() {
             </div>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3,minmax(0,1fr))",
-              marginTop: isMobile ? "46px" : "68px",
-              borderTop: "1px solid rgba(114,87,232,.12)",
-              borderBottom: "1px solid rgba(114,87,232,.12)",
-            }}
-          >
-            {[
-              { value: "6+", label: "Years designing" },
-              { value: "3", label: "Cities that shaped me" },
-              { value: "∞", label: "Ideas in progress" },
-            ].map((item, index) => (
-              <div
-                key={item.label}
-                style={{
-                  padding: isMobile ? "22px 10px" : "28px 22px",
-                  borderLeft: index === 0 ? "none" : "1px solid rgba(114,87,232,.14)",
-                  minWidth: 0,
-                }}
-              >
-                <p
-                  style={{
-                    margin: 0,
-                    fontFamily: "'Bricolage Grotesque', sans-serif",
-                    fontSize: isMobile ? "34px" : "46px",
-                    fontWeight: 800,
-                    lineHeight: 1,
-                    letterSpacing: "-0.04em",
-                    color: VIOLET,
-                  }}
-                >
-                  {item.value}
-                </p>
-                <p
-                  style={{
-                    margin: "8px 0 0",
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: isMobile ? "9px" : "10px",
-                    lineHeight: 1.45,
-                    letterSpacing: ".09em",
-                    textTransform: "uppercase",
-                    color: "#AAA4DE",
-                  }}
-                >
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* =====================================================
