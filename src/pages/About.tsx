@@ -307,128 +307,10 @@ export default function About() {
         </section>
 
         {/* =====================================================
-            STORY / PLACES
-        ====================================================== */}
-        <section style={{ marginBottom: isMobile ? "88px" : "118px" }}>
-          <SectionHeader>02 — A little context</SectionHeader>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : ".9fr 1.1fr",
-              gap: isMobile ? "30px" : "64px",
-              alignItems: "start",
-            }}
-          >
-            <h2
-              style={{
-                margin: 0,
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: isMobile ? "35px" : "clamp(42px,4vw,62px)",
-                lineHeight: 1.02,
-                letterSpacing: "-0.045em",
-                color: NAV,
-              }}
-            >
-              Santiago → Stockholm → Barcelona.
-            </h2>
-
-            <div>
-              <p
-                style={{
-                  margin: 0,
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: isMobile ? "16px" : "18px",
-                  lineHeight: 1.7,
-                  color: TEXT,
-                }}
-              >
-                I studied Digital Design in Santiago, spent part of my studies
-                in Barcelona, later worked internationally from Stockholm, and
-                eventually returned to Barcelona.
-              </p>
-
-              <p
-                style={{
-                  margin: "18px 0 0",
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: isMobile ? "15px" : "16px",
-                  lineHeight: 1.7,
-                  color: "#8B8DA2",
-                }}
-              >
-                That mix of places also shaped the way I work: structured when
-                a product needs clarity, exploratory when an idea needs room,
-                and always interested in how digital experiences feel — not
-                only how they function.
-              </p>
-            </div>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3,minmax(0,1fr))",
-              gap: isMobile ? "10px" : "18px",
-              marginTop: isMobile ? "34px" : "48px",
-            }}
-          >
-            {[
-              ["Santiago", "Design foundations"],
-              ["Stockholm", "International product work"],
-              ["Barcelona", "Current chapter"],
-            ].map(([city, note], index) => (
-              <div
-                key={city}
-                style={{
-                  position: "relative",
-                  padding: isMobile ? "18px 14px" : "24px 22px",
-                  borderTop: "1px solid rgba(114,87,232,.16)",
-                }}
-              >
-                <span
-                  style={{
-                    position: "absolute",
-                    top: "-4px",
-                    left: 0,
-                    width: "7px",
-                    height: "7px",
-                    borderRadius: "50%",
-                    background: index === 2 ? VIOLET : "#C8C1F5",
-                  }}
-                />
-                <p
-                  style={{
-                    margin: 0,
-                    fontFamily: "'Bricolage Grotesque', sans-serif",
-                    fontSize: isMobile ? "17px" : "20px",
-                    fontWeight: 700,
-                    color: NAV,
-                  }}
-                >
-                  {city}
-                </p>
-                <p
-                  style={{
-                    margin: "7px 0 0",
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: isMobile ? "10px" : "12px",
-                    lineHeight: 1.45,
-                    color: "#999AB0",
-                  }}
-                >
-                  {note}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* =====================================================
             EXPERIENCE
         ====================================================== */}
         <section style={{ marginBottom: isMobile ? "84px" : "112px" }}>
-          <SectionHeader>03 — Experience</SectionHeader>
+          <SectionHeader>02 — Experience</SectionHeader>
 
           {experience.map((item, index) => (
             <div
@@ -563,7 +445,7 @@ export default function About() {
             EXPERTISE + TOOLS
         ====================================================== */}
         <section style={{ marginBottom: isMobile ? "84px" : "112px" }}>
-          <SectionHeader>04 — What I work with</SectionHeader>
+          <SectionHeader>03 — What I work with</SectionHeader>
 
           <div
             style={{
@@ -619,7 +501,7 @@ export default function About() {
             EDUCATION
         ====================================================== */}
         <section style={{ marginBottom: isMobile ? "84px" : "112px" }}>
-          <SectionHeader>05 — Education</SectionHeader>
+          <SectionHeader>04 — Education</SectionHeader>
 
           {education.map((item, index) => (
             <div
@@ -693,7 +575,7 @@ export default function About() {
             PERSONAL + LANGUAGES + CTA
         ====================================================== */}
         <section>
-          <SectionHeader>06 — Outside the screen</SectionHeader>
+          <SectionHeader>05 — Outside the screen</SectionHeader>
 
           <div
             style={{
