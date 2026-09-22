@@ -508,7 +508,7 @@ function ProjectChapter({
       onMouseLeave={() => setHovered(false)}
       style={{
         position: "relative",
-        height: "260px",
+        height: "320px",
         overflow: "hidden",
         border: `1px solid ${hovered ? "var(--card-border-hover)" : "var(--card-border)"}`,
         borderRadius: "12px",
