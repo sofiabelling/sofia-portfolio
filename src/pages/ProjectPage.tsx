@@ -159,17 +159,6 @@ function NixCaseStudy() {
             <div className="nix-method-chips"><span>Psychology literature</span><span>Expert interviews</span><span>Participant observation</span><span>Play testing</span><span>Shadow experiments</span></div>
           </div>
 
-          <div className="nix-design-translation">
-            <p className="case-label">RESEARCH → DESIGN</p>
-            <h3 className="nix-translation-title">Every psychological insight became an interaction decision.</h3>
-            <div className="nix-translation-flow">
-              <article><span>01</span><div className="nix-mini-icon">◒</div><small>GRADUAL APPROACH</small><strong>Move through progressively darker moments instead of forcing exposure.</strong></article>
-              <article><span>02</span><div className="nix-mini-icon">☝</div><small>ACTIVE BODY</small><strong>Make the child the protagonist by turning their own shadow into the interface.</strong></article>
-              <article><span>03</span><div className="nix-mini-icon">✦</div><small>SYMBOLIC PLAY</small><strong>Turn ambiguous shadows into creatures, stories and actions.</strong></article>
-              <article><span>04</span><div className="nix-mini-icon">☺</div><small>POSITIVE ASSOCIATION</small><strong>Pair darkness with sound, curiosity, success and play.</strong></article>
-            </div>
-          </div>
-
           <blockquote className="nix-research-thesis">
             <span>THE IDEA THAT UNLOCKED NIX</span>
             <p>What if the imagination creating the fear could also be used to transform it?</p>
