@@ -24,8 +24,9 @@ const THUMBNAIL_STYLE: Record<
 export default function Home() {
   const navigate = useNavigate();
   const heroRef = useRef<HTMLElement | null>(null);
+  const workTrackRef = useRef<HTMLDivElement | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [activeSlug, setActiveSlug] = useState("copec");
+  const [activeWorkIndex, setActiveWorkIndex] = useState(0);
   const [tap, setTap] = useState<{ x: number; y: number; id: number } | null>(null);
 
   useEffect(() => {
@@ -39,11 +40,19 @@ export default function Home() {
     projects.find((project) => project.slug === slug),
   ).filter((project): project is (typeof projects)[number] => Boolean(project));
 
-  useEffect(() => {
-    if (featured.length && !featured.some((project) => project.slug === activeSlug)) {
-      setActiveSlug(featured[0].slug);
-    }
-  }, [activeSlug, featured]);
+  const handleWorkScroll = () => {
+    const el = workTrackRef.current;
+    if (!el || !featured.length) return;
+    const slideWidth = el.scrollWidth / featured.length;
+    setActiveWorkIndex(Math.round(el.scrollLeft / slideWidth));
+  };
+
+  const scrollToWorkSlide = (index: number) => {
+    const el = workTrackRef.current;
+    if (!el || !featured.length) return;
+    const slideWidth = el.scrollWidth / featured.length;
+    el.scrollTo({ left: slideWidth * index, behavior: "smooth" });
+  };
 
   const handleHeroPointerMove = (event: React.PointerEvent<HTMLElement>) => {
     if (isMobile || !heroRef.current) return;
@@ -257,25 +266,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SELECTED WORK / EXPANDABLE CHAPTERS */}
-      <section
-        className="page-container"
-        style={{
-          maxWidth: "1320px",
-          margin: "0 auto",
-          paddingTop: isMobile ? "18px" : "34px",
-          paddingBottom: isMobile ? "140px" : "170px",
-        }}
-      >
+      {/* SELECTED WORK / FULL-WIDTH CAROUSEL */}
+      <section style={{ paddingTop: isMobile ? "18px" : "34px", paddingBottom: isMobile ? "110px" : "140px" }}>
         <div
+          className="page-container"
           style={{
+            maxWidth: "1320px",
+            margin: "0 auto",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             gap: "20px",
             paddingBottom: isMobile ? "15px" : "20px",
             borderBottom: "1px solid rgba(114,87,232,.14)",
-            marginBottom: isMobile ? "14px" : "18px",
+            marginBottom: isMobile ? "20px" : "28px",
           }}
         >
           <p className="mono-label" style={{ margin: 0 }}>Selected work</p>
@@ -289,324 +293,55 @@ export default function Home() {
           </button>
         </div>
 
-        <div style={{ display: "grid", gap: isMobile ? "7px" : "9px" }}>
-          {featured.map((project) => (
-            <ProjectChapter
-              key={project.slug}
-              project={project}
-              isMobile={isMobile}
-              isActive={isMobile ? true : project.slug === activeSlug}
-              onActivate={() => setActiveSlug(project.slug)}
-              onOpen={() => navigate(`/work/${project.slug}`)}
-            />
-          ))}
+        <div className="home-carousel">
+          <div className="home-carousel-track" ref={workTrackRef} onScroll={handleWorkScroll}>
+            {featured.map((project) => {
+              const thumb = THUMBNAIL_STYLE[project.slug] ?? {};
+              const metaLines = project.meta ?? [project.industry.toUpperCase()];
+              return (
+                <button
+                  key={project.slug}
+                  type="button"
+                  className="home-carousel-slide"
+                  style={{ background: project.bg }}
+                  onClick={() => navigate(`/work/${project.slug}`)}
+                >
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="home-carousel-image"
+                    style={{
+                      objectFit: thumb.fit ?? "cover",
+                      objectPosition: thumb.position ?? project.imgPosition ?? "center",
+                    }}
+                  />
+                  <div className="home-carousel-scrim" aria-hidden="true" />
+                  <div className="home-carousel-info">
+                    <span className="home-carousel-year">{project.year}</span>
+                    <h2>{project.title}</h2>
+                    <div className="home-carousel-meta">
+                      {metaLines.map((line) => <div key={line}>{line}</div>)}
+                    </div>
+                    <span className="home-carousel-cta">View case study →</span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="home-carousel-dots">
+            {featured.map((project, index) => (
+              <button
+                key={project.slug}
+                type="button"
+                className={index === activeWorkIndex ? "active" : ""}
+                aria-label={`Show ${project.title}`}
+                onClick={() => scrollToWorkSlide(index)}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </div>
-  );
-}
-
-function ProjectChapter({
-  project,
-  isMobile,
-  isActive,
-  onActivate,
-  onOpen,
-}: {
-  project: (typeof projects)[number];
-  isMobile: boolean;
-  isActive: boolean;
-  onActivate: () => void;
-  onOpen: () => void;
-}) {
-  const metaLines = project.meta ?? [project.industry.toUpperCase()];
-  const [hovered, setHovered] = useState(false);
-  const thumb = THUMBNAIL_STYLE[project.slug] ?? {};
-
-  const image = (
-    <img
-      src={project.img}
-      alt={project.title}
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "block",
-        objectFit: thumb.fit ?? "cover",
-        objectPosition: thumb.position ?? project.imgPosition ?? "center",
-        padding: thumb.padding ?? 0,
-        transform: `translateZ(0) scale(${(thumb.scale ?? 1) * (!isMobile && hovered ? 1.025 : 1)})`,
-        transformOrigin: "center",
-        imageRendering: "auto",
-        backfaceVisibility: "hidden",
-        willChange: "transform",
-        transition: "transform .32s cubic-bezier(.2,.7,.2,1)",
-      }}
-    />
-  );
-
-  /* Mobile uses one persistent layout so the active/inactive state can
-     animate instead of swapping two different trees. */
-  if (isMobile) {
-    const mobileHeight = isActive ? 450 : 136;
-
-    return (
-      <article
-        onClick={onOpen}
-        onPointerDown={() => setHovered(true)}
-        onPointerUp={() => setHovered(false)}
-        onPointerCancel={() => setHovered(false)}
-        onPointerLeave={() => setHovered(false)}
-        style={{
-          position: "relative",
-          height: `${mobileHeight}px`,
-          overflow: "hidden",
-          border: `1px solid ${isActive ? "var(--card-border-active)" : "var(--card-border)"}`,
-          borderRadius: "12px",
-          background: BG,
-          cursor: "pointer",
-          transform: hovered ? "scale(.992)" : "scale(1)",
-          boxShadow: isActive ? "0 10px 28px rgba(26,25,64,.055)" : "0 0 0 rgba(26,25,64,0)",
-          transition: "height .42s cubic-bezier(.2,.78,.22,1), transform .16s ease, border-color .28s ease, box-shadow .32s ease",
-          willChange: "height, transform",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            zIndex: 2,
-            left: 0,
-            top: isActive ? "288px" : 0,
-            width: isActive ? "100%" : "42%",
-            height: isActive ? "162px" : "136px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: isActive ? "space-between" : "center",
-            padding: isActive ? "17px 17px 18px" : "0 14px",
-            background: BG,
-            transition: "top .42s cubic-bezier(.2,.78,.22,1), width .42s cubic-bezier(.2,.78,.22,1), height .42s cubic-bezier(.2,.78,.22,1), padding .34s ease",
-          }}
-        >
-          <div>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: isActive ? "9px" : "8px", letterSpacing: isActive ? ".07em" : ".06em", color: SOFT, transition: "font-size .28s ease" }}>
-              {project.year}
-            </span>
-            <h2
-              style={{
-                margin: isActive ? "7px 0 0" : "6px 0 0",
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: isActive ? "27px" : "18px",
-                fontWeight: 800,
-                lineHeight: isActive ? .96 : .98,
-                letterSpacing: isActive ? "-.04em" : "-.035em",
-                color: NAV,
-                transform: isActive ? "translate3d(0,0,0)" : "translate3d(0,1px,0)",
-                transition: "font-size .34s cubic-bezier(.2,.78,.22,1), margin .3s ease, transform .3s ease",
-              }}
-            >
-              {project.title}
-            </h2>
-            <div
-              className="editorial-meta-block"
-              style={{
-                marginTop: "9px",
-                maxWidth: "390px",
-                opacity: isActive ? 1 : 0,
-                transform: isActive ? "translate3d(0,0,0)" : "translate3d(0,8px,0)",
-                pointerEvents: isActive ? "auto" : "none",
-                transition: "opacity .24s ease .12s, transform .34s cubic-bezier(.2,.78,.22,1) .08s",
-              }}
-            >
-              {metaLines.map((line) => <div key={line}>{line}</div>)}
-            </div>
-          </div>
-
-          <button
-            type="button"
-            onClick={(event) => { event.stopPropagation(); onOpen(); }}
-            tabIndex={isActive ? 0 : -1}
-            aria-hidden={!isActive}
-            style={{
-              alignSelf: "flex-start",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: 0,
-              border: 0,
-              background: "transparent",
-              cursor: isActive ? "pointer" : "default",
-              pointerEvents: isActive ? "auto" : "none",
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "9px",
-              fontWeight: 500,
-              letterSpacing: ".1em",
-              textTransform: "uppercase",
-              color: VIOLET,
-              opacity: isActive ? 1 : 0,
-              transform: isActive ? "translate3d(0,0,0)" : "translate3d(0,8px,0)",
-              transition: "opacity .22s ease .15s, transform .32s cubic-bezier(.2,.78,.22,1) .1s",
-            }}
-          >
-            View case study
-            <span style={{ transition: "transform .2s ease" }}>→</span>
-          </button>
-        </div>
-
-        <button
-          type="button"
-          aria-label={`Open ${project.title} project`}
-          onClick={(event) => {
-            event.stopPropagation();
-            if (isActive) onOpen();
-            else onActivate();
-          }}
-          style={{
-            position: "absolute",
-            zIndex: 1,
-            top: 0,
-            right: 0,
-            width: isActive ? "100%" : "58%",
-            height: isActive ? "288px" : "136px",
-            padding: 0,
-            border: 0,
-            overflow: "hidden",
-            background: project.bg,
-            cursor: "pointer",
-            transition: "width .42s cubic-bezier(.2,.78,.22,1), height .42s cubic-bezier(.2,.78,.22,1)",
-          }}
-        >
-          <img
-            src={project.img}
-            alt={project.title}
-            style={{
-              width: "100%",
-              height: "100%",
-              display: "block",
-              objectFit: thumb.fit ?? "cover",
-              objectPosition: thumb.position ?? project.imgPosition ?? "center",
-              padding: thumb.padding ?? 0,
-              transform: `translateZ(0) scale(${(thumb.scale ?? 1) * (hovered ? .995 : isActive ? 1.012 : 1)})`,
-              transformOrigin: "center",
-              backfaceVisibility: "hidden",
-              willChange: "transform",
-              transition: "transform .36s cubic-bezier(.2,.75,.25,1), padding .3s ease",
-            }}
-          />
-        </button>
-      </article>
-    );
-  }
-
-  const openCaseStudy = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.stopPropagation();
-    onOpen();
-  };
-
-  return (
-    <article
-      onClick={onOpen}
-      onMouseEnter={() => { setHovered(true); onActivate(); }}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        position: "relative",
-        height: "320px",
-        overflow: "hidden",
-        border: `1px solid ${hovered ? "var(--card-border-hover)" : "var(--card-border)"}`,
-        borderRadius: "12px",
-        background: project.bg,
-        cursor: "pointer",
-        transform: hovered ? "translate3d(0,-3px,0)" : isActive ? "translate3d(0,-1px,0)" : "translate3d(0,0,0)",
-        boxShadow: hovered ? "0 14px 34px rgba(26,25,64,.08)" : "0 0 0 rgba(26,25,64,0)",
-        willChange: "transform",
-        transition: "transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s ease, border-color .24s ease",
-      }}
-    >
-      <div style={{ position: "absolute", inset: 0, display: "grid", gridTemplateColumns: "minmax(260px,.68fr) minmax(0,1.32fr)" }}>
-        <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: isActive ? "space-between" : "center",
-            minWidth: 0,
-            padding: isActive ? "24px 30px 22px" : "0 28px",
-            background: BG,
-          }}
-        >
-          <div>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", letterSpacing: ".07em", color: SOFT }}>
-              {project.year}
-            </span>
-            <h2
-              style={{
-                margin: isActive ? "9px 0 0" : "6px 0 0",
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-                fontSize: "27px",
-                fontWeight: 800,
-                lineHeight: .96,
-                letterSpacing: "-.04em",
-                color: NAV,
-                transform: `translate3d(0,${hovered ? "-1px" : "0"},0) scale(${isActive ? 1.055 : 1})`,
-                transformOrigin: "left center",
-                transition: "transform .3s cubic-bezier(.2,.75,.25,1), color .22s ease",
-              }}
-            >
-              {project.title}
-            </h2>
-            <div
-              className="editorial-meta-block"
-              style={{
-                marginTop: isActive ? "12px" : "7px",
-                maxWidth: "390px",
-                opacity: isActive ? 1 : hovered ? .92 : .68,
-                transform: isActive ? "translate3d(0,0,0)" : hovered ? "translate3d(0,-1px,0)" : "translate3d(0,2px,0)",
-                transition: "opacity .25s ease, transform .3s cubic-bezier(.2,.75,.25,1)",
-              }}
-            >
-              {metaLines.map((line) => <div key={line}>{line}</div>)}
-            </div>
-          </div>
-
-          <button
-            type="button"
-            onClick={openCaseStudy}
-            tabIndex={isActive ? 0 : -1}
-            aria-hidden={!isActive}
-            style={{
-              alignSelf: "flex-start",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "9px",
-              padding: 0,
-              border: 0,
-              background: "transparent",
-              cursor: isActive ? "pointer" : "default",
-              pointerEvents: isActive ? "auto" : "none",
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "9px",
-              fontWeight: 500,
-              letterSpacing: ".1em",
-              textTransform: "uppercase",
-              color: hovered ? VIOLET : "#938DCA",
-              opacity: isActive ? 1 : 0,
-              transform: isActive ? "translate3d(0,0,0)" : "translate3d(0,7px,0)",
-              transition: "opacity .22s ease, transform .3s cubic-bezier(.2,.75,.25,1), color .2s ease",
-            }}
-          >
-            View case study
-            <span style={{ transform: hovered ? "translateX(4px)" : "translateX(0)", transition: "transform .2s ease" }}>→</span>
-          </button>
-        </div>
-
-        <button
-          type="button"
-          aria-label={`Open ${project.title} project`}
-          onClick={(event) => { event.stopPropagation(); onOpen(); }}
-          style={{ position: "relative", zIndex: 1, minWidth: 0, overflow: "hidden", padding: 0, border: 0, background: project.bg, cursor: "pointer" }}
-        >
-          {image}
-        </button>
-      </div>
-    </article>
   );
 }
