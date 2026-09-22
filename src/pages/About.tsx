@@ -75,9 +75,9 @@ const expertise = [
 ];
 
 const languages = [
-  { lang: "Spanish", level: "Native" },
-  { lang: "English", level: "Professional" },
-  { lang: "Swedish", level: "Basic" },
+  { lang: "Spanish", level: "Native", flag: "🇨🇱" },
+  { lang: "English", level: "Professional", flag: "🇬🇧" },
+  { lang: "Swedish", level: "Basic", flag: "🇸🇪" },
 ];
 
 const personalBits = [
@@ -133,48 +133,37 @@ export default function About() {
               <h1
                 style={{
                   margin: 0,
-                  fontFamily: "'Bricolage Grotesque', sans-serif",
-                  fontSize: isMobile ? "clamp(48px,13vw,66px)" : "clamp(68px,6.2vw,106px)",
-                  fontWeight: 800,
-                  lineHeight: 0.92,
-                  letterSpacing: "-0.055em",
-                  color: VIOLET,
-                }}
-              >
-                Digital designer.
-                <br />
-                Curious human.
-              </h1>
-
-              <p
-                style={{
                   maxWidth: "560px",
-                  margin: isMobile ? "28px 0 0" : "36px 0 0",
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: isMobile ? "17px" : "19px",
+                  fontSize: isMobile ? "16px" : "17px",
+                  fontWeight: 400,
                   lineHeight: 1.65,
                   color: TEXT,
                 }}
               >
+                <span
+                  style={{
+                    display: "block",
+                    margin: "0 0 14px",
+                    fontFamily: "'Bricolage Grotesque', sans-serif",
+                    fontSize: isMobile ? "clamp(48px,13vw,66px)" : "clamp(68px,6.2vw,106px)",
+                    fontWeight: 800,
+                    lineHeight: 0.92,
+                    letterSpacing: "-0.055em",
+                    color: VIOLET,
+                  }}
+                >
+                  Digital designer.
+                  <br />
+                  Curious human.
+                </span>
                 I’m Sofia, a Product Designer with 6+ years of experience
                 creating useful, beautiful and human digital products across
-                international markets.
-              </p>
-
-              <p
-                style={{
-                  maxWidth: "560px",
-                  margin: "18px 0 0",
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: isMobile ? "15px" : "16px",
-                  lineHeight: 1.7,
-                  color: "#8A8CA2",
-                }}
-              >
-                My background sits between product design, visual design,
-                interaction and creative technology. I’m especially drawn to
-                projects where research and experimentation can live together.
-              </p>
+                international markets — sitting between product design, visual
+                design, interaction and creative technology, and especially
+                drawn to projects where research and experimentation can live
+                together.
+              </h1>
 
               {!isMobile && (
                 <div
@@ -645,7 +634,7 @@ export default function About() {
               </p>
 
               <div style={{ display: "grid", gap: "13px" }}>
-                {languages.map(({ lang, level }) => (
+                {languages.map(({ lang, level, flag }) => (
                   <div
                     key={lang}
                     style={{
@@ -658,12 +647,16 @@ export default function About() {
                   >
                     <span
                       style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
                         fontFamily: "'Bricolage Grotesque', sans-serif",
                         fontSize: "16px",
                         fontWeight: 700,
                         color: NAV,
                       }}
                     >
+                      <span aria-hidden="true" style={{ fontSize: "18px" }}>{flag}</span>
                       {lang}
                     </span>
                     <span
