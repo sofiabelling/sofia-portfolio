@@ -14,7 +14,13 @@ const experience = [
     years: "2020–2025",
     location: "Stockholm, Sweden",
     impact: null as string | null,
-    desc: "Designed and optimized web and mobile products for casino and sports betting platforms across European and international markets. Led UX/UI work across complex product areas including KYC, deposits, payments, and promotional experiences, balancing user needs, business objectives, technical constraints, and regulatory requirements. Built and evolved design systems and reusable components, improving consistency and scalability across multiple digital products. Optimized critical deposit and payment flows, focusing on reducing friction and improving acceptance rates. Collaborated closely with stakeholders, Data Scientists, Front-end and Back-end Engineers, translators, and other cross-functional teams throughout the product development process.",
+    desc: [
+      "Designed and optimized web and mobile products for casino and sports betting platforms across European and international markets.",
+      "Led UX/UI work across complex product areas including KYC, deposits, payments, and promotional experiences — balancing user needs, business objectives, technical constraints, and regulatory requirements.",
+      "Built and evolved design systems and reusable components, improving consistency and scalability across multiple digital products.",
+      "Optimized critical deposit and payment flows, focusing on reducing friction and improving acceptance rates.",
+      "Collaborated closely with stakeholders, Data Scientists, Front-end and Back-end Engineers, translators, and other cross-functional teams throughout the product development process.",
+    ] as string | string[],
   },
   {
     role: "Junior UX/UI Designer",
@@ -574,18 +580,44 @@ export default function About() {
                   {item.role}
                 </p>
 
-                <p
-                  style={{
-                    maxWidth: "760px",
-                    margin: "15px 0 0",
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: isMobile ? "14px" : "15px",
-                    lineHeight: 1.72,
-                    color: "#717388",
-                  }}
-                >
-                  {item.desc}
-                </p>
+                {Array.isArray(item.desc) ? (
+                  <ul
+                    style={{
+                      maxWidth: "760px",
+                      margin: "15px 0 0",
+                      paddingLeft: "18px",
+                      listStyle: "disc",
+                    }}
+                  >
+                    {item.desc.map((line, lineIndex) => (
+                      <li
+                        key={lineIndex}
+                        style={{
+                          fontFamily: "'Inter', sans-serif",
+                          fontSize: isMobile ? "14px" : "15px",
+                          lineHeight: 1.6,
+                          color: "#717388",
+                          marginBottom: lineIndex === item.desc.length - 1 ? 0 : "10px",
+                        }}
+                      >
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p
+                    style={{
+                      maxWidth: "760px",
+                      margin: "15px 0 0",
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: isMobile ? "14px" : "15px",
+                      lineHeight: 1.72,
+                      color: "#717388",
+                    }}
+                  >
+                    {item.desc}
+                  </p>
+                )}
               </div>
             </div>
           ))}
