@@ -29,16 +29,12 @@ const experience = [
     years: "2019–2020",
     location: "Santiago, Chile",
     impact: "5M+ Downloads",
-    desc: "Contributed to the early creation and launch of Copec's consumer app, helping shape the product from its initial stages through its release — now at 5M+ downloads. Conducted on-site user research and usability testing at Copec service stations, observing customers in real-world contexts. Used field research, usability testing, heuristic evaluation, A/B testing, and data analysis to uncover user needs and inform key functionalities before launch. Contributed to the Copec Design System, creating and evolving UI guidelines, components, and brand assets.",
-  },
-  {
-    role: "Digital Designer Intern",
-    company: "Redo",
-    period: "Dec 2015 – Feb 2016",
-    years: "2015–2016",
-    location: "Santiago, Chile",
-    impact: null as string | null,
-    desc: "Contributed with website interfaces and branded digital assets across multiple client projects.",
+    desc: [
+      "Contributed to the early creation and launch of Copec's consumer app, helping shape the product from its initial stages through its release — now at 5M+ downloads.",
+      "Conducted on-site user research and usability testing at Copec service stations, observing customers in real-world contexts.",
+      "Used field research, usability testing, heuristic evaluation, A/B testing, and data analysis to uncover user needs and inform key functionalities before launch.",
+      "Contributed to the Copec Design System, creating and evolving UI guidelines, components, and brand assets.",
+    ] as string | string[],
   },
 ];
 
